@@ -7,7 +7,7 @@ export default function PaginaPrincipal() {
         <NavBar/>
         <div className="imagen clase1">
             <h1></h1>
-            <h3>¡Tu esfuerzo vale la pena,<br /> nunca dejes de aprender! </h3>
+            <h3 className="texto-principal">¡Tu esfuerzo vale la pena,<br /> nunca dejes de aprender! </h3>
         </div>
         </header>
     </>

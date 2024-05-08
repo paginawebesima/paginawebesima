@@ -1,9 +1,11 @@
+@use '/src/sass/base/variables' as v;
 .header{
     display: grid;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.355);;
     padding-top: 10px;
     padding-bottom: 10px;
+  
     width: 100%;
     @media(min-width:768px){
         display: flex;
@@ -15,8 +17,9 @@
     
     img{
         max-width: 100%;
-        width: 100px;
+        width: 70px;
         border-radius: 100%;
+        padding-left: 10px;
     }
     a{
         text-decoration: none;
@@ -26,35 +29,40 @@
     }
     
 }
-.enlace:nth-child(1){
-    @media(max-width:1439px){
-        margin-left: 10px;
-    }
-    @media(min-width:1440px){
-        margin-left: 40px;
-    }
-
-}
 .enlace:last-of-type{
-    @media(max-width:1439px){
-        margin-right: 10px;
-    }
-    @media(min-width:1440px){
-        margin-right: 40px;
+    @media(min-width:768px){
+        padding-right: 20px;
     }
 }
 .enlace{
     text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .imagen{
     max-width: 100%;
     max-height: 100%;
     height: 550px;
+    
     background-position: center;
-    background-image: url(ImagenPrincipal.jpeg);
-    h3{
-        margin: 0;
-        color: white;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+     url(/ImagenPrincipal.jpeg);
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+
+.texto-principal{
+    color: white;
+    margin: 0;
+    padding-bottom: 25px;
+    padding-left: 20px;
+    font-size: 2.2rem;
+    @media(min-width: 768px){
+        font-size: 2.8rem;
+        padding-bottom: 42px;
+        padding-left: 50px;
     }
 }
 
@@ -64,11 +72,9 @@
    flex-direction: column;
    justify-content: space-between;
     font-size: 2rem;
-    h3{
-        padding-left: 60px;
-        padding-bottom: 50px;
-
-    }
+    max-width: 100%;
+    width: 100%;
+    
 }
 .clase2{
     position: absolute;
