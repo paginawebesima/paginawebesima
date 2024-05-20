@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function Talleres() {
@@ -10,6 +11,7 @@ export default function Talleres() {
             <h3 className="texto-principal">Talleres</h3>
         </div>
         </div>
+        <Footer/>
     </>
   )
 }

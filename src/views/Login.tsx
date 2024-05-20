@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function Login() {
@@ -13,11 +14,12 @@ export default function Login() {
         <div>
             <form action="">
                 <h1>Iniciar Sesion</h1>
-                <input type="text" placeholder="usuario" />
+                <input type="text" placeholder="usuario"/>
                 <input type="password" placeholder="contraseña" />
-                <input type="submit" value='Iniciar Sesion' />
+                <a href="/panel">Aceptar</a>
             </form>
         </div>
+        <Footer/>
     </>
   )
 }
