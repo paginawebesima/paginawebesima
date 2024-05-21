@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import '../sass/layout/_panel.scss';
 
 export default function Panel() {
   const navigate = useNavigate();
