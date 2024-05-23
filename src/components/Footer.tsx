@@ -2,39 +2,28 @@
 export default function Footer() {
   return (
     <>
-      <footer className="footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-1">
-              <ul className="footer-list">
-                <li className="footer-item">
-                  <a href="#">
-                    <span className="footer-icon"><img src="location.svg" alt="location icon" /></span>
-                    16°48'10, C. Cap. Francisco de Ibarra 1907 OTE-95°05'57, Nueva Vizcaya, 34080 Durango, Dgo.
-                  </a>
-                </li>
-                <li className="footer-item">
-                  <span className="footer-icon"><img src="phone.svg" alt="phone icon" /></span>
-                  618 530 3345
-                </li>
-                <li className="footer-item">
-                  <span className="footer-icon"><img src="mail.svg" alt="mail icon" /></span>
-                  direccionesima@hotmail.com
-                </li>
-                <li className="footer-item">
-                  <a href="https://www.facebook.com/ESIMAof/">
-                    <span className="footer-icon"><img src="facebook.svg" alt="facebook icon" /></span>
-                    https://www.facebook.com/ESIMAof/
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="copyright">
-          <p>&copy; 2024 ESIMA. Todos los derechos reservados.</p>
-        </div>
-      </footer>
+    <footer className="footer">
+    <div className="flexdireccion">
+      <div className="informacionescuela">
+        <img className="imagenfooter" src="/LogoEsima.png" alt="Imagen Footer" />
+      <div className="texto_informacion">
+        <p>Escuela Secundaria General #1</p>
+        <p>"Ignacio Manuel Altamirano"</p>
+        <p>Clave: 10DES0002V</p>
+      </div>
+      </div>
+      <div className="">
+      <div className="flex">
+        <a  href="https://www.facebook.com/ESIMAof" target="_blank"><img className="iconos facebookicono" src="/facebook.svg" alt="facebook" /></a>
+        <a  href="https://www.instagram.com/esima.of?igsh=MTVxazA1Nm9nNjg2Mg%3D%3D&utm_source=qr" target="_blank"><img className="iconos instagram_icono" src="/instagram.svg" alt="" /></a>
+        <a  href="https://twitter.com/ESIMADurango" target="_blank"><img className="iconos twitter_icono" src="/x-twitter.svg" alt="" /></a>
+      </div>
+      <p className=" numero_contacto">618-818-11-82</p>
+
+      </div>
+      </div>
+    <p className="texto-izquierda">C. Cap. Francisco de Ibarra 1907, Nueva Vizcaya, 34080 Durango, Dgo.</p>
+    </footer>
     </>
   )
 }

@@ -7,7 +7,7 @@ export default function Preinscripciones() {
   const texto = `${year} - ${nextyear}`
   return (
     <>
-      <h1>Preinscripciones </h1>
+      
       <header className="">
         <NavBar />
         <div className="imagen3 clase1">
