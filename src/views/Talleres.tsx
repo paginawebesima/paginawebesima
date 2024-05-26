@@ -11,7 +11,7 @@ export default function Talleres() {
         </div>
       </div>
       <div className="display">
-        <div className="container">
+        <div className="container1">
           <div className="card">
             <img src="Carpintería.jpg" alt="Carpintería"></img>
             <div className="overlay">
