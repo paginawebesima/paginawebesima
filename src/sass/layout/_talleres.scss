@@ -12,19 +12,14 @@
 }
 
 .display {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: auto;
-    margin: 0;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 900px;
+    max-width: 100%;
     margin: auto;
 }
 
