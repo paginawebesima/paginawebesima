@@ -16,14 +16,15 @@ export default function Talleres() {
             <img src="Carpintería.jpg" alt="Carpintería"></img>
             <div className="overlay">
               <h3>Carpintería</h3>
-              <button>Ver</button>
+              <a href="/carpinteria"><button>Ver</button></a>
+              
             </div>
           </div>
           <div className="card">
             <img src="Ofimática.jpg" alt="Ofimática"></img>
             <div className="overlay">
               <h3>Ofimática</h3>
-              <button>Ver</button>
+              <a href="/login"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
