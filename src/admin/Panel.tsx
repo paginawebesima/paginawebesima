@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import {ToastContainer} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom';
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-
+import { Outlet } from 'react-router-dom';
 export default function Panel() {
   const navigate = useNavigate();
 
@@ -18,7 +20,10 @@ export default function Panel() {
         navigate('/graduaciones');
       } else if (text === 'Noticias relevantes') {
         navigate('/login');
-      } else {
+      } else if(text==='Actualizar información de contacto'){
+        navigate('/panel/informacion')
+      } 
+      else {
         alert('No hay una ruta definida para esta opción');
       }
     };
@@ -42,36 +47,13 @@ export default function Panel() {
           <h1></h1>
           <h3 className="texto-principal">Panel<br />De Administración</h3>
         </div>
-        <div className="display">
-          <div className="container">
-            <div className="box">
-              <p>Información nuevo ingreso</p>
-              <img src="school.svg" alt="Nuevo Ingreso"></img>
-            </div>
-            <div className="box">
-              <p>Información alumnos a egresar</p>
-              <img src="graduation.svg" alt="Alumnos a Egresar"></img>
-            </div>
-            <div className="box">
-              <p>Noticias relevantes</p>
-              <img src="news.svg" alt="Noticias Relevantes"></img>
-            </div>
-            <div className="box">
-              <p>Usuarios</p>
-              <img src="user.svg" alt="Usuarios"></img>
-            </div>
-            <div className="box">
-              <p>Actualizar información de contacto</p>
-              <img src="mail-admin.svg" alt="Actualizar Contacto"></img>
-            </div>
-            <div className="box">
-              <p>Información directivos</p>
-              <img src="admins.svg" alt="Información Directivos"></img>
-            </div>
-          </div>
-        </div>
+        <Outlet/>
       </div>
       <Footer />
+      <ToastContainer
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+        />
     </>
   );
 }

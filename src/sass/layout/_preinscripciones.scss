@@ -20,8 +20,125 @@
 .informacion_inscripciones{
     display: grid;
     grid-template-rows: repeat(4,1fr);
+    h2{
+        font-size: 1.2rem;
+    }
+    li{
+        font-size: 1rem;
+    }
+    
+    
+    @media(min-width: 768px){
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+
+    }
 }
 
 .informacion{
     background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    li{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    @media(min-width: 768px){
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        text-align: left;
+        border-radius: 20px;
+        justify-content: center;
+        
+    }
+}
+.separacion_arriba{
+    
+    padding-top: 30px;
+    @media(min-width: 768px){
+        padding-top: 0;
+    }
+}
+
+.margen{
+    @media(min-width: 768px){
+        margin: 20px;
+        
+    }
+}
+.margen_1{
+    @media(min-width: 768px){
+        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+.margen_2{
+    @media(min-width: 768px){
+        margin-left: 0;
+    }
+}
+.Preinscripciones_Iconos{
+    width: 50px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-bottom: 0;
+    }
+}
+.contenido_centrado{
+    display: flex;
+    justify-content: center;
+    @media(min-width: 768px){
+        flex-basis: 25%;
+    }
+}
+
+.informacion_contenido{
+    @media(min-width: 768px){
+        flex-basis: 75%;
+    }
+}
+.informacion_contenido_papeleria{
+    padding-bottom: 20px;
+}
+.examen{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.papeleria{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.horario{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.resultados{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+
+.titulo_papeleria{
+
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-top: 15px;
+    margin-bottom: 10px;
+    }
 }

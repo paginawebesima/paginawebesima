@@ -6,6 +6,8 @@ import Talleres from './views/Talleres'
 import Graduaciones from './views/Graduaciones'
 import Administrativos from './views/Administrativos'
 import Panel from './admin/Panel'
+import OptionsPanel from './options/OptionsPanel'
+import InformationContact from './options/InformationContact'
 export default function Router() {
     return (
         <BrowserRouter>
@@ -18,7 +20,12 @@ export default function Router() {
                 <Route element={<Administrativos />} path='/administrativos' />
                 <Route element={<Graduaciones />} path='/clausura' />
                 <Route element={<Administrativos />} path='/administrativos' />
-                <Route element={<Panel />} path='/panel' />
+            </Routes>
+            <Routes>
+                <Route element={<Panel/>}>
+                    <Route element={<OptionsPanel/>} index path='/panel'/>
+                    <Route element={<InformationContact/>} path='/panel/informacion'/>
+                </Route>
             </Routes>
         </BrowserRouter>
     )

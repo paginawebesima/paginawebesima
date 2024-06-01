@@ -12,7 +12,7 @@
 .texto-izquierda{
     font-size: 1.1rem;
     text-align: center;
-    padding-top: 15px;
+    
     padding-bottom: 15px;
     @media (min-width:768px) {
         text-align: left;
@@ -35,7 +35,7 @@
 }
 
 .iconos{
-    width: 60px;
+    width: 40px;
     max-width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -87,7 +87,7 @@
 
 .numero_contacto{
     font-size: 1rem;
-    padding-top: 15px;
+    
     @media(min-width: 768px){
         text-align: right;
        padding-right: 55px;
