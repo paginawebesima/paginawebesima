@@ -19,7 +19,7 @@ export default function PaginaPrincipal() {
             <div>
               <img src="/TurnoMatutino.jpg" alt="Turno Matutino" />
             </div>
-            <div className="horario">
+            <div className="horario2">
               <h3>Matutino</h3>
               <p>7:30 am - 1:30 pm</p>
               <h3>Receso</h3>
@@ -41,7 +41,7 @@ export default function PaginaPrincipal() {
             <div>
               <img src="/TurnoVespertino.jpg" alt="Turno Vespertino" />
             </div>
-            <div className="horario">
+            <div className="horario2">
               <h3>Vespertino</h3>
               <p>1:30 pm</p>
               <h3>Receso</h3>

@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { QueryClient,QueryClientProvider } from 'react-query'
 import Router from './router'
 import './sass/app.scss'
 
+const queryclient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Router/>
+    <QueryClientProvider client={queryclient}>
+      <Router/>
+    </QueryClientProvider>
   </React.StrictMode>,
 )

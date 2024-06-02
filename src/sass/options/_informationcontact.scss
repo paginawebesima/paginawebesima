@@ -1,0 +1,17 @@
+.Telefono_Actual{
+    display: flex;
+    flex-direction: column;
+    label{
+        font-size: 1rem;
+    }
+    span{
+        font-weight: bold;
+    }
+}
+.formulario_actualizar_tel{
+    padding: 30px;
+}
+
+.formulario_aceptar{
+    width: 100%;
+}

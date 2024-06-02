@@ -4,8 +4,6 @@ import NavBar from "../components/NavBar";
 export default function Graduaciones() {
   return (
     <>
-      <h1>Graduaciones</h1>
-
       <header className="">
         <NavBar />
         <div className="imagen4 clase1">
