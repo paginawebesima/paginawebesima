@@ -46,7 +46,7 @@ export default function Administrativos() {
         </div>
       </header>
       <div className="container2">
-        <div className="section" ref={(el) => el && administrativosRef.current.push(el)}>
+        <div className="section-main">
           <div className="line-container"></div>
           <div className="administrativo">
             <h2 className="h2-admin">Dra. Rita Velia Reyes López</h2>
