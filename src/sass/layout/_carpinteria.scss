@@ -4,14 +4,12 @@
     height: 550px;
     width: 100%;
     background-position: center;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url(/Carpintería-header.jpg);
+    background-image: url(/Carpintería-header.jpg);
     background-repeat: no-repeat;
 }
 
 .display1 {
-    padding: 3%;
+    padding: 6%;
 }
 
 .main-content {
@@ -19,7 +17,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .info-section {
@@ -29,12 +26,29 @@
     width: 100%;
     max-width: 1200px;
     padding-bottom: 3%;
+    position: relative;
+    overflow: hidden;
 }
 
 .info-image {
     width: 40%;
     height: auto;
     border-radius: 10px;
+    transform: translateX(80%);
+    transition: transform 1s ease-in-out;
+}
+
+
+.info-image.hovered {
+    transform: translateX(0);
+}
+
+.h2-taller {
+    margin-bottom: 20px;
+}
+
+.p-taller {
+    line-height: 1.5em;
 }
 
 .info-text {
@@ -43,49 +57,134 @@
     text-align: center;
 }
 
-.carousel .slide {
+.info-section.active:not(:hover) .info-text {
+    transform: translateX(-10%);
+    opacity: 0;
+    transition: transform 1s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.info-section.active .info-text {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out, opacity 1.7s ease-in-out;
+    opacity: 1;
+}
+
+.carousel-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.carousel .slide img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.carousel .control-arrow {
-    display: none;
-}
-
-.carousel .carousel-status {
-    display: none;
+    justify-content: center;
+    width: 50%;
 }
 
 .carousel-section {
-    position: relative; 
+    position: relative;
     width: 100%;
-    max-width: 1200px;
+    border-radius: 6px;
+    overflow: hidden;
 }
 
-.carousel .control-dots .dot {
-    background: #D5D5D5;
-    transition: background 0.3s;
+.slide{
+    display: flex;
+    transform: translate3d(0,0,0);
+    transition: all 600ms;
+    animation-name: autoplay;
+    animation-duration: 6.5s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
-.carousel .control-dots .dot.selected {
-    background: #3F67DD;
+.item-slide{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
 }
 
-.carousel-section {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.pagination {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagination-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(255,255,255,0.5);
+    margin: 0 10px;
+    text-align: center;
+    transition: all 300ms;
+}
+
+.pagination-item:hover {
+    transform: scale(2);
+}
+
+.pagination-item img{
+    display: inline-block;
+    max-width: none;
+    height: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: all 300ms;
+}
+
+.pagination-item:hover img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+input[id="1"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(0,0,0);
+}
+
+input[id="1"]:checked ~ .pagination .pagination-item[for="1"] {
+    background: #fff;
+}
+
+input[id="2"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 1),0,0);
+}
+
+input[id="2"]:checked ~ .pagination .pagination-item[for="2"] {
+    background: #fff;
+}
+
+input[id="3"]:checked ~ .slide {
+    animation: none;
+    transform: translate3d(calc(-100% * 2),0,0);
+}
+
+input[id="3"]:checked ~ .pagination .pagination-item[for="3"] {
+    background: #fff;
+}
+
+@keyframes autoplay {
+    33%{
+        transform: translate3d(calc(-100% * 0), 0, 0);
+    }
+    66% {
+        transform: translate3d(calc(-100% * 1), 0, 0);
+    }
+    100% {
+        transform: translate3d(calc(-100% * 2), 0, 0);
+    }
 }
 
 @media (max-width: 768px) {
@@ -101,5 +200,9 @@
     .info-image {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .carousel-container {
+        width: 100%;
     }
 }

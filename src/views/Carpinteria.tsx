@@ -1,9 +1,15 @@
-import { Carousel } from 'react-responsive-carousel';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function TallerCarpinteria() {
+    const [isHovered, setIsHovered] = useState(false);
+    useEffect(() => {
+        const infoSection = document.querySelector('.info-section');
+        if (infoSection) {
+            infoSection.classList.add('active');
+        }
+    }, []);
     return (
         <>
             <header className="">
@@ -15,26 +21,44 @@ export default function TallerCarpinteria() {
             </header>
             <div className='display1'>
                 <div className="main-content">
-                    <div className="info-section">
-                        <img src="Carpintería-img.jpg" alt="Carpintero" className="info-image" />
-                        <div className="info-text">
-                            <h2>Una buena elección</h2>
-                            <p>La carpintería es el oficio de trabajar y labrar la madera para
-                                crear objetos útiles y agradables al ser humano.</p>
+                    <div className="info-section" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                        <img src="Carpintería-img.jpg" alt="Carpintero" className={`info-image ${isHovered ? 'hovered' : ''}`}/>
+                        <div className={`info-text ${isHovered ? 'visible' : ''}`}>
+                            <h2 className="h2-taller">Carpintería</h2>
+                            <p className="p-taller">La carpintería es el oficio de trabajar y labrar la madera para crear objetos útiles 
+                            y agradables al ser humano. Este arte ha sido practicado desde tiempos inmemoriales, y su evolución ha dado 
+                            lugar a una amplia gama de técnicas y herramientas que permiten a los carpinteros transformar la madera en 
+                            piezas funcionales y decorativas.</p>
                         </div>
                     </div>
-                    <div className="carousel-section">
-                        <Carousel showThumbs={false} infiniteLoop useKeyboardArrows autoPlay swipeable showStatus={false} emulateTouch >
-                            <div>
-                                <img src="Carpintería-carrousel1.jpg" alt="Herramientas 1" />
+                    <div className="carousel-container">
+                        <div className="carousel-section">
+                            <input type="radio" id="1" name="image-slide" hidden></input>
+                            <input type="radio" id="2" name="image-slide" hidden></input>
+                            <input type="radio" id="3" name="image-slide" hidden></input>
+                            <div className="slide">
+                                <div className="item-slide">
+                                    <img src="Carpintería-carrousel1.jpg" alt="Herramientas 1" className="img-carpinteria" />
+                                </div>
+                                <div className="item-slide">
+                                    <img src="Carpintería-carrousel2.jpg" alt="Herramientas 2" className="img-carpinteria" />
+                                </div>
+                                <div className="item-slide">
+                                    <img src="Carpintería-carrousel3.jpg" alt="Herramientas 3" className="img-carpinteria" />
+                                </div>
                             </div>
-                            <div>
-                                <img src="Carpintería-carrousel2.jpg" alt="Herramientas 2" />
+                            <div className="pagination">
+                                <label className="pagination-item" htmlFor="1">
+                                    <img src="Carpintería-carrousel1.jpg" className="img-carpinteria"></img>
+                                </label>
+                                <label className="pagination-item" htmlFor="2">
+                                    <img src="Carpintería-carrousel2.jpg" className="img-carpinteria"></img>
+                                </label>
+                                <label className="pagination-item" htmlFor="3">
+                                    <img src="Carpintería-carrousel3.jpg" className="img-carpinteria"></img>
+                                </label>
                             </div>
-                            <div>
-                                <img src="Carpintería-carrousel3.jpg" alt="Herramientas 3" />
-                            </div>
-                        </Carousel>
+                        </div>
                     </div>
                 </div>
             </div>
