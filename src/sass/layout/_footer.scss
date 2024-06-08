@@ -10,7 +10,7 @@
    }
 }
 .texto-izquierda{
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: center;
     
     padding-bottom: 15px;
@@ -24,26 +24,27 @@
 
 .imagenfooter{
     border-radius: 100%;
-    width: 100px;
+    width: 60px;
     max-width: 100%;
     margin-top: 20px;
     margin-bottom: 10px;
     @media(min-width: 768px){
+
         margin-left: 40px;
-        margin-top: 0;
+        margin-top: 10px;
     }
 }
 
 .iconos{
-    width: 40px;
+    width: 35px;
     max-width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
     @media(min-width: 768px){
-        margin-top: 0;
+        margin-top: 10px;
         margin-bottom: 0;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
 }
 .facebookicono{
@@ -66,7 +67,7 @@
     flex-direction: column;
     align-items: center;
     @media(min-width:768px){
-        padding-top: 5px;
+        
         padding-right: 40px;
         flex-direction: row;
     }
@@ -90,7 +91,7 @@
     
     @media(min-width: 768px){
         text-align: right;
-       padding-right: 55px;
+       padding-right: 45px;
        padding-top: 0;
         margin: 0;
     }
@@ -105,12 +106,13 @@
         text-align: left;
     }
     .texto_informacion{
-        
-        padding-left: 20px;
+        padding-top: 8px;
+        padding-left: 10px;
     }
 }
 .texto_informacion{
     p{
-        font-size: 1rem;
+        font-size: 0.9rem;
+        margin: 3px;
     }
 }

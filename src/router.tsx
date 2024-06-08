@@ -9,6 +9,10 @@ import Administrativos from './views/Administrativos'
 import Panel from './admin/Panel'
 import OptionsPanel from './options/OptionsPanel'
 import InformationContact from './options/InformationContact'
+import EditarNuevoIngreso from './options/actualizacion/EditarNuevoIngreso'
+import ActualizarInformacionNuevoIngreso from './options/actualizacion/ActualizarInformacionNuevoIngreso'
+import OpcionesNuevoIngreso from './options/actualizacion/OpcionesNuevoIngreso'
+import OpcionesTelefono from './options/actualizacion/OpcionesTelefono'
 export default function Router() {
     return (
         <BrowserRouter>
@@ -26,7 +30,11 @@ export default function Router() {
             <Routes>
                 <Route element={<Panel/>}>
                     <Route element={<OptionsPanel/>} index path='/panel'/>
-                    <Route element={<InformationContact/>} path='/panel/informacion'/>
+                    <Route element={<OpcionesTelefono/>} path='/panel/informacion'/>
+                    <Route element={<InformationContact/>} path='/panel/informacion/telefono'/>
+                    <Route element={<OpcionesNuevoIngreso/>} path='/panel/nuevoIngreso'/>
+                    <Route element={<ActualizarInformacionNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar'/>
+                    <Route element={<EditarNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar/:preinscripcionesId/editar'/>
                 </Route>
             </Routes>
         </BrowserRouter>

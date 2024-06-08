@@ -12,8 +12,8 @@ export default function InformationContact() {
   }
   const {mutate} = useMutation({
     mutationFn:creartelefonocontacto,
-    onError:()=>{
-    
+    onError:(error)=>{
+      toast.error("")
     },
     onSuccess:(data)=>{
       toast.success(data)

@@ -1,5 +1,10 @@
-
+import { useQuery } from "react-query"
+import { obtenertelefono} from "../api/api";
 export default function Footer() {
+  const {data} = useQuery({
+    queryKey:'telefonos',
+    queryFn:obtenertelefono
+   })
   return (
     <>
     <footer className="footer">
@@ -18,7 +23,10 @@ export default function Footer() {
         <a  href="https://www.instagram.com/esima.of?igsh=MTVxazA1Nm9nNjg2Mg%3D%3D&utm_source=qr" target="_blank"><img className="iconos instagram_icono" src="/instagram.svg" alt="" /></a>
         <a  href="https://twitter.com/ESIMADurango" target="_blank"><img className="iconos twitter_icono" src="/x-twitter.svg" alt="" /></a>
       </div>
-      <p className=" numero_contacto">618-818-11-82</p>
+      {data?.map((telefono)=>(
+      <p className=" numero_contacto">{telefono.telefono}</p>
+      ))}
+
 
       </div>
       </div>
