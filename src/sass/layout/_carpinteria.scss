@@ -55,17 +55,13 @@
     flex: 1;
     padding: 100px;
     text-align: center;
-}
-
-.info-section.active:not(:hover) .info-text {
     transform: translateX(-10%);
     opacity: 0;
     transition: transform 1s ease-in-out, opacity 0.7s ease-in-out;
 }
 
-.info-section.active .info-text {
+.info-text.hovered {
     transform: translateX(0);
-    transition: transform 1s ease-in-out, opacity 1.7s ease-in-out;
     opacity: 1;
 }
 
@@ -83,9 +79,9 @@
     overflow: hidden;
 }
 
-.slide{
+.slide {
     display: flex;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     transition: all 600ms;
     animation-name: autoplay;
     animation-duration: 6.5s;
@@ -94,7 +90,7 @@
     animation-iteration-count: infinite;
 }
 
-.item-slide{
+.item-slide {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -124,7 +120,7 @@
     border-radius: 4px;
     overflow: hidden;
     cursor: pointer;
-    background: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
     margin: 0 10px;
     text-align: center;
     transition: all 300ms;
@@ -134,7 +130,7 @@
     transform: scale(2);
 }
 
-.pagination-item img{
+.pagination-item img {
     display: inline-block;
     max-width: none;
     height: 100%;
@@ -148,40 +144,42 @@
     transform: scale(1);
 }
 
-input[id="1"]:checked ~ .slide {
+input[id="1"]:checked~.slide {
     animation: none;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
 }
 
-input[id="1"]:checked ~ .pagination .pagination-item[for="1"] {
+input[id="1"]:checked~.pagination .pagination-item[for="1"] {
     background: #fff;
 }
 
-input[id="2"]:checked ~ .slide {
+input[id="2"]:checked~.slide {
     animation: none;
-    transform: translate3d(calc(-100% * 1),0,0);
+    transform: translate3d(calc(-100% * 1), 0, 0);
 }
 
-input[id="2"]:checked ~ .pagination .pagination-item[for="2"] {
+input[id="2"]:checked~.pagination .pagination-item[for="2"] {
     background: #fff;
 }
 
-input[id="3"]:checked ~ .slide {
+input[id="3"]:checked~.slide {
     animation: none;
-    transform: translate3d(calc(-100% * 2),0,0);
+    transform: translate3d(calc(-100% * 2), 0, 0);
 }
 
-input[id="3"]:checked ~ .pagination .pagination-item[for="3"] {
+input[id="3"]:checked~.pagination .pagination-item[for="3"] {
     background: #fff;
 }
 
 @keyframes autoplay {
-    33%{
+    33% {
         transform: translate3d(calc(-100% * 0), 0, 0);
     }
+
     66% {
         transform: translate3d(calc(-100% * 1), 0, 0);
     }
+
     100% {
         transform: translate3d(calc(-100% * 2), 0, 0);
     }
@@ -195,11 +193,14 @@ input[id="3"]:checked ~ .pagination .pagination-item[for="3"] {
 
     .info-text {
         padding: 10px;
+        transform: translateY(-20%);
+        
     }
 
     .info-image {
         width: 100%;
         margin-bottom: 20px;
+        transform: translateX(-100%);
     }
 
     .carousel-container {

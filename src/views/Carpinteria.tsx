@@ -1,15 +1,58 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 
 export default function TallerCarpinteria() {
-    const [isHovered, setIsHovered] = useState(false);
+    const [showImage, setShowImage] = useState(false);
+    const [showText, setShowText] = useState(false);
+    const infoImageRef = useRef<HTMLDivElement>(null);
+    const infoTextRef = useRef<HTMLDivElement>(null);
+    const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
+    const previousScroll = useRef<number>(window.scrollY);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+
+            if (currentScroll < previousScroll.current) {
+                setScrollDirection("up");
+            } else {
+                setScrollDirection("down");
+            }
+
+            previousScroll.current = currentScroll;
+
+            if (!infoImageRef.current || !infoTextRef.current) return;
+
+            const topImage = infoImageRef.current.getBoundingClientRect().top;
+            const topText = infoTextRef.current.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (topImage < windowHeight * 0.6 && scrollDirection === "down" && !showImage) {
+                setShowImage(true);
+            }
+
+            if (topText < windowHeight * 0.6 && scrollDirection === "down" && !showText) {
+                setShowText(true);
+            }
+        };
+
+        if (window.innerWidth <= 768) {
+            window.addEventListener("scroll", handleScroll);
+        }
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [scrollDirection, showImage, showText]);
+
     useEffect(() => {
         const infoSection = document.querySelector('.info-section');
         if (infoSection) {
             infoSection.classList.add('active');
         }
     }, []);
+
     return (
         <>
             <header className="">
@@ -21,9 +64,9 @@ export default function TallerCarpinteria() {
             </header>
             <div className='display1'>
                 <div className="main-content">
-                    <div className="info-section" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                        <img src="Carpintería-img.jpg" alt="Carpintero" className={`info-image ${isHovered ? 'hovered' : ''}`}/>
-                        <div className={`info-text ${isHovered ? 'visible' : ''}`}>
+                    <div ref={infoImageRef} className="info-section" onMouseEnter={() => setShowImage(true)}>
+                        <img src="Carpintería-img.jpg" alt="Carpintero" className={`info-image ${showImage ? 'hovered' : ''}`}/>
+                        <div ref={infoTextRef} className={`info-text ${showText ? 'hovered' : ''}`} onMouseEnter={() => setShowText(true)} >
                             <h2 className="h2-taller">Carpintería</h2>
                             <p className="p-taller">La carpintería es el oficio de trabajar y labrar la madera para crear objetos útiles 
                             y agradables al ser humano. Este arte ha sido practicado desde tiempos inmemoriales, y su evolución ha dado 
