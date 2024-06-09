@@ -1,9 +1,12 @@
 import { useQuery } from "react-query";
 import { Menu, MenuButton, Transition } from '@headlessui/react'
+
+import 'react-toastify/ReactToastify.css'
 import { requerimientosPreinscripciones } from "../../api/api";
 import { Link } from "react-router-dom";
 import { EllipsisVerticalIcon } from '@heroicons/react/20/solid'
 import { Fragment } from "react/jsx-runtime";
+
 export default function ActualizarInformacionNuevoIngreso() {
   const {data} = useQuery({
     queryKey:['preinscripciones'],
@@ -61,6 +64,7 @@ export default function ActualizarInformacionNuevoIngreso() {
           
         </div>
       </main>
+      
     </>
   )
 }

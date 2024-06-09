@@ -1,12 +1,19 @@
 import { useForm } from "react-hook-form"
 import { PreinscripcionesEsima, preinscripciones2 } from "../../types"
 import FormularioEditarNuevoIngreso from "../../formularios/FormularioEditarNuevoIngreso"
+import { useNavigate } from "react-router-dom"
+import { useMutation, useQuery, useQueryClient } from "react-query"
+import { toast } from "react-toastify"
+import 'react-toastify/ReactToastify.css'
+import { actualizarRequerimiento } from "../../api/api"
 
 type ActualizarNuevoIngresoProps={
     data:PreinscripcionesEsima
     preinscripcionesId:preinscripciones2['_id']
 }
 export default function ActualizarNuevoIngreso({data,preinscripcionesId}:ActualizarNuevoIngresoProps) {
+    const navigate = useNavigate();
+    const queryClient = useQueryClient();
     const {register,handleSubmit,formState:{errors}} = useForm({
         defaultValues:{
             titulo:data.titulo,
@@ -17,12 +24,26 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
             requerimiento5:data.requerimiento5
         }
     })
-    const handleForm=()=>{
-
+    const {mutate} = useMutation({
+        mutationFn:actualizarRequerimiento,
+        onError:()=>{
+            
+        },
+        onSuccess:(data)=>{
+            toast.success(data)
+            navigate('/panel')
+        }
+    })
+    const handleForm=(formData:PreinscripcionesEsima)=>{
+        const data = {
+            formData,
+            preinscripcionesId
+        }
+        mutate(data)
     }
   return (
     <div>
-        <form className="form-register" onSubmit={handleSubmit(handleForm)}>
+        <form className="form-register" noValidate onSubmit={handleSubmit(handleForm)}>
             <h4>Actualizar Informacion Nuevo Ingreso</h4>
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
             <input className="botons" type="submit" value='Aceptar' />

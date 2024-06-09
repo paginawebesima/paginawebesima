@@ -1,5 +1,5 @@
 import api from "../lib/axios"
-import { FormTelefono, ShemaPreinscripciones,preinscripciones2,telefonoshema } from "../types"
+import { FormTelefono, PreinscripcionesEsima,preinscripciones2,telefonoshema } from "../types"
 
 
 
@@ -36,6 +36,20 @@ export async function obtenertelefono() {
 export async function obtenerRequerimientoPorID(id:preinscripciones2['_id']) {
     try {
         const {data} = await api(`requerimiento/${id}`)
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+type actualizarRequerimientoProps={
+    formData:PreinscripcionesEsima
+    preinscripcionesId:preinscripciones2['_id']
+}
+
+export async function actualizarRequerimiento({formData, preinscripcionesId}:actualizarRequerimientoProps) {
+    try {
+        const {data} = await api.put<string>(`preinscripciones/${preinscripcionesId}`,formData)
         return data
     } catch (error) {
         console.log(error)
