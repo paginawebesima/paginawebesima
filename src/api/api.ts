@@ -1,5 +1,5 @@
 import api from "../lib/axios"
-import { FormTelefono, ShemaPreinscripciones,preinscripciones2,telefonoshema } from "../types"
+import { FormTelefono,preinscripciones2,telefonoshema } from "../types"
 
 
 
