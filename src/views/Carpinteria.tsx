@@ -5,7 +5,7 @@ import NavBar from "../components/NavBar";
 export default function TallerCarpinteria() {
     const [showImage, setShowImage] = useState(false);
     const [showText, setShowText] = useState(false);
-    const infoImageRef = useRef<HTMLDivElement>(null);
+    const infoImageRef = useRef<HTMLImageElement>(null);
     const infoTextRef = useRef<HTMLDivElement>(null);
     const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
     const previousScroll = useRef<number>(window.scrollY);
@@ -64,9 +64,9 @@ export default function TallerCarpinteria() {
             </header>
             <div className='display1'>
                 <div className="main-content">
-                    <div ref={infoImageRef} className="info-section" onMouseEnter={() => setShowImage(true)}>
-                        <img src="Carpintería-img.jpg" alt="Carpintero" className={`info-image ${showImage ? 'hovered' : ''}`}/>
-                        <div ref={infoTextRef} className={`info-text ${showText ? 'hovered' : ''}`} onMouseEnter={() => setShowText(true)} >
+                    <div className="info-section">
+                        <img ref={infoImageRef} src="Carpintería-img.jpg" alt="Carpintería" className={`info-image ${showImage ? 'hovered' : ''}`} onMouseEnter={() => setShowImage(true)}/>
+                        <div ref={infoTextRef} className={`info-text ${showText ? 'hovered' : ''}`} onMouseEnter={() => { setShowText(true); setShowImage(true); }}>
                             <h2 className="h2-taller">Carpintería</h2>
                             <p className="p-taller">La carpintería es el oficio de trabajar y labrar la madera para crear objetos útiles 
                             y agradables al ser humano. Este arte ha sido practicado desde tiempos inmemoriales, y su evolución ha dado 
