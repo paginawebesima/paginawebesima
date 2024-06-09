@@ -6,7 +6,7 @@ type ActualizarNuevoIngresoProps={
     data:PreinscripcionesEsima
     preinscripcionesId:preinscripciones2['_id']
 }
-export default function ActualizarNuevoIngreso({data,preinscripcionesId}:ActualizarNuevoIngresoProps) {
+export default function ActualizarNuevoIngreso({data}:ActualizarNuevoIngresoProps) {
     const {register,handleSubmit,formState:{errors}} = useForm({
         defaultValues:{
             titulo:data.titulo,
