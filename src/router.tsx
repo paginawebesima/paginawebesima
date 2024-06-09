@@ -24,17 +24,15 @@ export default function Router() {
                 <Route element={<TallerCarpinteria />} path='/carpinteria' />
                 <Route element={<Graduaciones />} path='/graduaciones' />
                 <Route element={<Administrativos />} path='/administrativos' />
-                <Route element={<Graduaciones />} path='/clausura' />
-                <Route element={<Administrativos />} path='/administrativos' />
             </Routes>
             <Routes>
-                <Route element={<Panel/>}>
-                    <Route element={<OptionsPanel/>} index path='/panel'/>
-                    <Route element={<OpcionesTelefono/>} path='/panel/informacion'/>
-                    <Route element={<InformationContact/>} path='/panel/informacion/telefono'/>
-                    <Route element={<OpcionesNuevoIngreso/>} path='/panel/nuevoIngreso'/>
-                    <Route element={<ActualizarInformacionNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar'/>
-                    <Route element={<EditarNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar/:preinscripcionesId/editar'/>
+                <Route element={<Panel />}>
+                    <Route element={<OptionsPanel />} index path='/panel' />
+                    <Route element={<OpcionesTelefono />} path='/panel/informacion' />
+                    <Route element={<InformationContact />} path='/panel/informacion/telefono' />
+                    <Route element={<OpcionesNuevoIngreso />} path='/panel/nuevoIngreso' />
+                    <Route element={<ActualizarInformacionNuevoIngreso />} path='/panel/nuevoIngreso/actualizar' />
+                    <Route element={<EditarNuevoIngreso />} path='/panel/nuevoIngreso/actualizar/:preinscripcionesId/editar' />
                 </Route>
             </Routes>
         </BrowserRouter>
