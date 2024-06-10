@@ -12,7 +12,7 @@ export default function TelefonoContacto({register,errors}:TelefonoContactoProps
     <>
     <div className="formulario_actualizar_tel">
                 <div className="Telefono_Actual">
-                    <label htmlFor="">Telefono actual: <span>6182930123</span> </label>
+                    <label htmlFor="">Telefono</label>
                     <input type="text" {...register('telefono',{
                         required:"El telefono es obligatorio"
                     })}/>

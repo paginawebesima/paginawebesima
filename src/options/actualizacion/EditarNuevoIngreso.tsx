@@ -2,6 +2,7 @@ import { useQuery } from "react-query";
 import { Navigate, useParams } from "react-router-dom"
 import { obtenerRequerimientoPorID } from "../../api/api";
 import ActualizarNuevoIngreso from "../Forms/ActualizarNuevoIngreso";
+import RutasIconos from "../../components/RutasIconos";
 
 
 export default function EditarNuevoIngreso() {
@@ -15,6 +16,8 @@ export default function EditarNuevoIngreso() {
    if(isLoading) return 'Cargando .. ..' 
    if(isError) return <Navigate to='/404'/>
   return (
-    <ActualizarNuevoIngreso data={data} preinscripcionesId={preinscripcionesId}/>
+    <div>
+      <ActualizarNuevoIngreso data={data} preinscripcionesId={preinscripcionesId}/>
+    </div>
   )
 }

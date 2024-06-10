@@ -8,51 +8,61 @@ type FormularioEditarNuevoIngresoProps={
 export default function FormularioEditarNuevoIngreso({register}:FormularioEditarNuevoIngresoProps) {
   return (
     <div className="form-register">
-        <label htmlFor="">Titulo Requerimiento</label>
+      <div>
+        <label htmlFor="titulo">Titulo Requerimiento</label>
         <input className="controls" type="text" 
         id="titulo"
         {...register('titulo',{
             required:"El titulo es obligatorio"
         })}
         />
-        <label>Requerimiento 1</label>
+        {errors.titulo&&(
+          <p>{errors.titulo.message}</p>
+        )}
+      </div>
+      <div>
+        <label htmlFor="Requerimiento1">Requerimiento 1</label>
         <input type="text" 
         className="controls"
-        id="titulo"
+        id="Requerimiento1"
         {...register('requerimiento1',{
-            required:"El titulo es obligatorio"
+            required:"Minimo ingresar 1 requerimiento"
         })}
         />
-        <label>Requerimiento 2</label>
+        {errors.requerimiento1&&(
+          <p>{errors.requerimiento1.message}</p>
+        )}
+      </div>
+        <label htmlFor="Requerimiento2">Requerimiento 2</label>
          <input type="text" 
-        id="titulo"
+        id="Requerimiento2"
         className="controls"
         {...register('requerimiento2',{
-            required:"El titulo es obligatorio"
+            
         })}
         />
-        <label>Requerimiento 3</label>
+        <label htmlFor="Requerimiento3">Requerimiento 3</label>
          <input type="text" 
-        id="titulo"
+        id="Requerimiento3"
         className="controls"
         {...register('requerimiento3',{
-            required:"El titulo es obligatorio"
+            
         })}
         />
-        <label>Requerimiento 4</label>
+        <label htmlFor="Requerimiento4">Requerimiento 4</label>
         <input type="text" 
-        id="titulo"
+        id="Requerimiento4"
         className="controls"
         {...register('requerimiento4',{
-            required:"El titulo es obligatorio"
+            
         })}
         />
-        <label>Requerimiento 5</label>
+        <label htmlFor="Requerimiento5">Requerimiento 5</label>
         <input type="text" 
-        id="titulo"
+        id="Requerimiento5"
         className="controls"
         {...register('requerimiento5',{
-            required:"El titulo es obligatorio"
+            
         })}
         />
     </div>

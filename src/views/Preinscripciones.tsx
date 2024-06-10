@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+
 import PreinscripcionesInformacion from "../components/PreinscripcionesInformacion";
 export default function Preinscripciones() {
   
