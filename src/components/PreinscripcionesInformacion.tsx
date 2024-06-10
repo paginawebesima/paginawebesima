@@ -6,9 +6,10 @@ export default function PreinscripcionesInformacion() {
         queryFn:requerimientosPreinscripciones
       })
       if(isLoading)return 'Cargando ....'
-  if(data)return (
+      console.log(data)
+  return (
     <div className="informacion_inscripciones">
-          {data.map((informacion:{
+          {/* {data.map((informacion:{
             _id:string,
             titulo:string,
             requerimiento1:string,
@@ -34,7 +35,7 @@ export default function PreinscripcionesInformacion() {
             </div>
             </div>
           </div>
-          ))}
+          ))} */}
           
     </div>
   )

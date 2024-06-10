@@ -1,5 +1,5 @@
 import api from "../lib/axios"
-import { FormTelefono,preinscripciones2,telefonoshema } from "../types"
+import { FormTelefono,ShemaPreinscripciones,preinscripciones2,telefonoshema } from "../types"
 
 
 
@@ -15,7 +15,7 @@ export async function creartelefonocontacto(FormData:FormTelefono) {
 export async function requerimientosPreinscripciones() {
     try {
         const {data} = await api('/obtenerRequerimientos')
-        return data
+        console.log(data)
     } catch (error) {
         console.log(error)
     }
