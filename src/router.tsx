@@ -3,7 +3,15 @@ import PaginaPrincipal from './views/PaginaPrincipal'
 import Login from './views/Login'
 import Preinscripciones from './views/Preinscripciones'
 import Talleres from './views/Talleres'
-import TallerCarpinteria from './views/Carpinteria'
+import TallerCarpinteria from './views/talleres/Carpinteria'
+import TallerOfimatica from './views/talleres/Ofimatica'
+import TallerCocina from './views/talleres/Cocina'
+import TallerElectronica from './views/talleres/Electronica'
+import TallerMecanica from './views/talleres/Mecanica'
+import TallerAutomotriz from './views/talleres/Automotriz'
+import TallerDibujo from './views/talleres/Dibujo'
+import TallerSoldadura from './views/talleres/Soldadura'
+import TallerElectricidad from './views/talleres/Electricidad'
 import Graduaciones from './views/Graduaciones'
 import Administrativos from './views/Administrativos'
 import Panel from './admin/Panel'
@@ -27,9 +35,15 @@ export default function Router() {
                 <Route element={<Preinscripciones />} path='/preinscripciones' />
                 <Route element={<Talleres />} path='/talleres' />
                 <Route element={<TallerCarpinteria />} path='/carpinteria' />
+                <Route element={<TallerOfimatica />} path='/ofimatica' />
+                <Route element={<TallerCocina />} path='/cocina' />
+                <Route element={<TallerElectronica />} path='/electronica' />
+                <Route element={<TallerMecanica />} path='/mecanica' />
+                <Route element={<TallerAutomotriz />} path='/automotriz' />
+                <Route element={<TallerDibujo />} path='/dibujo' />
+                <Route element={<TallerSoldadura />} path='/soldadura' />
+                <Route element={<TallerElectricidad />} path='/electricidad' />
                 <Route element={<Graduaciones />} path='/graduaciones' />
-                <Route element={<Administrativos />} path='/administrativos' />
-                <Route element={<Graduaciones />} path='/clausura' />
                 <Route element={<Administrativos />} path='/administrativos' />
             </Routes>
             <Routes>
