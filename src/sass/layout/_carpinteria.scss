@@ -8,6 +8,86 @@
     background-repeat: no-repeat;
 }
 
+.imagen6 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Ofimática-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen7 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Cocina-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen8 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Electrónica-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen9 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Mecánica-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen10 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Automotriz-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen11 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Dibujo-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen12 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Soldadura-header.jpg);
+    background-repeat: no-repeat;
+}
+
+.imagen13 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 550px;
+    width: 100%;
+    background-position: center;
+    background-image: url(/Electricidad-header.jpg);
+    background-repeat: no-repeat;
+}
+
 .display1 {
     padding: 6%;
 }
@@ -32,10 +112,17 @@
 
 .info-image {
     width: 40%;
-    height: auto;
+    height: 300px;
+    overflow: hidden;
     border-radius: 10px;
     transform: translateX(80%);
     transition: transform 1s ease-in-out;
+}
+
+.info-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -92,11 +179,16 @@
 
 .item-slide {
     position: relative;
-    display: flex;
-    flex-direction: column;
     flex-shrink: 0;
-    flex-grow: 0;
     width: 100%;
+    padding-bottom: 50%;
+}
+
+.item-slide img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-position: center;
 }
 
 .pagination {

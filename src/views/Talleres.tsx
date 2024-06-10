@@ -24,56 +24,56 @@ export default function Talleres() {
             <img src="Ofimática.jpg" alt="Ofimática"></img>
             <div className="overlay">
               <h3>Ofimática</h3>
-              <a href="/login"><button>Ver</button></a>
+              <a href="/ofimatica"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Cocina.jpg" alt="Cocina"></img>
             <div className="overlay">
               <h3>Cocina</h3>
-              <button>Ver</button>
+              <a href="/cocina"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Electrónica.jpg" alt="Electrónica"></img>
             <div className="overlay">
               <h3>Electrónica</h3>
-              <button>Ver</button>
+              <a href="/electronica"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Mecánica.jpg" alt="Mecánica"></img>
             <div className="overlay">
               <h3>Mecánica</h3>
-              <button>Ver</button>
+              <a href="/mecanica"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Automotriz.jpg" alt="Automotriz"></img>
             <div className="overlay">
               <h3>Automotriz</h3>
-              <button>Ver</button>
+              <a href="/automotriz"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Dibujo.jpg" alt="Dibujo"></img>
             <div className="overlay">
               <h3>Dibujo</h3>
-              <button>Ver</button>
+              <a href="/dibujo"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Soldadura.jpg" alt="Soldadura"></img>
             <div className="overlay">
               <h3>Soldadura</h3>
-              <button>Ver</button>
+              <a href="/soldadura"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Electricidad.jpg" alt="Electricidad"></img>
             <div className="overlay">
               <h3>Electricidad</h3>
-              <button>Ver</button>
+              <a href="/electricidad"><button>Ver</button></a>
             </div>
           </div>
         </div>
