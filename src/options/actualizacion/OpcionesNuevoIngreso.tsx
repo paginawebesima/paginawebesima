@@ -10,15 +10,13 @@ export default function OpcionesNuevoIngreso() {
       const box = event.currentTarget as HTMLElement;
       const text = box.querySelector('p')?.innerText;
       if (text === 'Añadir Informacion') {
-        navigate('');
+        navigate('/panel/nuevoIngreso/añadir');
       } else if (text === 'Actualizar Informacion') {
         navigate('/panel/nuevoIngreso/actualizar');
       } else if (text === 'Eliminar Informacion') {
-        navigate('/login');
+        navigate('/panel/nuevoIngreso/eliminar');
       } 
-      else {
-        alert('No hay una ruta definida para esta opción');
-      }
+      
     };
 
     boxes.forEach(box => {

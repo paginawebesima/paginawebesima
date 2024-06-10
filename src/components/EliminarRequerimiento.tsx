@@ -1,17 +1,28 @@
-import { useQuery } from "react-query";
+import { useMutation, useQuery } from "react-query";
 
 
 import 'react-toastify/ReactToastify.css'
-import { requerimientosPreinscripciones } from "../../api/api";
-import { Link } from "react-router-dom";
+import { eliminarRequerimiento, requerimientosPreinscripciones } from "../api/api";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
-export default function ActualizarInformacionNuevoIngreso() {
+export default function EliminarRequerimiento() {
+    const navigate = useNavigate();
   const {data} = useQuery({
     queryKey:['preinscripciones'],
     queryFn:requerimientosPreinscripciones
   })
-  
+  const {mutate} = useMutation({
+    mutationFn:eliminarRequerimiento,
+    onError:()=>{
+
+    },
+    onSuccess:(data)=>{
+        toast.success(data)
+        navigate('/panel')
+    }
+  })
   if(data) return (
     <>
       <main>
@@ -41,7 +52,7 @@ export default function ActualizarInformacionNuevoIngreso() {
               <p>{informacion.requerimiento5}</p>
             </div>
             </div>
-            <Link to={`/panel/nuevoIngreso/actualizar/${informacion._id}/editar`}>Editar</Link>
+            <button onClick={()=>{mutate(informacion._id)}}>Eliminar</button>
           </div>
           ))}
           

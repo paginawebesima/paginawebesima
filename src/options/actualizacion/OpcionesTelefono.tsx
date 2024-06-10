@@ -12,9 +12,9 @@ export default function OpcionesTelefono() {
       if (text === 'Publicar Numero de Telefono') {
         navigate('/panel/informacion/telefono');
       } else if (text === 'Actualizar Numero de Telefono') {
-        navigate('/graduaciones');
+        navigate('/panel/informacion/actualizar');
       } else if (text === 'Eliminar Numero de Telefono') {
-        navigate('/login');
+        navigate('/panel/informacion/eliminar');
       } 
       else {
         alert('No hay una ruta definida para esta opción');

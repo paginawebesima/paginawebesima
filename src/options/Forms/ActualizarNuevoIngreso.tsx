@@ -2,10 +2,11 @@ import { useForm } from "react-hook-form"
 import { PreinscripcionesEsima, preinscripciones2 } from "../../types"
 import FormularioEditarNuevoIngreso from "../../formularios/FormularioEditarNuevoIngreso"
 import { useNavigate } from "react-router-dom"
-import { useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQueryClient } from "react-query"
 import { toast } from "react-toastify"
 import 'react-toastify/ReactToastify.css'
 import { actualizarRequerimiento } from "../../api/api"
+import RutasIconos from "../../components/RutasIconos"
 
 type ActualizarNuevoIngresoProps={
     data:PreinscripcionesEsima
@@ -13,7 +14,7 @@ type ActualizarNuevoIngresoProps={
 }
 export default function ActualizarNuevoIngreso({data,preinscripcionesId}:ActualizarNuevoIngresoProps) {
     const navigate = useNavigate();
-    const queryClient = useQueryClient();
+    
     const {register,handleSubmit,formState:{errors}} = useForm({
         defaultValues:{
             titulo:data.titulo,
@@ -48,6 +49,9 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
             <input className="botons" type="submit" value='Aceptar' />
         </form>
+        <div>
+            <RutasIconos/>
+        </div>
     </div>
   )
 }

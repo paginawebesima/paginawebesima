@@ -5,9 +5,10 @@ type FormularioEditarNuevoIngresoProps={
     register:UseFormRegister<PreinscripcionesEsima>
     errors:FieldErrors<PreinscripcionesEsima>
 }
-export default function FormularioEditarNuevoIngreso({register}:FormularioEditarNuevoIngresoProps) {
+export default function FormularioEditarNuevoIngreso({errors,register}:FormularioEditarNuevoIngresoProps) {
   return (
     <div className="form-register">
+      <div>
         <label htmlFor="titulo">Titulo Requerimiento</label>
         <input className="controls" type="text" 
         id="titulo"
@@ -15,14 +16,23 @@ export default function FormularioEditarNuevoIngreso({register}:FormularioEditar
             required:"El titulo es obligatorio"
         })}
         />
+        {errors.titulo&&(
+          <p>{errors.titulo.message}</p>
+        )}
+      </div>
+      <div>
         <label htmlFor="Requerimiento1">Requerimiento 1</label>
         <input type="text" 
         className="controls"
         id="Requerimiento1"
         {...register('requerimiento1',{
-            required:"El titulo es obligatorio"
+            required:"Minimo ingresar 1 requerimiento"
         })}
         />
+        {errors.requerimiento1&&(
+          <p>{errors.requerimiento1.message}</p>
+        )}
+      </div>
         <label htmlFor="Requerimiento2">Requerimiento 2</label>
          <input type="text" 
         id="Requerimiento2"
