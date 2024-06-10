@@ -8,9 +8,9 @@ export default function OpcionesNuevoIngreso() {
     const handleClick = (event: Event) => {
       const text = (event.currentTarget as HTMLElement).querySelector('p')?.innerText;
       const routes: { [key: string]: string } = {
-        'Añadir Información': '',
-        'Actualizar Información': '',
-        'Eliminar Información': '',
+        'Añadir Información': '/panel/nuevoIngreso/añadir',
+        'Actualizar Información': '/panel/nuevoIngreso/actualizar',
+        'Eliminar Información': '/panel/nuevoIngreso/eliminar',
       };
       const path = routes[text || ''];
       path ? navigate(path) : alert('No hay una ruta definida para esta opción');

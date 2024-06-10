@@ -5,7 +5,7 @@ type FormularioEditarNuevoIngresoProps={
     register:UseFormRegister<PreinscripcionesEsima>
     errors:FieldErrors<PreinscripcionesEsima>
 }
-export default function FormularioEditarNuevoIngreso({register}:FormularioEditarNuevoIngresoProps) {
+export default function FormularioEditarNuevoIngreso({errors,register}:FormularioEditarNuevoIngresoProps) {
   return (
     <div className="form-register">
       <div>
