@@ -22,7 +22,8 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
             requerimiento2:data.requerimiento2,
             requerimiento3:data.requerimiento3,
             requerimiento4:data.requerimiento4,
-            requerimiento5:data.requerimiento5
+            requerimiento5:data.requerimiento5,
+            icono:data.icono
         }
     })
     const {mutate} = useMutation({
@@ -43,15 +44,17 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
         mutate(data)
     }
   return (
-    <div>
-        <form className="form-register" noValidate onSubmit={handleSubmit(handleForm)}>
-            <h4>Actualizar Informacion Nuevo Ingreso</h4>
+    <>
+    <h4>Actualizar Informacion Nuevo Ingreso</h4>
+      <div className="dos-columnas">
+        <form className="form-register flex1" noValidate onSubmit={handleSubmit(handleForm)}>
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
             <input className="botons" type="submit" value='Aceptar' />
         </form>
-        <div>
+        <div className="flex2">
             <RutasIconos/>
         </div>
     </div>
+    </>
   )
 }

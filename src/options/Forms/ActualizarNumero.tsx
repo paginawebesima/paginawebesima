@@ -8,6 +8,7 @@ export default function ActualizarNumero() {
        })
   return (
     <>
+    <h2>Actualizar Telefono</h2>
     {data?.map((telefono)=>(
         <div>
             <p className="">{telefono.telefono}</p>

@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 export default function EliminarRequerimiento() {
     const navigate = useNavigate();
-  const {data} = useQuery({
+  const {data,isLoading} = useQuery({
     queryKey:['preinscripciones'],
     queryFn:requerimientosPreinscripciones
   })
@@ -23,9 +23,11 @@ export default function EliminarRequerimiento() {
         navigate('/panel')
     }
   })
+  if(isLoading) return "Cargando ..."
   if(data) return (
     <>
       <main>
+      <h1>Eliminar Requerimiento de Preinscripcion</h1>
         <div className="informacion_inscripciones">
           {data.map((informacion:{
             _id:string,

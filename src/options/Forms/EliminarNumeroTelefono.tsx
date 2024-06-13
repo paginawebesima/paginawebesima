@@ -20,6 +20,7 @@ export default function EliminarNumeroTelefono() {
        })
   return (
     <>
+        <h2>Eliminar Telefono</h2>
         {data?.map((telefono)=>(
         <div>
             <p className="">{telefono.telefono}</p>

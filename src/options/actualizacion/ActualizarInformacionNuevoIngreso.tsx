@@ -15,6 +15,7 @@ export default function ActualizarInformacionNuevoIngreso() {
   if(data) return (
     <>
       <main>
+      <h1>Actualizar Requerimiento de Preinscripcion</h1>
         <div className="informacion_inscripciones">
           {data.map((informacion:{
             _id:string,
@@ -23,12 +24,13 @@ export default function ActualizarInformacionNuevoIngreso() {
             requerimiento2:string,
             requerimiento3:string,
             requerimiento4:string,
-            requerimiento5:string
+            requerimiento5:string,
+            icono:string
           })=>(
 
           <div className="informacion margen separacion_arriba">
             <div className="contenido_centrado">
-              <img className="Preinscripciones_Iconos" src='/examen.svg' alt="Papeleria" />
+              <img className="Preinscripciones_Iconos" src={`${informacion.icono}`} />
             </div>
             <div className="informacion_contenido">
 
