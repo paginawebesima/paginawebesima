@@ -49,3 +49,32 @@ export const ShemaPreinscripciones=z.array(
 export type preinscripciones2= z.infer<typeof preinscripciones1>
 
 export type PreinscripcionesEsima = Pick<preinscripciones2,'titulo'|'requerimiento1'|'requerimiento2'|'requerimiento3'|'requerimiento4'|'requerimiento5'|'icono'>
+
+
+
+
+export const prestamosAlumnosShema=z.object({
+    _id:z.string(),
+    alumno:z.string(),
+    grado:z.string(),
+    grupo:z.string(),
+    libro:z.string(),
+    fechaprestamo:z.string(),
+    fechadevolucion:z.string()
+})
+
+export const EsimaprestamosAlumnosShema=z.array(
+    prestamosAlumnosShema.pick({
+        _id:true,
+        alumno:true,
+        grado:true,
+        grupo:true,
+        libro:true,
+        fechaprestamo:true,
+        fechadevolucion:true
+    })
+)
+
+export type TPrestamos = z.infer<typeof prestamosAlumnosShema>
+
+export type PrestamosFormData= Pick<TPrestamos,'alumno'|'grado'|'grupo'|'libro'|'fechaprestamo'|'fechadevolucion'>

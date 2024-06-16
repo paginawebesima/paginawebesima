@@ -26,6 +26,10 @@ import EliminarRequerimiento from './components/EliminarRequerimiento'
 import ActualizarNumero from './options/Forms/ActualizarNumero'
 import EditarNumeroDeTelefono from './options/Forms/EditarNumeroDeTelefono'
 import EliminarNumeroTelefono from './options/Forms/EliminarNumeroTelefono'
+import PrestamosLibros from './prestamos/PrestamosLibros'
+import CrearPrestamo from './prestamos/CrearPrestamo'
+import ActualizarPrestamo from './prestamos/ActualizarPrestamo'
+import Layout from './prestamos/Layout'
 export default function Router() {
     return (
         <BrowserRouter>
@@ -59,6 +63,13 @@ export default function Router() {
                     <Route element={<EditarNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar/:preinscripcionesId/editar'/>
                     <Route element={<InsertarRequerimientos/>} path='/panel/nuevoIngreso/añadir'/>
                     <Route element={<EliminarRequerimiento/>} path='/panel/nuevoIngreso/eliminar'/>
+                </Route>
+            </Routes>
+            <Routes>
+                <Route element={<Layout/>}>
+                <Route element={<PrestamosLibros/>} index path='/prestamos'/>
+                <Route element={<CrearPrestamo/>} path='/crearPrestamo'/>
+                <Route element={<ActualizarPrestamo/>} path='/actualizarPrestamo/:prestamoId/editar' />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -11,7 +11,7 @@ export default function ActualizarInformacionNuevoIngreso() {
     queryKey:['preinscripciones'],
     queryFn:requerimientosPreinscripciones
   })
-  
+  console.log(data)
   if(data) return (
     <>
       <main>

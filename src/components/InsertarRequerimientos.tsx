@@ -20,18 +20,20 @@ export default function InsertarRequerimientos() {
         icono:"",
     }
 
+   
     const {register,handleSubmit,formState:{errors}} = useForm({defaultValues:valoresIniciales})
+    const handleForm= (formData:PreinscripcionesEsima)=>mutate(formData)
     const {mutate} = useMutation({
         mutationFn:crearRequerimiento,
-        onError:()=>{
-
+        onError:(error:Error)=>{
+            toast.error(error.message)
         },
         onSuccess:(data)=>{
             toast.success(data)
             navigate('/panel')
         }
     })
-    const handleForm= (formData:PreinscripcionesEsima)=>mutate(formData)
+   
   return (
     <>  
     <h1 className="texto">Añadir Requerimiento de Preinscripcion</h1>
