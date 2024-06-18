@@ -1,13 +1,44 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { useState } from 'react';
+import { useForm } from "react-hook-form";
+import { useMutation } from "react-query";
+import { UserLoginForm } from "../types";
+import ErrorMessage from "../components/ErrorMessage";
+import { authenticateUser } from "../api/api";
+import { toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
-
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+
+  const initialValues: UserLoginForm = {
+    email: '',
+    password: '',
+  };
+
+  const { register, handleSubmit, formState: { errors } } = useForm({ defaultValues: initialValues });
+  const navigate = useNavigate();
+  const { mutate } = useMutation({
+    mutationFn: authenticateUser,
+    onError: (error: any) => {
+      if (error instanceof Error) {
+        toast.error(error.message);
+      } else {
+        toast.error("An unexpected error occurred");
+      }
+    },
+    onSuccess: (data) => {
+      toast.success(data);
+      navigate('/panel');
+    }
+  });
+
+  const handleLogin = (formData: UserLoginForm) => mutate(formData);
+
   return (
     <>
       <header className="">
@@ -22,20 +53,42 @@ export default function Login() {
           <img src="EsimaLogo.png" alt="Logo ESIMA" className="logo-image" />
         </div>
         <div className="form-container">
-          <form action="">
-            <input type="text" className="input mail" placeholder="Correo" />
-            <div className="password-input">
+          <form onSubmit={handleSubmit(handleLogin)} noValidate>
+            <div className="input-group">
               <input
-                type={passwordVisible ? "text" : "password"}
-                className="input password"
-                placeholder="Contraseña"
+                type="text"
+                className="input mail"
+                placeholder="Correo"
+                {...register("email", {
+                  required: "El correo es obligatorio",
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Correo no válido",
+                  },
+                })}
               />
-              <img
-                src={passwordVisible ? "eye-lock-login.svg" : "eye-login.svg"}
-                alt="Mostrar Contraseña"
-                className="password-toggle-icon"
-                onClick={togglePasswordVisibility}
-              />
+              {errors.email && (
+                <ErrorMessage>{errors.email.message}</ErrorMessage>
+              )}
+              <div className="password-input">
+                <input
+                  type={passwordVisible ? "text" : "password"}
+                  className="input password"
+                  placeholder="Contraseña"
+                  {...register("password", {
+                    required: "La contraseña es obligatoria",
+                  })}
+                />
+                <img
+                  src={passwordVisible ? "eye-lock-login.svg" : "eye-login.svg"}
+                  alt="Mostrar Contraseña"
+                  className="password-toggle-icon"
+                  onClick={togglePasswordVisibility}
+                />
+              </div>
+              {errors.password && (
+                <ErrorMessage>{errors.password.message}</ErrorMessage>
+              )}
             </div>
             <input type="submit" className="button" value='Ingresar' />
           </form>
@@ -43,5 +96,5 @@ export default function Login() {
       </div>
       <Footer />
     </>
-  )
+  );
 }

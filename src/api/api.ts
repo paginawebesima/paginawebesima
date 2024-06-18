@@ -1,8 +1,36 @@
 import api from "../lib/axios"
-import { FormTelefono, PreinscripcionesEsima,Telefono3,preinscripciones2,telefonoshema } from "../types"
+import { UserRegistrationForm, FormTelefono, PreinscripcionesEsima,Telefono3,preinscripciones2,telefonoshema, UserLoginForm } from "../types"
+import { isAxiosError } from "axios";
+
+//Crear cuenta
+export async function createAccount(formData: UserRegistrationForm) {
+    try {
+        const url = "/create-account";
+        const {data} = await api.post<string>(url, formData)
+        return data
+
+    } catch (error) {
+        if(isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+//Autenticación del login
+export async function authenticateUser(formData: UserLoginForm) {
+    try {
+        const url = "/login";
+        const {data} = await api.post<string>(url, formData)
+        return data
+
+    } catch (error) {
+        if(isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
 
 //telefono
-
 export async function creartelefonocontacto(FormData:FormTelefono) {
     try {
         const {data} = await api.post('/crearnumero',FormData)
@@ -60,8 +88,6 @@ export async function eliminarTelefono(id:Telefono3['_id']) {
 
 
 //Requerimientos 
-
-
 export async function crearRequerimiento(formData:PreinscripcionesEsima) {
     try {
         const {data } = await api.post('/preinscripciones',formData)

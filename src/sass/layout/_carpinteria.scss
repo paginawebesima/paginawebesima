@@ -1,91 +1,100 @@
 .imagen5 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Carpintería-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen6 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Ofimática-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen7 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Cocina-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen8 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Electrónica-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen9 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Mecánica-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen10 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Automotriz-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen11 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Dibujo-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen12 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Soldadura-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .imagen13 {
     max-width: 100%;
     max-height: 100%;
-    height: 550px;
+    height: 400px;
     width: 100%;
     background-position: center;
     background-image: url(/Electricidad-header.jpg);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .display1 {
@@ -278,6 +287,12 @@ input[id="3"]:checked~.pagination .pagination-item[for="3"] {
 }
 
 @media (max-width: 768px) {
+    .imagen5, .imagen6,.imagen7, .imagen8,
+    .imagen9, .imagen10, .imagen11, .imagen12,
+    .imagen13 {
+        height: 200px;
+    }
+
     .info-section {
         flex-direction: column;
         text-align: center;

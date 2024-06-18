@@ -1,66 +1,70 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
-import PaginaPrincipal from './views/PaginaPrincipal'
-import Login from './views/Login'
-import Preinscripciones from './views/Preinscripciones'
-import Talleres from './views/Talleres'
-import TallerCarpinteria from './views/talleres/Carpinteria'
-import TallerOfimatica from './views/talleres/Ofimatica'
-import TallerCocina from './views/talleres/Cocina'
-import TallerElectronica from './views/talleres/Electronica'
-import TallerMecanica from './views/talleres/Mecanica'
-import TallerAutomotriz from './views/talleres/Automotriz'
-import TallerDibujo from './views/talleres/Dibujo'
-import TallerSoldadura from './views/talleres/Soldadura'
-import TallerElectricidad from './views/talleres/Electricidad'
-import Graduaciones from './views/Graduaciones'
-import Administrativos from './views/Administrativos'
-import Panel from './admin/Panel'
-import OptionsPanel from './options/OptionsPanel'
-import InformationContact from './options/InformationContact'
-import EditarNuevoIngreso from './options/actualizacion/EditarNuevoIngreso'
-import ActualizarInformacionNuevoIngreso from './options/actualizacion/ActualizarInformacionNuevoIngreso'
-import OpcionesNuevoIngreso from './options/actualizacion/OpcionesNuevoIngreso'
-import OpcionesTelefono from './options/actualizacion/OpcionesTelefono'
-import InsertarRequerimientos from './components/InsertarRequerimientos'
-import EliminarRequerimiento from './components/EliminarRequerimiento'
-import ActualizarNumero from './options/Forms/ActualizarNumero'
-import EditarNumeroDeTelefono from './options/Forms/EditarNumeroDeTelefono'
-import EliminarNumeroTelefono from './options/Forms/EliminarNumeroTelefono'
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import PaginaPrincipal from './views/PaginaPrincipal';
+import Login from './views/Login';
+import Preinscripciones from './views/Preinscripciones';
+import Talleres from './views/Talleres';
+import TallerCarpinteria from './views/talleres/Carpinteria';
+import TallerOfimatica from './views/talleres/Ofimatica';
+import TallerCocina from './views/talleres/Cocina';
+import TallerElectronica from './views/talleres/Electronica';
+import TallerMecanica from './views/talleres/Mecanica';
+import TallerAutomotriz from './views/talleres/Automotriz';
+import TallerDibujo from './views/talleres/Dibujo';
+import TallerSoldadura from './views/talleres/Soldadura';
+import TallerElectricidad from './views/talleres/Electricidad';
+import Graduaciones from './views/Graduaciones';
+import Administrativos from './views/Administrativos';
+import Panel from './admin/Panel';
+import OptionsPanel from './options/OptionsPanel';
+import InformationContact from './options/InformationContact';
+import EditarNuevoIngreso from './options/actualizacion/EditarNuevoIngreso';
+import ActualizarInformacionNuevoIngreso from './options/actualizacion/ActualizarInformacionNuevoIngreso';
+import OpcionesNuevoIngreso from './options/actualizacion/OpcionesNuevoIngreso';
+import OpcionesTelefono from './options/actualizacion/OpcionesTelefono';
+import InsertarRequerimientos from './components/InsertarRequerimientos';
+import EliminarRequerimiento from './components/EliminarRequerimiento';
+import ActualizarNumero from './options/Forms/ActualizarNumero';
+import EditarNumeroDeTelefono from './options/Forms/EditarNumeroDeTelefono';
+import EliminarNumeroTelefono from './options/Forms/EliminarNumeroTelefono';
+import AuthLayout from './layout/AuthLayout';
+import Register from './views/Register';
+
 export default function Router() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route element={<PaginaPrincipal />} index path='/' />
-                <Route element={<Login />} path='/login' />
-                <Route element={<Preinscripciones />} path='/preinscripciones' />
-                <Route element={<Talleres />} path='/talleres' />
-                <Route element={<TallerCarpinteria />} path='/carpinteria' />
-                <Route element={<TallerOfimatica />} path='/ofimatica' />
-                <Route element={<TallerCocina />} path='/cocina' />
-                <Route element={<TallerElectronica />} path='/electronica' />
-                <Route element={<TallerMecanica />} path='/mecanica' />
-                <Route element={<TallerAutomotriz />} path='/automotriz' />
-                <Route element={<TallerDibujo />} path='/dibujo' />
-                <Route element={<TallerSoldadura />} path='/soldadura' />
-                <Route element={<TallerElectricidad />} path='/electricidad' />
-                <Route element={<Graduaciones />} path='/graduaciones' />
-                <Route element={<Administrativos />} path='/administrativos' />
-            </Routes>
-            <Routes>
-                <Route element={<Panel/>}>
-                    <Route element={<OptionsPanel/>} index path='/panel'/>
-                    <Route element={<OpcionesTelefono/>} path='/panel/informacion'/>
-                    <Route element={<ActualizarNumero/>} path='/panel/informacion/actualizar'/>
-                    <Route element={<EditarNumeroDeTelefono/>} path='/panel/informacion/actualizar/:telefonoId/editar'/>
-                    <Route element={<EliminarNumeroTelefono/>} path='/panel/informacion/eliminar'/>
-                    <Route element={<InformationContact/>} path='/panel/informacion/telefono'/>
-                    <Route element={<OpcionesNuevoIngreso/>} path='/panel/nuevoIngreso'/>
-                    <Route element={<ActualizarInformacionNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar'/>
-                    <Route element={<EditarNuevoIngreso/>} path='/panel/nuevoIngreso/actualizar/:preinscripcionesId/editar'/>
-                    <Route element={<InsertarRequerimientos/>} path='/panel/nuevoIngreso/añadir'/>
-                    <Route element={<EliminarRequerimiento/>} path='/panel/nuevoIngreso/eliminar'/>
+                <Route element={<PaginaPrincipal />} index path="/" />
+                <Route element={<Preinscripciones />} path="/preinscripciones" />
+                <Route element={<Talleres />} path='/talleres'></Route>
+                <Route element={<TallerCarpinteria />} path="/carpinteria" />
+                <Route element={<TallerOfimatica />} path="/ofimatica" />
+                <Route element={<TallerCocina />} path="/cocina" />
+                <Route element={<TallerElectronica />} path="/electronica" />
+                <Route element={<TallerMecanica />} path="/mecanica" />
+                <Route element={<TallerAutomotriz />} path="/automotriz" />
+                <Route element={<TallerDibujo />} path="/dibujo" />
+                <Route element={<TallerSoldadura />} path="/soldadura" />
+                <Route element={<TallerElectricidad />} path="/electricidad" />
+                <Route element={<Graduaciones />} path="/graduaciones" />
+                <Route element={<Administrativos />} path="/administrativos" />
+                <Route element={<AuthLayout />}>
+                    <Route element={<Login />} path="/login" />
+                    <Route element={<Register />} path="/register" />
+                </Route>
+                <Route element={<Panel />} path="/panel">
+                    <Route element={<OptionsPanel />} index />
+                    <Route element={<OpcionesTelefono />} path="informacion" />
+                    <Route element={<ActualizarNumero />} path="informacion/actualizar" />
+                    <Route element={<EditarNumeroDeTelefono />} path="informacion/actualizar/:telefonoId/editar" />
+                    <Route element={<EliminarNumeroTelefono />} path="informacion/eliminar" />
+                    <Route element={<InformationContact />} path="informacion/telefono" />
+                    <Route element={<OpcionesNuevoIngreso />} path="nuevoIngreso" />
+                    <Route element={<ActualizarInformacionNuevoIngreso />} path="nuevoIngreso/actualizar" />
+                    <Route element={<EditarNuevoIngreso />} path="nuevoIngreso/actualizar/:preinscripcionesId/editar" />
+                    <Route element={<InsertarRequerimientos />} path="nuevoIngreso/añadir" />
+                    <Route element={<EliminarRequerimiento />} path="nuevoIngreso/eliminar" />
                 </Route>
             </Routes>
         </BrowserRouter>
-    )
+    );
 }

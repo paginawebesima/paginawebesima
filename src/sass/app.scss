@@ -2,7 +2,20 @@
 @use 'layout';
 @use 'panel';
 @use 'options';
-body{
+
+body {
     font-family: "Lato", sans-serif;
     background-color: #F2F2F2;
 }
+
+.error-message {
+    color: #ff4d4f;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    border-left: 4px solid #ff4d4f;
+    background-color: #ffe6e6;
+    border-radius: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+

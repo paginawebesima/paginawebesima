@@ -24,7 +24,7 @@ export default function Footer() {
         <a  href="https://twitter.com/ESIMADurango" target="_blank"><img className="iconos twitter_icono" src="/x-twitter.svg" alt="" /></a>
       </div>
       {data?.map((telefono)=>(
-      <p className=" numero_contacto">{telefono.telefono}</p>
+      <p key={telefono._id} className="numero_contacto">{telefono.telefono}</p>
       ))}
 
 
