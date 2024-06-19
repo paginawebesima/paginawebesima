@@ -84,7 +84,11 @@
     color: #0056b3;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+    .imagen3 {
+        height: 200px;
+    }
+    
     .administrativo {
         width: 50%;
     }
