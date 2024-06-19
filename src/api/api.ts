@@ -1,6 +1,34 @@
 import { isAxiosError } from "axios"
 import api from "../lib/axios"
-import { EsimaprestamosAlumnosShema, FormTelefono, PreinscripcionesEsima,PrestamosFormData,TPrestamos,Telefono3,preinscripciones2,telefonoshema } from "../types"
+import { EsimaprestamosAlumnosShema, FormTelefono, PreinscripcionesEsima,PrestamosFormData,TPrestamos,Telefono3,UserLoginForm,UserRegistrationForm,preinscripciones2,telefonoshema } from "../types"
+
+//Crear cuenta
+export async function createAccount(formData: UserRegistrationForm) {
+    try {
+        const url = "/create-account";
+        const {data} = await api.post<string>(url, formData)
+        return data
+
+    } catch (error) {
+        if(isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+//Autenticación del login
+export async function authenticateUser(formData: UserLoginForm) {
+    try {
+        const url = "/login";
+        const {data} = await api.post<string>(url, formData)
+        return data
+
+    } catch (error) {
+        if(isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
 
 //telefono
 export async function creartelefonocontacto(FormData:FormTelefono) {

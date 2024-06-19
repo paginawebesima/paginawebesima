@@ -60,6 +60,7 @@ export default function Login() {
                 type="text"
                 className="input mail"
                 placeholder="Correo"
+                autoComplete="off"
                 {...register("email", {
                   required: "El correo es obligatorio",
                   pattern: {
