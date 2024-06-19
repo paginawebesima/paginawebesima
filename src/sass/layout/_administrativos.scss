@@ -1,15 +1,70 @@
-.box3 {
-    background-color: rgba(217, 217, 217, 0.4);
-    border: 1px solid #D9D9D9;
-    border-radius: 8px;
-    text-align: center;
+.container2 {
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    margin: 2% 0;
+}
+
+.section-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1; 
+}
+
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.aparecer {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.administrativo {
+    background: #fff;
+    border: 3px solid #9bb9dd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 10px 0;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.line-container {
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    background: linear-gradient(90deg, #ced7e2, #e6f0fa, #ced7e2);
+    background-size: 400%;
+    animation: gradientAnimation 15s linear infinite;
+}
+
+@keyframes gradientAnimation {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
+}
+
+.administrativo:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .h2-admin {
     color: #333;
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin: 0 0 10px;
     transition: color 0.3s ease;
 }
@@ -29,33 +84,17 @@
     color: #0056b3;
 }
 
-@media (max-width: 768px) {
-    .imagen3 {
-        height: 200px;
+@media screen and (max-width: 600px) {
+    .administrativo {
+        width: 50%;
     }
 
-    .h2-admin {
+    h2 {
         font-size: 1.3em;
-        margin: 0 0 10px;
-    }
-
-    .p-admin {
-        font-size: 0.9em;
-        margin: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .box3 {
-        height: 70px;
+        margin: 0 0 5px;
     }
     
-    .h2-admin {
-        font-size: 1.3em;
-        margin: 0 0 10px;
-    }
-
-    .p-admin {
+    p {
         font-size: 0.9em;
         margin: 0;
     }
