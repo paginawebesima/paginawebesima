@@ -55,6 +55,7 @@ export default function Login() {
         <div className="form-container">
           <form onSubmit={handleSubmit(handleLogin)} noValidate>
             <div className="input-group">
+            <span className="icon"></span>
               <input
                 type="text"
                 className="input mail"

@@ -34,6 +34,7 @@
 }
 
 .input-group {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -49,10 +50,21 @@
     border-radius: 10px;
     font-size: 1em;
     outline: none;
-    background-image: url('mail-login.svg');
     background-repeat: no-repeat;
     background-position: 10px center;
 }
+
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 20%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('mail-login.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 
 form {
     width: 100%;
