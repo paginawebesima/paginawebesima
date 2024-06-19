@@ -30,6 +30,7 @@ import PrestamosLibros from './prestamos/PrestamosLibros'
 import CrearPrestamo from './prestamos/CrearPrestamo'
 import ActualizarPrestamo from './prestamos/ActualizarPrestamo'
 import Layout from './prestamos/Layout'
+import GenerarPDF from './prestamos/GenerarPDF'
 export default function Router() {
     return (
         <BrowserRouter>
@@ -70,6 +71,7 @@ export default function Router() {
                 <Route element={<PrestamosLibros/>} index path='/prestamos'/>
                 <Route element={<CrearPrestamo/>} path='/crearPrestamo'/>
                 <Route element={<ActualizarPrestamo/>} path='/actualizarPrestamo/:prestamoId/editar' />
+                <Route element={<GenerarPDF/>} path='/documento'/>
                 </Route>
             </Routes>
         </BrowserRouter>

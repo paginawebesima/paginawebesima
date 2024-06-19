@@ -10,7 +10,7 @@ export default function Prestamo({register,errors}:PrestamoProps) {
   return (
     <>
     <div>
-        <label htmlFor="">Alumno</label>
+        <label htmlFor="alumno">Alumno</label>
         <input type="text" 
         id='alumno'
         {...register('alumno',{
@@ -22,7 +22,7 @@ export default function Prestamo({register,errors}:PrestamoProps) {
         )}
     </div>
     <div>
-        <label htmlFor="">Grado</label>
+        <label htmlFor="grado">Grado</label>
         <input type="text" 
         id="grado"
         {...register('grado',{
@@ -34,7 +34,7 @@ export default function Prestamo({register,errors}:PrestamoProps) {
         )}
     </div>
     <div>
-        <label htmlFor="">Grupo</label>
+        <label htmlFor="grupo">Grupo</label>
         <input type="text"
         id="grupo"
         {...register('grupo',{
@@ -46,7 +46,7 @@ export default function Prestamo({register,errors}:PrestamoProps) {
         )}
     </div>
     <div>
-        <label htmlFor="">Libro</label>
+        <label htmlFor="libro">Libro</label>
         <input type="text" 
         id="libro"
         {...register('libro',{
@@ -58,7 +58,7 @@ export default function Prestamo({register,errors}:PrestamoProps) {
         )}
     </div>
     <div>
-        <label htmlFor="">Fecha prestamo</label>
+        <label htmlFor="fechaprestamo">Fecha prestamo</label>
         <input type="text" 
         id="fechaprestamo"
         {...register('fechaprestamo',{
@@ -70,9 +70,9 @@ export default function Prestamo({register,errors}:PrestamoProps) {
         )}
     </div>
     <div>
-        <label htmlFor="">Fecha Devolucion</label>
+        <label htmlFor="fechadevolucion">Fecha Devolucion</label>
         <input type="text" 
-        id=""
+        id="fechadevolucion"
         {...register('fechadevolucion',{
             required:"La fecha de devolucion es obligatoria"
         })}
