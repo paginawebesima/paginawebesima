@@ -2,8 +2,9 @@
 @use 'layout';
 @use 'panel';
 @use 'options';
-
-body {
+@use 'preinscripciones';
+@use 'prestamos';
+body{
     font-family: "Lato", sans-serif;
     background-color: #F2F2F2;
 }

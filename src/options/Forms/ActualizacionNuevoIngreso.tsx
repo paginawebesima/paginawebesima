@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "react-query"
 import { actualizarTelefono } from "../../api/api"
 import TelefonoContacto from "./TelefonoContacto"
 import { toast } from "react-toastify"
-import RutasIconos from "../../components/RutasIconos"
+
 
 type ActualizacionNuevoIngresoProps={
     data:FormTelefono

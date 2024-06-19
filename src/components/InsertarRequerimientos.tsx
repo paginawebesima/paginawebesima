@@ -17,34 +17,39 @@ export default function InsertarRequerimientos() {
         requerimiento3:"",
         requerimiento4:"",
         requerimiento5:"",
+        icono:"",
     }
 
+   
     const {register,handleSubmit,formState:{errors}} = useForm({defaultValues:valoresIniciales})
+    const handleForm= (formData:PreinscripcionesEsima)=>mutate(formData)
     const {mutate} = useMutation({
         mutationFn:crearRequerimiento,
-        onError:()=>{
-
+        onError:(error:Error)=>{
+            toast.error(error.message)
         },
         onSuccess:(data)=>{
             toast.success(data)
             navigate('/panel')
         }
     })
-    const handleForm= (formData:PreinscripcionesEsima)=>mutate(formData)
+   
   return (
-    <div>
-
+    <>  
+    <h1 className="texto">Añadir Requerimiento de Preinscripcion</h1>
+    <div className="dos-columnas">
         <form
         noValidate
         onSubmit={handleSubmit(handleForm)}
-        className="form-register"
+        className="form-register flex1"
         >
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
             <input className="botons" type="submit" value='Aceptar' />
         </form>
-        <div>
+        <div className="flex2">
             <RutasIconos/>
         </div>
     </div>
+    </>
   )
 }

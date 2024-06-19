@@ -29,6 +29,11 @@ import EliminarNumeroTelefono from './options/Forms/EliminarNumeroTelefono';
 import AuthLayout from './layout/AuthLayout';
 import Register from './views/Register';
 
+import PrestamosLibros from './prestamos/PrestamosLibros'
+import CrearPrestamo from './prestamos/CrearPrestamo'
+import ActualizarPrestamo from './prestamos/ActualizarPrestamo'
+import Layout from './prestamos/Layout'
+import GenerarPDF from './prestamos/GenerarPDF'
 export default function Router() {
     return (
         <BrowserRouter>
@@ -63,6 +68,22 @@ export default function Router() {
                     <Route element={<EditarNuevoIngreso />} path="nuevoIngreso/actualizar/:preinscripcionesId/editar" />
                     <Route element={<InsertarRequerimientos />} path="nuevoIngreso/añadir" />
                     <Route element={<EliminarRequerimiento />} path="nuevoIngreso/eliminar" />
+                </Route>
+            </Routes>
+            <Routes>
+                <Route element={<Layout/>}>
+                <Route element={<PrestamosLibros/>} index path='/prestamos'/>
+                <Route element={<CrearPrestamo/>} path='/crearPrestamo'/>
+                <Route element={<ActualizarPrestamo/>} path='/actualizarPrestamo/:prestamoId/editar' />
+                <Route element={<GenerarPDF/>} path='/documento'/>
+                </Route>
+            </Routes>
+            <Routes>
+                <Route element={<Layout/>}>
+                <Route element={<PrestamosLibros/>} index path='/prestamos'/>
+                <Route element={<CrearPrestamo/>} path='/crearPrestamo'/>
+                <Route element={<ActualizarPrestamo/>} path='/actualizarPrestamo/:prestamoId/editar' />
+                <Route element={<GenerarPDF/>} path='/documento'/>
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -17,7 +17,7 @@ export default function FormularioEditarNuevoIngreso({errors,register}:Formulari
         })}
         />
         {errors.titulo&&(
-          <p>{errors.titulo.message}</p>
+          <p className="alerta">{errors.titulo.message}</p>
         )}
       </div>
       <div>
@@ -30,7 +30,7 @@ export default function FormularioEditarNuevoIngreso({errors,register}:Formulari
         })}
         />
         {errors.requerimiento1&&(
-          <p>{errors.requerimiento1.message}</p>
+          <p className="alerta">{errors.requerimiento1.message}</p>
         )}
       </div>
         <label htmlFor="Requerimiento2">Requerimiento 2</label>
@@ -65,6 +65,20 @@ export default function FormularioEditarNuevoIngreso({errors,register}:Formulari
             
         })}
         />
+       <label htmlFor="icono">Icono</label>
+        <input type="text" 
+        id="icono"
+        className="controls"
+        {...register('icono',{
+            required:"La imagen del icono es obligatoria"
+        })}
+        
+        />
+        {
+          errors.icono&&(
+            <p className="alerta">{errors.icono.message}</p>
+          )
+        }
     </div>
   )
 }
