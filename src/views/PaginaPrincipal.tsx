@@ -1,6 +1,9 @@
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
+import Primero from "./modales/Primero";
+import Segundo from "./modales/Segundo";
+import Tercero from "./modales/Tercero";
 
 
 export default function PaginaPrincipal() {
@@ -15,12 +18,18 @@ export default function PaginaPrincipal() {
           <h3 className="texto-principal">¡Tu esfuerzo vale la pena,<br /> nunca dejes de aprender! </h3>
         </div>
       </header>
-      <div>
+      <div className="contenido_principal">
         <div>
-          <h1>Mision</h1>
+          <h2>Mision</h2>
+          <div>
+            <p className="texto_mision">Somos una INSTITUCIÓN PÚBLICA DE CALIDAD, con alto compromiso social, que imparte estudios de educación superior; comprometida con la formación integral de profesionistas con valores, liderazgo y visión emprendedora; mediante un modelo educativo de vanguardia basado en competencias y orientado a contribuir al desarrollo regional sustentable.</p>
+          </div>
         </div>
-        <div>
-          <h1>Vision</h1>
+        <div className="contenido_principal_vision">
+          <h2>Vision</h2>
+          <div>
+            <p className="texto_vision">Ser una INSTITUCIÓN PÚBLICA RECONOCIDA en el ámbito nacional e internacional, con programas académicos acreditados y procesos de gestión certificados; profesores con alto perfil académico y profesional, cuerpos académicos consolidados y proyectos de investigación aplicados en áreas estratégicas que satisfagan las necesidades sociales.</p>
+          </div>
         </div>
       </div>
       <div className="Preinscripcion_Activo clase3 ">
@@ -35,9 +44,9 @@ export default function PaginaPrincipal() {
           <h2 className="texto-centrado">Contamos con los siguiente turnos</h2>
           <div className="turnos">
             <div>
-              <img src="/TurnoMatutino.jpg" alt="Turno Matutino" />
+              <img className="imagen_principal border-elements-image" src="/TurnoMatutino.jpg" alt="Turno Matutino" />
             </div>
-            <div className="horario2">
+            <div className="horario2 border-elements">
               <div>
               <h3>Matutino</h3>
               <p className="margin-textos">7:30 am - 1:30 pm</p>
@@ -48,9 +57,9 @@ export default function PaginaPrincipal() {
           </div>
           <div className="turnos">
             <div className="imagen-intermedio">
-              <img src="/TurnoIntermedio.jpg" alt="Turno Intermedio" />
+              <img src="/TurnoIntermedio.jpg" alt="Turno Intermedio" className="border-elements-image2" />
             </div>
-            <div className="horario1">
+            <div className="horario1 border-elements1">
               <div>
               <h3>Intermedio</h3>
               <p className="margin-textos">10:30 am - 4:30 pm</p>
@@ -61,9 +70,9 @@ export default function PaginaPrincipal() {
           </div>
           <div className="turnos">
             <div>
-              <img src="/TurnoVespertino.jpg" alt="Turno Vespertino" />
+              <img src="/TurnoVespertino.jpg" alt="Turno Vespertino" className="border-elements-image"/>
             </div>
-            <div className="horario2">
+            <div className="horario2 border-elements">
               <div>
               <h3>Vespertino</h3>
               <p className="margin-textos">1:30 pm</p>
@@ -74,12 +83,51 @@ export default function PaginaPrincipal() {
           </div>
         </div>
       </main>
+      <div className="disciplinas_grados">
+        <div>
+        <h2 className="titulo_disciplinas">Disciplinas a cursar</h2>
+        </div>
+        <div className="disciplinas">
+        <div className="grado">
+          <h3>1° de secundaria</h3>
+          <Primero/>  
+        </div>
+        <div className="grado segundosecundaria">
+          <h3>2° de secundaria</h3>
+          <Segundo/>
+        </div>
+        <div className="grado">
+          <h3>3° de secundaria</h3>
+          <Tercero/>
+        </div>
+      </div>
+      </div>
+      <div className="centrar-biblioteca">  
+      <div className="biblioteca">
+        <div>
+          <img src="/biblioteca.jpg" alt="Biblioteca Escolar" />
+        </div>
+        <div className="biblioteca_texto">
+          <h3>Contamos con una biblioteca adecuada para ti</h3>
+          <button>Ver</button>
+        </div>
+      </div>
+      </div>
+      <div>
+      <h2 className="ubicacion_mapa">Ubicación</h2>
+      </div>
       <div className="ubicacion">
         <iframe className="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1288.3394683208778!2d-104.64490826279317!3d24.031971486826347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x869bb7c3822f24bb%3A0x956d86cf60373c18!2sEscuela%20Secundaria%20%22Ignacio%20Manuel%20Altamirano%22!5e0!3m2!1ses-419!2smx!4v1715192596633!5m2!1ses-419!2smx" loading="lazy"></iframe>
 
         <div className="redsocial">
           <iframe className="facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FESIMAof&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"  scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
         </div>
+      </div>
+      <div className="centrar_contenido_calendario">
+      <div className="contenido_calendario">
+        <h2 className="ciclo_escolar">Calendario escolar 2024 - 2025</h2>
+        <img className="calendarioescolar" src="/Calendario_Escolar.jpeg" alt="Calendario Escolar" />
+      </div>
       </div>
       <Footer />
     </>
