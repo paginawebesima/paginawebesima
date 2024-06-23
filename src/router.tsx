@@ -78,14 +78,6 @@ export default function Router() {
                 <Route element={<GenerarPDF/>} path='/documento'/>
                 </Route>
             </Routes>
-            <Routes>
-                <Route element={<Layout/>}>
-                <Route element={<PrestamosLibros/>} index path='/prestamos'/>
-                <Route element={<CrearPrestamo/>} path='/crearPrestamo'/>
-                <Route element={<ActualizarPrestamo/>} path='/actualizarPrestamo/:prestamoId/editar' />
-                <Route element={<GenerarPDF/>} path='/documento'/>
-                </Route>
-            </Routes>
         </BrowserRouter>
     );
 }

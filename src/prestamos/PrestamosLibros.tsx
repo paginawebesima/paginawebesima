@@ -126,7 +126,7 @@ export default function PrestamosLibros() {
                         <div>
                             <button onClick={()=>{mutate(prestamo._id)}} className="eliminar">Eliminar</button>
                             <Link to={`/actualizarPrestamo/${prestamo._id}/editar`} className="actualizar">Actualizar</Link>
-                            <button onClick={()=>{generarPDF(prestamo._id)}}>Generar PDF</button>
+                            <button className="generarPDF" onClick={()=>{generarPDF(prestamo._id)}}>Generar PDF</button>
                         </div>
                     </tr>
                     
