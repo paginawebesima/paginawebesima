@@ -1,6 +1,6 @@
 import { isAxiosError } from "axios"
 import api from "../lib/axios"
-import { EsimaprestamosAlumnosShema, FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema } from "../types"
+import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema } from "../types"
 
 //Crear cuenta
 export async function createAccount(formData: UserRegistrationForm) {
@@ -85,7 +85,7 @@ export async function validateToken(formData: ConfirmToken) {
     }
 }
 
-//Validar token
+//Actualizar contraseña
 export async function updatePasswordWithToken({ formData, token }: { formData: NewPasswordForm, token: ConfirmToken['token'] }) {
     try {
         const url = `/update-password/${token}`;
