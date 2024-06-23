@@ -7,7 +7,7 @@ import { UserLoginForm } from "../types";
 import ErrorMessage from "../components/ErrorMessage";
 import { authenticateUser } from "../api/api";
 import { toast } from "react-toastify";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -31,8 +31,7 @@ export default function Login() {
         toast.error("An unexpected error occurred");
       }
     },
-    onSuccess: (data) => {
-      toast.success(data);
+    onSuccess: () => {
       navigate('/panel');
     }
   });
@@ -55,7 +54,7 @@ export default function Login() {
         <div className="form-container">
           <form onSubmit={handleSubmit(handleLogin)} noValidate>
             <div className="input-group">
-            <span className="icon"></span>
+              <span className="icon"></span>
               <input
                 type="text"
                 className="input mail"
@@ -93,6 +92,9 @@ export default function Login() {
               )}
             </div>
             <input type="submit" className="button" value='Ingresar' />
+            <Link to='/forgot-password' className="forgot-password-link">
+              ¿Olvidaste tu contraseña? Reestablecer
+            </Link>
           </form>
         </div>
       </div>

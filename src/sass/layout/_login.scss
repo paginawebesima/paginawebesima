@@ -116,8 +116,22 @@ form {
     border: 1px solid #ffffff;
 }
 
+.forgot-password-link {
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 0.9em; 
+    color: #b8b4b4;
+    text-decoration: none;
+    display: block; 
+    transition: color 0.3s ease; 
+  }
+  
+  .forgot-password-link:hover {
+    color: #213981;
+  }
+
 @media only screen and (max-width: 768px) {
-    .imagen2{
+    .imagen2 {
         height: 200px;
     }
 
@@ -134,7 +148,8 @@ form {
         width: 80%;
     }
 
-    .input, .button {
+    .input,
+    .button {
         width: 100%;
     }
 }

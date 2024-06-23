@@ -6,12 +6,29 @@ const authSchema = z.object({
     email: z.string().email(),
     password: z.string(),
     password_confirmation: z.string(),
-    rol: z.enum(['Administrador', 'Gestor de Libros', 'Gestor de Salones'])
+    rol: z.enum(['Administrador', 'Gestor de Libros', 'Gestor de Salones']),
+    token: z.string()
   });
 
 type Auth = z.infer<typeof authSchema>
 export type UserLoginForm = Pick<Auth, 'email' | 'password'>
 export type UserRegistrationForm = Pick<Auth, 'name' | 'email' | 'password' | 'password_confirmation' | 'rol'>;
+export type UserRequestCodeForm = Pick<Auth, 'email'>;
+export type ForgotPasswordForm = Pick<Auth, 'email'>;
+export type NewPasswordForm = Pick<Auth, 'password' | 'password_confirmation'>;
+
+export type NewPassword = Pick<Auth, 'token'>
+export type RecoverPassword = Pick<Auth, 'token'>
+export type ConfirmToken = Pick<Auth, 'token'>
+
+/** Users */
+export const userSchema = authSchema.pick({
+    name:true,
+    email:true
+}).extend({
+    _id: z.string()
+})
+export type User = z.infer<typeof userSchema>
 
 export const telefono1=z.object({
     _id:z.string(),
