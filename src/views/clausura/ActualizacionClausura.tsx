@@ -7,7 +7,7 @@ import InformacionActualizacion from "./InformacionActualizacion";
 export default function ActualizacionClausura() {
     const params = useParams();
     const clausuraId = params.clausuraId!
-    const { data,isLoading,isError} = useQuery({
+    const { data} = useQuery({
         queryKey:['Clausura',clausuraId],
         queryFn:()=>obtenerClausuraId(clausuraId),
         retry:false

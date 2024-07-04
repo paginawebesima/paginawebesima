@@ -1,6 +1,6 @@
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import ActivarProceso from './mostrar/ActivarProceso';
 import DesactivarProceso from './mostrar/DesactivarProceso';
 

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { EsimaClausuraFormData, TClausura } from "../../types"
 import { useForm } from "react-hook-form"
 import { useMutation } from "react-query"
@@ -11,7 +11,6 @@ type InformacionActualizacionProps={
     clausuraId:TClausura['_id']
 }
 export default function InformacionActualizacion({clausuraId,data}:InformacionActualizacionProps) {
-    const navigate  = useNavigate()
     const {register,handleSubmit,formState:{errors}} = useForm({defaultValues:{
         titulo:data.titulo,
         informacion:data.informacion

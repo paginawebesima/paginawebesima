@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
 
 import { useForm } from "react-hook-form"
 
@@ -15,7 +15,6 @@ type EditarPrestamoProps={
     prestamoId:TPrestamos['_id']
 }
 export default function EditarPrestamoVespertino({data,prestamoId}:EditarPrestamoProps) {
-    const navigate = useNavigate();
     const {register,handleSubmit,formState:{errors}}=useForm({defaultValues:{
             alumno:data.alumno,
             grado:data.grado,

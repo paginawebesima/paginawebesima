@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form"
 import { PreinscripcionesEsima, preinscripciones2 } from "../../types"
 import FormularioEditarNuevoIngreso from "../../formularios/FormularioEditarNuevoIngreso"
 import { Link, useNavigate } from "react-router-dom"
-import { useMutation, useQueryClient } from "react-query"
+import { useMutation} from "react-query"
 import { toast } from "react-toastify"
 import 'react-toastify/ReactToastify.css'
 import { actualizarRequerimiento } from "../../api/api"
