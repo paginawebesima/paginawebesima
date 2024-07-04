@@ -90,7 +90,8 @@ export const prestamosAlumnosShema=z.object({
     grupo:z.string(),
     libro:z.string(),
     fechaprestamo:z.string(),
-    fechadevolucion:z.string()
+    fechadevolucion:z.string(),
+    personaAutorizacion:z.string()
 })
 
 export const EsimaprestamosAlumnosShema=z.array(
@@ -101,10 +102,50 @@ export const EsimaprestamosAlumnosShema=z.array(
         grupo:true,
         libro:true,
         fechaprestamo:true,
-        fechadevolucion:true
+        fechadevolucion:true,
+        personaAutorizacion:true
     })
 )
 
 export type TPrestamos = z.infer<typeof prestamosAlumnosShema>
 
-export type PrestamosFormData= Pick<TPrestamos,'alumno'|'grado'|'grupo'|'libro'|'fechaprestamo'|'fechadevolucion'>
+export type PrestamosFormData= Pick<TPrestamos,'alumno'|'grado'|'grupo'|'libro'|'fechaprestamo'|'fechadevolucion'|'personaAutorizacion'>
+
+
+
+export const InformacionClausura=z.object({
+    _id:z.string(),
+    titulo:z.string(),
+    informacion:z.string()
+})
+
+
+export const SchemaClusuraEsima=z.array(
+    InformacionClausura.pick({
+        _id:true,
+        titulo:true,
+        informacion:true
+    })
+)
+
+export type TClausura = z.infer<typeof InformacionClausura>
+
+export type EsimaClausuraFormData = Pick<TClausura,'titulo'|'informacion'>
+
+
+export const ProcesoBoolean=z.object({
+    _id:z.string(),
+    boolean:z.string()
+})
+
+export const SchemaProcesoBoolean = z.array(
+    ProcesoBoolean.pick(
+        {
+            _id:true,
+            boolean:true
+        }
+    )
+)
+
+
+export type TProceso = z.infer<typeof ProcesoBoolean>

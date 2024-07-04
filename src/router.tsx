@@ -38,6 +38,15 @@ import CrearPrestamo from './prestamos/CrearPrestamo';
 import ActualizarPrestamo from './prestamos/ActualizarPrestamo';
 import Layout from './prestamos/Layout';
 import GenerarPDF from './prestamos/GenerarPDF';
+import PanelClausura from './views/clausura/PanelClausura';
+import EliminarClausura from './views/clausura/EliminarClausura';
+import ActualizarClausura from './views/clausura/ActualizarClausura';
+import ActualizacionClausura from './views/clausura/ActualizacionClausura';
+import Gestion from './views/gestionprestamos/Gestion';
+import Prestamos_Vespertino from './views/gestionprestamos/Prestamos_Vespertino';
+import Prestamo_Vespertino from './views/gestionprestamos/Prestamo_Vespertino';
+import ActualizarPrestamoVespertino from './views/gestionprestamos/ActualizarPrestamoVespertino';
+import Biblioteca from './views/Biblioteca';
 
 export default function Router() {
     return (
@@ -46,6 +55,7 @@ export default function Router() {
                 <Route element={<PublicLayout />}>
                     <Route element={<PaginaPrincipal />} index path="/" />
                     <Route element={<Preinscripciones />} path="/preinscripciones" />
+                    <Route element={<Biblioteca/>} path='/biblioteca'/>
                     <Route element={<Talleres />} path='/talleres' />
                     <Route element={<TallerCarpinteria />} path="/carpinteria" />
                     <Route element={<TallerOfimatica />} path="/ofimatica" />
@@ -79,13 +89,21 @@ export default function Router() {
                         <Route element={<EditarNuevoIngreso />} path="nuevoIngreso/actualizar/:preinscripcionesId/editar" />
                         <Route element={<InsertarRequerimientos />} path="nuevoIngreso/añadir" />
                         <Route element={<EliminarRequerimiento />} path="nuevoIngreso/eliminar" />
+                        <Route element={<PanelClausura/>} path='clausura'/>
+                        <Route element={<EliminarClausura/>} path='clausura/eliminar'/>
+                        <Route element={<ActualizarClausura/>} path='clausura/actualizar'/>
+                        <Route element={<ActualizacionClausura/>} path='clausura/actualizar/:clausuraId/editar'/>
                     </Route>
                 </Route>
 
                 <Route element={<Layout />}>
-                    <Route element={<PrestamosLibros />} index path='/prestamos' />
+                    <Route element={<Gestion/>}index path='/prestamos'/>
+                    <Route element={<PrestamosLibros />} path='/prestamos/matutino' />
+                    <Route element={<Prestamos_Vespertino/>} path='/prestamos/vespertino'/>
                     <Route element={<CrearPrestamo />} path='/crearPrestamo' />
+                    <Route element={<Prestamo_Vespertino/>} path='/crearPrestamoVespertino'/>
                     <Route element={<ActualizarPrestamo />} path='/actualizarPrestamo/:prestamoId/editar' />
+                    <Route element={<ActualizarPrestamoVespertino/>} path='/actualizarPrestamoVespertino/:prestamoId/editar'/>
                     <Route element={<GenerarPDF />} path='/documento' />
                 </Route>
             </Routes>

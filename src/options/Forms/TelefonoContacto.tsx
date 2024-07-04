@@ -1,5 +1,6 @@
 import {UseFormRegister,FieldErrors} from 'react-hook-form'
 import { FormTelefono } from '../../types'
+import ErrorMessage from '../../components/ErrorMessage'
 
 type TelefonoContactoProps={
     register: UseFormRegister<FormTelefono>
@@ -13,14 +14,13 @@ export default function TelefonoContacto({register,errors}:TelefonoContactoProps
     <div className="formulario_actualizar_tel">
                 <div className="Telefono_Actual">
                     <label htmlFor="">Telefono</label>
-                    <input type="text" {...register('telefono',{
+                    <input className='formulario_input' type="text" {...register('telefono',{
                         required:"El telefono es obligatorio"
                     })}/>
                     {errors.telefono &&(
-                        <p>{errors.telefono.message}</p>
+                        <ErrorMessage>{errors.telefono.message}</ErrorMessage>
                     )}
                 </div>
-            <input className="formulario_aceptar" type="submit" value='Aceptar'/>
     </div>
     </>
   )

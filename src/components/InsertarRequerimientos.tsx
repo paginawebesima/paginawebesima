@@ -3,7 +3,7 @@ import { PreinscripcionesEsima } from "../types"
 import { useMutation } from "react-query"
 import { crearRequerimiento } from "../api/api"
 import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import FormularioEditarNuevoIngreso from "../formularios/FormularioEditarNuevoIngreso"
 import RutasIconos from "./RutasIconos"
 
@@ -36,20 +36,21 @@ export default function InsertarRequerimientos() {
    
   return (
     <>  
-    <h1 className="texto">Añadir Requerimiento de Preinscripcion</h1>
-    <div className="dos-columnas">
+    <h2 className="texto_prestamo separacion_abajo">Añadir Requerimiento de Preinscripcion</h2>
+    <div className="dos-columnas dos-columnas_separacion">
         <form
         noValidate
         onSubmit={handleSubmit(handleForm)}
-        className="form-register flex1"
+        className="formulario"
         >
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
-            <input className="botons" type="submit" value='Aceptar' />
+            <input className="boton_guardar" type="submit" value='Aceptar' />
         </form>
         <div className="flex2">
             <RutasIconos/>
         </div>
     </div>
+    <Link className="boton_regresar enlace_eliminar" to='/panel/nuevoIngreso'>Regresar</Link>
     </>
   )
 }

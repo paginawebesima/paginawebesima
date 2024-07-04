@@ -1,5 +1,6 @@
 import { UseFormRegister,FieldErrors } from "react-hook-form";
 import { PreinscripcionesEsima } from "../types";
+import ErrorMessage from "../components/ErrorMessage";
 
 type FormularioEditarNuevoIngresoProps={
     register:UseFormRegister<PreinscripcionesEsima>
@@ -7,78 +8,91 @@ type FormularioEditarNuevoIngresoProps={
 }
 export default function FormularioEditarNuevoIngreso({errors,register}:FormularioEditarNuevoIngresoProps) {
   return (
-    <div className="form-register">
-      <div>
+    <div className="">
+      <div className="formulario_flex">
         <label htmlFor="titulo">Titulo Requerimiento</label>
-        <input className="controls" type="text" 
+        <input className="formulario_input" type="text" 
         id="titulo"
         {...register('titulo',{
             required:"El titulo es obligatorio"
         })}
         />
         {errors.titulo&&(
-          <p className="alerta">{errors.titulo.message}</p>
+          <ErrorMessage>{errors.titulo.message}</ErrorMessage>
         )}
       </div>
-      <div>
+      <div className="formulario_flex">
         <label htmlFor="Requerimiento1">Requerimiento 1</label>
         <input type="text" 
-        className="controls"
+        className="formulario_input"
         id="Requerimiento1"
         {...register('requerimiento1',{
             required:"Minimo ingresar 1 requerimiento"
         })}
         />
         {errors.requerimiento1&&(
-          <p className="alerta">{errors.requerimiento1.message}</p>
+          <ErrorMessage>{errors.requerimiento1.message}</ErrorMessage>
         )}
       </div>
+      <div className="formulario_flex">
         <label htmlFor="Requerimiento2">Requerimiento 2</label>
          <input type="text" 
         id="Requerimiento2"
-        className="controls"
+        className="formulario_input"
         {...register('requerimiento2',{
             
         })}
         />
+      </div>
+      <div className="formulario_flex">
         <label htmlFor="Requerimiento3">Requerimiento 3</label>
          <input type="text" 
         id="Requerimiento3"
-        className="controls"
+        className="formulario_input"
         {...register('requerimiento3',{
             
         })}
         />
+      </div>
+      <div className="formulario_flex">
         <label htmlFor="Requerimiento4">Requerimiento 4</label>
         <input type="text" 
         id="Requerimiento4"
-        className="controls"
+        className="formulario_input"
         {...register('requerimiento4',{
             
         })}
         />
+      </div>
+      <div className="formulario_flex">
         <label htmlFor="Requerimiento5">Requerimiento 5</label>
         <input type="text" 
         id="Requerimiento5"
-        className="controls"
+        className="formulario_input"
         {...register('requerimiento5',{
             
         })}
         />
+      </div>
+      <div className="formulario_flex formulario_ultimo">
        <label htmlFor="icono">Icono</label>
-        <input type="text" 
-        id="icono"
-        className="controls"
+        <select id="icono" 
+        className="formulario_input"
         {...register('icono',{
-            required:"La imagen del icono es obligatoria"
+          required:"La imagen del icono es obligatoria"
         })}
-        
-        />
+        >
+          <option value="/examen.svg">/examen.svg</option>
+          <option value="/horario.svg">/horario.svg</option>
+          <option value="/papeleria.svg">/papeleria.svg</option>
+          <option value="/resultados.svg">/resultados.svg</option>
+        </select>
         {
           errors.icono&&(
-            <p className="alerta">{errors.icono.message}</p>
+            <ErrorMessage>{errors.icono.message}</ErrorMessage>
           )
         }
+      </div>
     </div>
   )
 }

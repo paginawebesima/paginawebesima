@@ -14,8 +14,7 @@ export default function Panel() {
       const text = (event.currentTarget as HTMLElement).querySelector('p')?.innerText;
       const routes: { [key: string]: string } = {
         'Información nuevo ingreso': '/panel/nuevoIngreso',
-        'Información alumnos a egresar': '/graduaciones',
-        'Noticias relevantes': '',
+        'Información alumnos a egresar': 'clausura',
         'Actualizar información de contacto': '/panel/informacion',
         'Información directivos': '/administrativos',
         'Usuarios': '',

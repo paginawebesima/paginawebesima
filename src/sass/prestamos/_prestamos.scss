@@ -1,9 +1,29 @@
 .eliminar{
+    background-color: #e91919;
+    border-radius: 5px;
+    border: 1px solid #e91919;
+}
+.eliminar:hover{
     background-color: #bb1010;
 }
+.eliminar_separacion{
+    margin-left: 10px;
+}
+.actualizar_separacion{
+    margin-left: 10px;
+    margin-right: 10px;
+}
 .actualizar{
-    background-color: #174ecf;
+    background-color: #cc6402;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
     color: white;
+    border-radius: 5px;
+    border: 1px solid #cc6402;
+}
+.actualizar:hover{
+    background-color: #a14d0b;
 }
 .prestamos{
     display: flex;
@@ -12,5 +32,58 @@
 }
 
 .generarPDF{
+    background-color: #00a1a0;
+    border-radius: 5px;
+    border: 1px solid #00a1a0;
+}
+.generarPDF:hover{
     background-color: #058787;
+}
+
+.boton_volver{
+    display: flex;
+    margin-top: 30px;
+    cursor: pointer;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #213981;
+    color: white;
+    border-radius: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 20%;
+    margin-left: 30px;
+}
+.boton_volver:hover{
+    background-color: #152453;
+}
+
+.enlace_eliminar{
+    text-decoration: none;
+}
+
+
+.elemento_tabla{
+    font-weight: lighter;
+}
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+
+.botones_flex_prestamo{
+    display: flex;
+}
+.tabla_prestamos{
+    margin-left: 30px;
 }

@@ -1,10 +1,7 @@
 import { useQuery } from "react-query";
-
-
 import 'react-toastify/ReactToastify.css'
 import { requerimientosPreinscripciones } from "../../api/api";
 import { Link } from "react-router-dom";
-
 
 export default function ActualizarInformacionNuevoIngreso() {
   const {data} = useQuery({
@@ -15,7 +12,7 @@ export default function ActualizarInformacionNuevoIngreso() {
   if(data) return (
     <>
       <main>
-      <h1>Actualizar Requerimiento de Preinscripcion</h1>
+      <h2 className="texto_prestamo separacion_abajo">Actualizar Requerimiento de Preinscripcion</h2>
         <div className="informacion_inscripciones">
           {data.map((informacion:{
             _id:string,
@@ -43,12 +40,13 @@ export default function ActualizarInformacionNuevoIngreso() {
               <p>{informacion.requerimiento5}</p>
             </div>
             </div>
-            <Link to={`/panel/nuevoIngreso/actualizar/${informacion._id}/editar`}>Editar</Link>
+            <Link className="enlace_eliminar boton_actualizar_preinscripciones" to={`/panel/nuevoIngreso/actualizar/${informacion._id}/editar`}>Editar</Link>
           </div>
           ))}
           
         </div>
       </main>
+      <Link className="boton_regresar enlace_eliminar" to='/panel/nuevoIngreso'>Regresar</Link>
       
     </>
   )

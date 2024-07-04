@@ -1,23 +1,23 @@
 import { useMutation, useQuery, useQueryClient } from "react-query"
 import {jsPDF} from 'jspdf'
-import { eliminarPrestamo, obtenerPrestamos } from "../api/api"
 import { Link } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
-export default function PrestamosLibros() {
+import { eliminarPrestamo_Vespertino, obtenerPrestamos_Vespertino } from "../../api/api"
+export default function Prestamos_Vespertino() {
     const {data} = useQuery({
-        queryKey:['Prestamos'],
-        queryFn:obtenerPrestamos
+        queryKey:['Prestamos_Vespertino'],
+        queryFn:obtenerPrestamos_Vespertino
     })
     const QueryClient = useQueryClient();
     const {mutate} = useMutation({
-        mutationFn:eliminarPrestamo,
+        mutationFn:eliminarPrestamo_Vespertino,
         onError:(error:Error)=>{
             toast.error(error.message)
         },
         onSuccess:(data)=>{
             toast.success(data)
-            QueryClient.invalidateQueries({queryKey:['Prestamos']})
+            QueryClient.invalidateQueries({queryKey:['Prestamos_Vespertino']})
         }
     })
     const generarPDF=(id:string)=>{
@@ -42,6 +42,11 @@ export default function PrestamosLibros() {
     // Información del préstamo
     doc.setFontSize(14);
     doc.setFont('helvetica', 'normal');
+    // Datos del alumno
+    doc.setTextColor(0, 0, 255);  // color azul
+    doc.text(`Persona Autorizacion`, 100, 200);
+    doc.setTextColor(0, 0, 0);  // color negro
+    doc.text(prestamo.personaAutorizacion, 150, 250);
 
     // Crear una línea divisoria
     doc.setDrawColor(0, 0, 0);  // color negro
@@ -52,12 +57,6 @@ export default function PrestamosLibros() {
     doc.text(`Alumno:`, 10, 40);
     doc.setTextColor(0, 0, 0);  // color negro
     doc.text(prestamo.alumno, 50, 40);
-
-    // Datos del alumno
-    doc.setTextColor(0, 0, 255);  // color azul
-    doc.text(`Persona Autorizacion`, 100, 200);
-    doc.setTextColor(0, 0, 0);  // color negro
-    doc.text(prestamo.personaAutorizacion, 150, 250);
 
     doc.setTextColor(0, 0, 255);  // color azul
     doc.text(`Grado:`, 10, 50);
@@ -98,8 +97,8 @@ export default function PrestamosLibros() {
             pauseOnFocusLoss={false}
         />
         <div>
-            <h2 className="prestamo_turno">Turno Matutino</h2>
-        <div className="prestamos table-container">
+        <h2 className="prestamo_turno">Turno Verpertino</h2>
+        <div className="prestamos table-container ">
 
         <table className="tabla_prestamos">
             <thead>
@@ -130,8 +129,8 @@ export default function PrestamosLibros() {
                         <th className="elemento_tabla">{prestamo.fechaprestamo}</th>
                         <th className="elemento_tabla">{prestamo.fechadevolucion}</th>
                         <div className="botones_flex_prestamo">
-                            <button onClick={()=>{mutate(prestamo._id)}} className="eliminar eliminar_separacion">Eliminar</button>
-                            <Link to={`/actualizarPrestamo/${prestamo._id}/editar`} className="actualizar actualizar_separacion enlace_eliminar">Actualizar</Link>
+                            <button onClick={()=>{mutate(prestamo._id)}} className="eliminar_separacion eliminar">Eliminar</button>
+                            <Link to={`/actualizarPrestamoVespertino/${prestamo._id}/editar`} className="actualizar enlace_eliminar actualizar_separacion">Actualizar</Link>
                             <button className="generarPDF" onClick={()=>{generarPDF(prestamo._id)}}>Generar PDF</button>
                         </div>
                     </tr>
@@ -142,7 +141,7 @@ export default function PrestamosLibros() {
         </table>
         </div>
         <div className="enlace_crear">
-        <Link className="enlace_eliminar boton_agregar_prestamo" to='/crearPrestamo'>Añadir prestamo</Link>
+        <Link to='/crearPrestamoVespertino' className="enlace_eliminar boton_agregar_prestamo">Añadir prestamo</Link>
         </div>
         </div>
         <Link className="boton_regresar enlace_eliminar" to='/prestamos'>Regresar</Link>

@@ -1,5 +1,8 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import ActivarProceso from './mostrar/ActivarProceso';
+import DesactivarProceso from './mostrar/DesactivarProceso';
 
 export default function OpcionesNuevoIngreso() {
   const navigate = useNavigate();
@@ -20,7 +23,7 @@ export default function OpcionesNuevoIngreso() {
     boxes2.forEach(box2 => box2.addEventListener('click', handleClick));
     return () => boxes2.forEach(box2 => box2.removeEventListener('click', handleClick));
   }, [navigate]);
-
+  
   return (
     <>
       <div className="display">
@@ -34,9 +37,16 @@ export default function OpcionesNuevoIngreso() {
           <div className="box2">
             <p>Eliminar Información</p>
           </div>
+          <DesactivarProceso/>
+          <ActivarProceso/>
         </div>
       </div>
+      <Link className='boton_regresar enlace_eliminar' to='/panel'>Regresar</Link>
       <Outlet />
+      <ToastContainer
+                pauseOnHover={false}
+                pauseOnFocusLoss={false}
+            />
     </>
   );
 }

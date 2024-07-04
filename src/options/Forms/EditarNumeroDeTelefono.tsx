@@ -2,7 +2,7 @@ import { useQuery } from "react-query";
 import { Navigate, useParams } from "react-router-dom"
 import { obtenerTelefonoById } from "../../api/api";
 import ActualizacionNuevoIngreso from "./ActualizacionNuevoIngreso";
-import RutasIconos from "../../components/RutasIconos";
+
 
 
 export default function EditarNumeroDeTelefono() {

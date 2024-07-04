@@ -1,14 +1,17 @@
 import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form"
-import { PrestamosFormData } from "../types"
-import { Link} from "react-router-dom"
-import { useMutation} from "react-query";
-import { crearPrestamo } from "../api/api";
-import 'react-toastify/dist/ReactToastify.css'
-import Prestamo from "./Prestamo";
-import ErrorMessage from "../components/ErrorMessage";
 
-export default function CrearPrestamo() {
+import { Link} from "react-router-dom"
+import { useMutation } from "react-query";
+
+import 'react-toastify/dist/ReactToastify.css'
+import { PrestamosFormData } from "../../types";
+import Prestamo from "../../prestamos/Prestamo";
+import { crearPrestamo_Vespertino } from "../../api/api";
+import ErrorMessage from "../../components/ErrorMessage";
+
+
+export default function Prestamo_Vespertino() {
     const valoresIniciales:PrestamosFormData={
         alumno:"",
         grado:"",
@@ -20,7 +23,7 @@ export default function CrearPrestamo() {
     }
     const {register,handleSubmit,formState:{errors}} = useForm({defaultValues:valoresIniciales})
     const {mutate}=useMutation({
-        mutationFn:crearPrestamo,
+        mutationFn:crearPrestamo_Vespertino,
         onError:(error:Error)=>{
             toast.error(error.message)
         },
@@ -29,21 +32,20 @@ export default function CrearPrestamo() {
         }
     })
     const handleForm = (formData:PrestamosFormData)=>mutate(formData)
-    
   return (
     <>
        <ToastContainer 
          pauseOnHover={false}
             pauseOnFocusLoss={false}
         />
-        <h2 className="texto_prestamo">Añadir prestamo turno matutino</h2>
+        <h2 className="texto_prestamo">Añadir prestamo turno vespertino</h2>
         <div className="div_formulario">
         <form className="formulario" noValidate onSubmit={handleSubmit(handleForm)}>
             <Prestamo
             register={register}
             errors={errors}
             />
-    <div className="formulario_flex formulario_ultimo">
+            <div className="formulario_flex formulario_ultimo">
         <label htmlFor="personaAutorizacion">Persona quien autoriza</label>
         <input type="text" 
         id="personaAutorizacion"
@@ -52,15 +54,15 @@ export default function CrearPrestamo() {
         })}
         className="formulario_input"
         />
-        <p>Este apartado no podrá ser modificado despues</p>
+        <p>Este apartado no podra ser modificado despues</p>
         {errors.personaAutorizacion&&(
             <ErrorMessage>{errors.personaAutorizacion.message}</ErrorMessage>
         )}
     </div>
-        <input type="submit" className="boton_guardar" value='Guardar' />
+            <input type="submit" value='Guardar' className="boton_guardar" />
         </form>
         </div>
-        <Link className="enlace_eliminar boton_regresar" to='/prestamos/matutino'>Regresar</Link>
+        <Link className="enlace_eliminar boton_regresar" to='/prestamos/vespertino'>Regresar</Link>
     </>
   )
 }

@@ -1,0 +1,126 @@
+.div_formulario{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.formulario{
+    background-color: #fff;
+    width: 60%;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    label{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    @media(min-width:768px){
+        width: 30%;
+    }
+}
+.formulario_ultimo{
+    margin-bottom: 20px;
+}
+.formulario_flex{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.formulario_grado{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+.formulario_input{
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #213981;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.boton_guardar{
+    background-color: #4a5bb2;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 2px solid #fff;
+    padding: 10px;
+    
+}
+
+.boton_regresar{
+    background-color: #194edc;
+    color: #fff;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 30px;
+    width: 65px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+.boton_regresar:hover{
+    background-color: #1b40b2;
+}
+.texto_prestamo{
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.separacion_prestamos{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    a{
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+    }
+}
+
+.enlaces_prestamos{
+    padding: 30px;
+}
+.prestamo_turno{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.separacion_abajo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.boton_agregar_prestamo{
+    background-color: #049116;
+    color: white;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 65px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boton_agregar_prestamo:hover{
+    background-color: #0a7118;
+}
+.enlace_crear{
+    display: flex;
+    justify-content: center;
+}
+
+
+.personaAutorizacion{
+    display: none;
+}

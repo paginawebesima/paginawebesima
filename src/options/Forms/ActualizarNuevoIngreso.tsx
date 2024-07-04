@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { PreinscripcionesEsima, preinscripciones2 } from "../../types"
 import FormularioEditarNuevoIngreso from "../../formularios/FormularioEditarNuevoIngreso"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useMutation, useQueryClient } from "react-query"
 import { toast } from "react-toastify"
 import 'react-toastify/ReactToastify.css'
@@ -28,8 +28,8 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
     })
     const {mutate} = useMutation({
         mutationFn:actualizarRequerimiento,
-        onError:()=>{
-            
+        onError:(error:Error)=>{
+            toast.error(error.message)
         },
         onSuccess:(data)=>{
             toast.success(data)
@@ -45,16 +45,17 @@ export default function ActualizarNuevoIngreso({data,preinscripcionesId}:Actuali
     }
   return (
     <>
-    <h4>Actualizar Informacion Nuevo Ingreso</h4>
-      <div className="dos-columnas">
-        <form className="form-register flex1" noValidate onSubmit={handleSubmit(handleForm)}>
+    <h2 className="texto_prestamo separacion_abajo">Actualizar Informacion Nuevo Ingreso</h2>
+      <div className="dos-columnas dos-columnas_separacion">
+        <form className="formulario" noValidate onSubmit={handleSubmit(handleForm)}>
             <FormularioEditarNuevoIngreso register={register} errors={errors} />
-            <input className="botons" type="submit" value='Aceptar' />
+            <input className="boton_guardar" type="submit" value='Guardar' />
         </form>
         <div className="flex2">
             <RutasIconos/>
         </div>
     </div>
+    <Link className="boton_regresar enlace_eliminar" to='/panel/nuevoIngreso/actualizar'>Regresar</Link>
     </>
   )
 }
