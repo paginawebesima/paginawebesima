@@ -36,8 +36,8 @@ import NewPasswordView from './views/NewPasswordView';
 import PrestamosLibros from './prestamos/PrestamosLibros';
 import CrearPrestamo from './prestamos/CrearPrestamo';
 import ActualizarPrestamo from './prestamos/ActualizarPrestamo';
-import Layout from './prestamos/Layout';
 import GenerarPDF from './prestamos/GenerarPDF';
+import BookLayout from './layout/BookLayout';
 
 export default function Router() {
     return (
@@ -82,7 +82,7 @@ export default function Router() {
                     </Route>
                 </Route>
 
-                <Route element={<Layout />}>
+                <Route element={<BookLayout />}>
                     <Route element={<PrestamosLibros />} index path='/prestamos' />
                     <Route element={<CrearPrestamo />} path='/crearPrestamo' />
                     <Route element={<ActualizarPrestamo />} path='/actualizarPrestamo/:prestamoId/editar' />

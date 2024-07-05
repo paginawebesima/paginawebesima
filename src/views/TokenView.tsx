@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { PinInput, PinInputField } from "@chakra-ui/pin-input";
-import "../sass/layout/_tokenview.scss";
 import { useMutation } from "react-query";
 import { RecoverPassword } from "../types";
 import { recoverPassword } from "../api/api";

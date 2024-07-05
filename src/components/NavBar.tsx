@@ -23,6 +23,7 @@ export default function NavBar() {
   const queryClient = useQueryClient()
   const handleLogout = () => {
     localStorage.removeItem('AUTH_TOKEN');
+    localStorage.removeItem('USER_ROL');
     queryClient.invalidateQueries({queryKey: ['user']})
     setIsLoggedIn(false);
   };

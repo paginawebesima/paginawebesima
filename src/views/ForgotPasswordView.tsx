@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { ForgotPasswordForm } from "../types";
 import ErrorMessage from "../components/ErrorMessage";
-import "../sass/layout/_request-code.scss";
 import { forgotPassword } from "../api/api";
 import { toast } from "react-toastify";
 

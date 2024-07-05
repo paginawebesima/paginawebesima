@@ -24,7 +24,8 @@ export type ConfirmToken = Pick<Auth, 'token'>
 /** Users */
 export const userSchema = authSchema.pick({
     name:true,
-    email:true
+    email:true,
+    rol:true
 }).extend({
     _id: z.string()
 })

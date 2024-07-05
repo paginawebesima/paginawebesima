@@ -10,6 +10,10 @@ export default function AuthLayout() {
     if (isError) {
         return <Navigate to='/login' />
     }
+    const isValidUser = data && data.rol === 'Administrador';
+    if (!isValidUser) {
+        return <Navigate to='/prestamos' />;
+    }
     if (data) return (
         <>
             <div>

@@ -20,14 +20,15 @@ export async function createAccount(formData: UserRegistrationForm) {
 export async function authenticateUser(formData: UserLoginForm) {
     try {
         const url = "/login";
-        const { data } = await api.post<string>(url, formData)
-        localStorage.setItem('AUTH_TOKEN', data)
-        return data
-
+        const { data } = await api.post<{ token: string, rol: string }>(url, formData);
+        localStorage.setItem('AUTH_TOKEN', data.token);
+        localStorage.setItem('USER_ROL', data.rol);
+        return data;
     } catch (error) {
         if (isAxiosError(error) && error.response) {
-            throw new Error(error.response.data.error)
+            throw new Error(error.response.data.error);
         }
+        throw new Error('An unexpected error occurred');
     }
 }
 
@@ -309,3 +310,15 @@ export async function getUser() {
         }
     }
 }
+
+export const deleteUser = async (userId: string) => {
+    try {
+        const { data } = await api.delete(`/user/${userId}`);
+        return data;
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+        throw new Error('An unexpected error occurred');
+    }
+};

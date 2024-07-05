@@ -31,8 +31,15 @@ export default function Login() {
         toast.error("An unexpected error occurred");
       }
     },
-    onSuccess: () => {
-      navigate('/panel');
+    onSuccess: (data) => {
+      const { rol } = data;
+      if (rol === 'Administrador') {
+        navigate('/panel');
+      } else if (rol === 'Gestor de Libros') {
+        navigate('/prestamos');
+      } else {
+        toast.error("Rol no autorizado");
+      }
     }
   });
 
