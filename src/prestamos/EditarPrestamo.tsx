@@ -1,5 +1,5 @@
 import { ToastContainer, toast } from 'react-toastify';
-import { Link, useNavigate } from "react-router-dom"
+import { Link} from "react-router-dom"
 import { PrestamosFormData, TPrestamos } from "../types"
 import { useForm } from "react-hook-form"
 import Prestamo from "./Prestamo"
@@ -12,14 +12,14 @@ type EditarPrestamoProps={
     prestamoId:TPrestamos['_id']
 }
 export default function EditarPrestamo({data,prestamoId}:EditarPrestamoProps) {
-    const navigate = useNavigate();
     const {register,handleSubmit,formState:{errors}}=useForm({defaultValues:{
             alumno:data.alumno,
             grado:data.grado,
             grupo:data.grupo,
             libro:data.libro,
             fechaprestamo:data.fechaprestamo,
-            fechadevolucion:data.fechadevolucion
+            fechadevolucion:data.fechadevolucion,
+            personaAutorizacion:data.personaAutorizacion
         }
     })
     const {mutate} = useMutation({
@@ -46,11 +46,18 @@ export default function EditarPrestamo({data,prestamoId}:EditarPrestamoProps) {
          pauseOnHover={false}
             pauseOnFocusLoss={false}
         />
-        <form action="" noValidate onSubmit={handleSubmit(handleForm)}>
+        <h2 className='texto_prestamo'>Actualizar prestamo turno matutino</h2>
+        <div className='div_formulario'>
+        <form className='formulario' noValidate onSubmit={handleSubmit(handleForm)}>
             <Prestamo register={register} errors={errors}/>
-            <input type="submit" value='Actualizar Prestamo' />
+            <div className='formulario_flex'>
+            <label htmlFor="">Persona quien autorizo</label>
+            <p>{data.personaAutorizacion}</p>
+            </div>
+            <input className='boton_guardar' type="submit" value='Guardar' />
         </form>
-        <Link to='/prestamos'>Volver a prestamos</Link>
+        </div>
+        <Link className="boton_regresar enlace_eliminar" to='/prestamos/matutino'>Regresar</Link>
     </div>
   )
 }

@@ -2,7 +2,6 @@ import { useQuery } from "react-query";
 import { Navigate, useParams } from "react-router-dom"
 import { obtenerRequerimientoPorID } from "../../api/api";
 import ActualizarNuevoIngreso from "../Forms/ActualizarNuevoIngreso";
-import RutasIconos from "../../components/RutasIconos";
 
 
 export default function EditarNuevoIngreso() {

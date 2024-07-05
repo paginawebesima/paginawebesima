@@ -1,6 +1,6 @@
 import { isAxiosError } from "axios"
 import api from "../lib/axios"
-import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema } from "../types"
+import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema, EsimaClausuraFormData, TClausura, TProceso, EsimaAdministrativosFormData, TAdministrativos } from "../types"
 
 //Crear cuenta
 export async function createAccount(formData: UserRegistrationForm) {
@@ -311,14 +311,214 @@ export async function getUser() {
     }
 }
 
-export const deleteUser = async (userId: string) => {
+export async function crearClausura(formData:EsimaClausuraFormData) {
     try {
-        const { data } = await api.delete(`/user/${userId}`);
-        return data;
+        const { data } = await api.post('/crearClausura', formData)
+        return data
     } catch (error) {
         if (isAxiosError(error) && error.response) {
-            throw new Error(error.response.data.error);
+            throw new Error(error.response.data.error)
         }
-        throw new Error('An unexpected error occurred');
     }
-};
+}
+
+export async function obtenerClausura() {
+    try {
+        const data = await api('/obtenerClausura')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function eliminarClausura(id:TClausura['_id']) {
+    try {
+        const {data} = await api.delete<string>(`/eliminarClausura/${id}`)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerClausuraId(id:TClausura['_id']) {
+    try {
+        const { data } = await api.get(`/obtenerClausuraId/${id}`)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+type actualizarClausuraTypes={
+    formData:EsimaClausuraFormData
+    clausuraId:TClausura['_id']
+}
+
+export async function actualizarClausura({formData,clausuraId}:actualizarClausuraTypes) {
+    try {
+        const { data } = await api.put<string>(`/actualizarClausura/${clausuraId}`, formData)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function crearAdministrativos(formData:EsimaAdministrativosFormData) {
+    try {
+        const { data } = await api.post('/crearAdministrativos', formData)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerAdministrativos() {
+    try {
+        const data = await api('/obtenerAdministrativos')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function eliminarAdministrativos(id:TAdministrativos['_id']) {
+    try {
+        const {data} = await api.delete<string>(`/eliminarAdministrativos/${id}`)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerAdministrativosId(id:TAdministrativos['_id']) {
+    try {
+        const { data } = await api.get(`/obtenerAdministrativosId/${id}`)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+type actualizarAdministrativosTypes={
+    formData:EsimaAdministrativosFormData
+    administrativosId:TAdministrativos['_id']
+}
+
+export async function actualizarAdministrativos({formData,administrativosId}:actualizarAdministrativosTypes) {
+    try {
+        const { data } = await api.put<string>(`/actualizarAdministrativos/${administrativosId}`, formData)
+        return data
+    } catch (error) {
+        if(isAxiosError(error)&&error.response){
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerPrestamos_Vespertino() {
+    try {
+        const data = await api('/obtenerPrestamosVespertino')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function eliminarPrestamo_Vespertino(id: TPrestamos['_id']) {
+    try {
+        const { data } = await api.delete<string>(`/eliminarPrestamos_Vespertino/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+export async function crearPrestamo_Vespertino(formData: PrestamosFormData) {
+    try {
+        const { data } = await api.post('/crearPrestamoVerpertino', formData)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerPrestamoTurnoVespertino(id: TPrestamos['_id']) {
+    try {
+        const { data } = await api.get(`/obtenerPrestamos_Vespertino/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function actualizarPrestamoVespertino({ formData2, prestamoId }: actualizarPrestamoType) {
+    try {
+        const { data } = await api.put<string>(`/actualizarPrestamos_Vespertino/${prestamoId}`, formData2)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+export async function obtenerProceso() {
+    try {
+        const data = await api('/obtenerProceso')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+export async function activarProcesoAPI(id:TProceso['_id']) {
+    try {
+        const { data } = await api.put<string>(`/activarProceso/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+export async function desactivarProcesoAPI(id:TProceso['_id']) {
+    try {
+        const { data } = await api.put<string>(`/desactivarProceso/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}

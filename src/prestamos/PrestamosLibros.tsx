@@ -1,11 +1,11 @@
-import { QueryClient, useMutation, useQuery, useQueryClient } from "react-query"
+import { useMutation, useQuery, useQueryClient } from "react-query"
 import {jsPDF} from 'jspdf'
 import { eliminarPrestamo, obtenerPrestamos } from "../api/api"
 import { Link } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 export default function PrestamosLibros() {
-    const {data,isLoading} = useQuery({
+    const {data} = useQuery({
         queryKey:['Prestamos'],
         queryFn:obtenerPrestamos
     })
@@ -28,7 +28,8 @@ export default function PrestamosLibros() {
             grupo:string,
             libro:string,
             fechaprestamo:string,
-            fechadevolucion:string
+            fechadevolucion:string,
+            personaAutorizacion:string
         })=>{
             if(id===prestamo._id){
                 const doc = new jsPDF();
@@ -51,6 +52,12 @@ export default function PrestamosLibros() {
     doc.text(`Alumno:`, 10, 40);
     doc.setTextColor(0, 0, 0);  // color negro
     doc.text(prestamo.alumno, 50, 40);
+
+    // Datos del alumno
+    doc.setTextColor(0, 0, 255);  // color azul
+    doc.text(`Persona Autorizacion`, 100, 200);
+    doc.setTextColor(0, 0, 0);  // color negro
+    doc.text(prestamo.personaAutorizacion, 150, 250);
 
     doc.setTextColor(0, 0, 255);  // color azul
     doc.text(`Grado:`, 10, 50);
@@ -91,11 +98,10 @@ export default function PrestamosLibros() {
             pauseOnFocusLoss={false}
         />
         <div>
+            <h2 className="prestamo_turno">Turno Matutino</h2>
+        <div className="prestamos table-container">
 
-        <div className="prestamos">
-
-        <table>
-            <caption>Alumnos con prestamos</caption>
+        <table className="tabla_prestamos">
             <thead>
                 <tr>
                     <th>Alumno</th>
@@ -117,15 +123,15 @@ export default function PrestamosLibros() {
                         fechadevolucion:string
                     })=>(
                     <tr>
-                        <th>{prestamo.alumno}</th>
-                        <th>{prestamo.grado}</th>
-                        <th>{prestamo.grupo}</th>
-                        <th>{prestamo.libro}</th>
-                        <th>{prestamo.fechaprestamo}</th>
-                        <th>{prestamo.fechadevolucion}</th>
-                        <div>
-                            <button onClick={()=>{mutate(prestamo._id)}} className="eliminar">Eliminar</button>
-                            <Link to={`/actualizarPrestamo/${prestamo._id}/editar`} className="actualizar">Actualizar</Link>
+                        <th className="elemento_tabla">{prestamo.alumno}</th>
+                        <th className="elemento_tabla">{prestamo.grado}</th>
+                        <th className="elemento_tabla">{prestamo.grupo}</th>
+                        <th className="elemento_tabla">{prestamo.libro}</th>
+                        <th className="elemento_tabla">{prestamo.fechaprestamo}</th>
+                        <th className="elemento_tabla">{prestamo.fechadevolucion}</th>
+                        <div className="botones_flex_prestamo">
+                            <button onClick={()=>{mutate(prestamo._id)}} className="eliminar eliminar_separacion">Eliminar</button>
+                            <Link to={`/actualizarPrestamo/${prestamo._id}/editar`} className="actualizar actualizar_separacion enlace_eliminar">Actualizar</Link>
                             <button className="generarPDF" onClick={()=>{generarPDF(prestamo._id)}}>Generar PDF</button>
                         </div>
                     </tr>
@@ -135,9 +141,11 @@ export default function PrestamosLibros() {
             </tbody>
         </table>
         </div>
-        <Link to='/crearPrestamo'>Añadir prestamo</Link>
+        <div className="enlace_crear">
+        <Link className="enlace_eliminar boton_agregar_prestamo" to='/crearPrestamo'>Añadir prestamo</Link>
         </div>
-        
+        </div>
+        <Link className="boton_regresar enlace_eliminar" to='/prestamos'>Regresar</Link>
     </div>
   )
 }

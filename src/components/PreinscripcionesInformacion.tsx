@@ -1,14 +1,31 @@
 import { requerimientosPreinscripciones } from "../api/api";
 import { useQuery } from "react-query";
-export default function PreinscripcionesInformacion() {
+
+type PreinscripcionesInformacionProps={
+  nuevaInformacion:any
+}
+
+export default function PreinscripcionesInformacion({nuevaInformacion}:PreinscripcionesInformacionProps) {
     const {data,isLoading} = useQuery({
         queryKey:['preinscripciones'],
         queryFn:requerimientosPreinscripciones
       })
+      nuevaInformacion?.map((proceso:{boolean:string})=>{
+        if (proceso.boolean === 'true') {
+          const imagen = document.getElementById('proceso') as HTMLImageElement | null;
+          if (imagen) {
+            imagen.style.display = 'none';
+          }
+        }else if(proceso.boolean === 'false'){
+          const imagen = document.getElementById('proceso') as HTMLImageElement | null;
+          if (imagen) {
+            imagen.style.display = 'grid';
+          }
+        }
+      })
       if(isLoading)return 'Cargando ....'
-      console.log(data)
   return (
-    <div className="informacion_inscripciones">
+    <div id="proceso" className="informacion_inscripciones">
           {data.map((informacion:{
             _id:string,
             titulo:string,

@@ -13,10 +13,6 @@ export default function OptionsPanel() {
               <img src="graduation.svg" alt="Alumnos a Egresar"></img>
             </div>
             <div className="box">
-              <p>Noticias relevantes</p>
-              <img src="news.svg" alt="Noticias Relevantes"></img>
-            </div>
-            <div className="box">
               <p>Usuarios</p>
               <img src="user.svg" alt="Usuarios"></img>
             </div>

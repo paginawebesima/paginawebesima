@@ -4,11 +4,30 @@ import { Link } from "react-router-dom";
 import Primero from "./modales/Primero";
 import Segundo from "./modales/Segundo";
 import Tercero from "./modales/Tercero";
+import { useQuery } from "react-query";
+import { obtenerProceso } from "../api/api";
 
 
 export default function PaginaPrincipal() {
   const fecha = new Date()
   const year = fecha.getFullYear()
+  const {data} = useQuery({
+    queryKey:['Procesos'],
+    queryFn:obtenerProceso
+  })
+  data?.map((proceso:{boolean:string})=>{
+    if (proceso.boolean === 'true') {
+      const imagen = document.getElementById('proceso') as HTMLImageElement | null;
+      if (imagen) {
+        imagen.style.display = 'none';
+      }
+    }else if(proceso.boolean === 'false'){
+      const imagen = document.getElementById('proceso') as HTMLImageElement | null;
+      if (imagen) {
+        imagen.style.display = 'flex';
+      }
+    }
+  })
   return (
     <>
       <header className="">
@@ -32,7 +51,7 @@ export default function PaginaPrincipal() {
           </div>
         </div>
       </div>
-      <div className="Preinscripcion_Activo clase3 ">
+      <div id="proceso" className="Preinscripcion_Activo clase3">
           <h2>Proceso de seleccion {year} activo</h2>
           <div>
           <Link className="clase4" to='/preinscripciones'>Ver informacion</Link>
@@ -109,7 +128,7 @@ export default function PaginaPrincipal() {
         </div>
         <div className="biblioteca_texto">
           <h3>Contamos con una biblioteca adecuada para ti</h3>
-          <button>Ver</button>
+          <Link className="enlace_biblioteca" to='/biblioteca'>Ver</Link>
         </div>
       </div>
       </div>

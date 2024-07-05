@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function OpcionesTelefono() {
@@ -36,6 +36,7 @@ export default function OpcionesTelefono() {
           </div>
         </div>
       </div>
+      <Link className='boton_regresar enlace_eliminar' to='/panel'>Regresar</Link>
       <Outlet />
     </>
   );

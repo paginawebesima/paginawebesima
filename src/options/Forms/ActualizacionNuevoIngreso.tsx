@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { FormTelefono, Telefono3} from "../../types"
 import { useForm } from "react-hook-form"
 import { useMutation, useQueryClient } from "react-query"
@@ -21,12 +21,13 @@ export default function ActualizacionNuevoIngreso({data,telefonoId}:Actualizacio
   const queryClient = useQueryClient();
   const {mutate} = useMutation({
     mutationFn:actualizarTelefono,
-    onError:()=>{
-
+    onError:(error:Error)=>{
+      toast.error(error.message)
     },
     onSuccess:(data)=>{
       toast.success(data)
-      navigate('/panel')
+      navigate('/panel/informacion')
+      queryClient.invalidateQueries({queryKey:['telefonos']})
     }
   })
   const handleform=(formData:FormTelefono)=>{
@@ -37,12 +38,17 @@ export default function ActualizacionNuevoIngreso({data,telefonoId}:Actualizacio
     mutate(data)
   }
   return (
-    <div>
-      <form noValidate onSubmit={handleSubmit(handleform)}>
+    <>
+    <h2 className="texto_prestamo">Actualizar telefono de contacto</h2>
+    <div className="div_formulario">
+      <form className="formulario" noValidate onSubmit={handleSubmit(handleform)}>
       
         <TelefonoContacto register={register} errors={errors}/>
+        <input className="boton_guardar" type="submit" value='Aceptar'/>
       </form>
       
     </div>
+    <Link className="enlace_eliminar boton_regresar" to='/panel/informacion/actualizar'>Regresar</Link>
+    </>
   )
 }

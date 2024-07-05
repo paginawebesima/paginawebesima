@@ -1,21 +1,22 @@
 import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form"
 import { PrestamosFormData } from "../types"
-import { Link, useNavigate } from "react-router-dom"
-import { useMutation } from "react-query";
+import { Link} from "react-router-dom"
+import { useMutation} from "react-query";
 import { crearPrestamo } from "../api/api";
 import 'react-toastify/dist/ReactToastify.css'
 import Prestamo from "./Prestamo";
+import ErrorMessage from "../components/ErrorMessage";
 
 export default function CrearPrestamo() {
-    const navigate = useNavigate();
     const valoresIniciales:PrestamosFormData={
         alumno:"",
         grado:"",
         grupo:"",
         libro:"",
         fechaprestamo:"",
-        fechadevolucion:""
+        fechadevolucion:"",
+        personaAutorizacion:""
     }
     const {register,handleSubmit,formState:{errors}} = useForm({defaultValues:valoresIniciales})
     const {mutate}=useMutation({
@@ -28,20 +29,38 @@ export default function CrearPrestamo() {
         }
     })
     const handleForm = (formData:PrestamosFormData)=>mutate(formData)
+    
   return (
     <>
        <ToastContainer 
          pauseOnHover={false}
             pauseOnFocusLoss={false}
         />
-        <form className="" noValidate onSubmit={handleSubmit(handleForm)}>
+        <h2 className="texto_prestamo">Añadir prestamo turno matutino</h2>
+        <div className="div_formulario">
+        <form className="formulario" noValidate onSubmit={handleSubmit(handleForm)}>
             <Prestamo
             register={register}
             errors={errors}
             />
-            <input type="submit" value='Crear Prestamo' />
+    <div className="formulario_flex formulario_ultimo">
+        <label htmlFor="personaAutorizacion">Persona quien autoriza</label>
+        <input type="text" 
+        id="personaAutorizacion"
+        {...register('personaAutorizacion',{
+            required:"La persona quien autoriza el prestamo es obligatoria"
+        })}
+        className="formulario_input"
+        />
+        <p>Este apartado no podrá ser modificado despues</p>
+        {errors.personaAutorizacion&&(
+            <ErrorMessage>{errors.personaAutorizacion.message}</ErrorMessage>
+        )}
+    </div>
+        <input type="submit" className="boton_guardar" value='Guardar' />
         </form>
-        <Link to='/prestamos'>Volver a prestamos</Link>
+        </div>
+        <Link className="enlace_eliminar boton_regresar" to='/prestamos/matutino'>Regresar</Link>
     </>
   )
 }

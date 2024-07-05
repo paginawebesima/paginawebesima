@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import InformacionCarga from "./Administrativos/InformacionCarga";
 
 export default function Administrativos() {
   const administrativosRef = useRef<HTMLDivElement[]>([]);
@@ -16,11 +17,13 @@ export default function Administrativos() {
       } else {
         setScrollDirection("down");
       }
-      
+
       previousScroll.current = currentScroll;
 
-      administrativosRef.current.forEach((administrativo) => {
+      administrativosRef.current.forEach((administrativo, index) => {
         if (!administrativo) return;
+        if (index === 0) return; // Skip the first element
+
         const top = administrativo.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         if (top < windowHeight * 0.8 && scrollDirection === "down") {
@@ -36,6 +39,7 @@ export default function Administrativos() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [scrollDirection]);
+
   return (
     <>
       <header className="">
@@ -46,41 +50,7 @@ export default function Administrativos() {
         </div>
       </header>
       <div className="container2">
-        <div className="section-main">
-          <div className="line-container"></div>
-          <div className="administrativo">
-            <h2 className="h2-admin">Dra. Rita Velia Reyes López</h2>
-            <p className="p-admin">Directora Encargada</p>
-          </div>
-        </div>
-        <div className="section" ref={(el) => el && administrativosRef.current.push(el)}>
-          <div className="line-container"></div>
-          <div className="administrativo">
-            <h2 className="h2-admin">Mtra. Norma Lylia Martínez Gracia</h2>
-            <p className="p-admin">Subdirectora Encargada Turno Matutino</p>
-          </div>
-        </div>
-        <div className="section" ref={(el) => el && administrativosRef.current.push(el)}>
-          <div className="line-container"></div>
-          <div className="administrativo">
-            <h2 className="h2-admin">Prof. Sergio Iván Chairez Tremillo</h2>
-            <p className="p-admin">Subdirector Turno Vespertino</p>
-          </div>
-        </div>
-        <div className="section" ref={(el) => el && administrativosRef.current.push(el)}>
-          <div className="line-container"></div>
-          <div className="administrativo">
-            <h2 className="h2-admin">Mtra. Ma. Olimpia Torres Quiñones</h2>
-            <p className="p-admin">Coordinadora Académica Turno Matutino</p>
-          </div>
-        </div>
-        <div className="section" ref={(el) => el && administrativosRef.current.push(el)}>
-          <div className="line-container"></div>
-          <div className="administrativo">
-            <h2 className="h2-admin">Profa. Miroslava Margarita Solis Herrera</h2>
-            <p className="p-admin">Coordinadora Académica Turno Vespertino</p>
-          </div>
-        </div>
+        <InformacionCarga administrativosRef={administrativosRef} />
       </div>
       <Footer />
     </>

@@ -1,3 +1,133 @@
+.modal_administrativos, .overlay_administrativos {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+
+.modal-content_administrativos {
+    color: #000;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    line-height: 1.4;
+    background: #fff;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 400px;
+    min-height: 200px;
+}
+
+.close-modal_administrativos {
+    position: absolute;
+    color: #000;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    font-size: larger;
+}
+
+.box1_administrativos {
+    background-color: rgba(217, 217, 217, 0.4);
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.box1_administrativos:hover {
+    transform: scale(1.05);
+}
+
+.box1_administrativos p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.box1_administrativos_modal {
+    background-color: rgba(217, 217, 217, 0.4);
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.box1_administrativos_modal:hover {
+    transform: scale(1.05);
+}
+
+.administrativos_container {
+    text-align: center;
+}
+
+.administrativos_container_children {
+    border: 3px solid #9bb9dd;
+    margin: 30px;
+    background-color: #fff;
+    padding: 30px;
+}
+
+@media (min-width: 768px) {
+    .administrativos_container_children {
+        border-radius: 10px;
+    }
+}
+
+.eliminar_administrativos {
+    background-color: #da0505;
+    border-radius: 8px;
+}
+
+.boton_actualizar_administrativos {
+    background-color: #cc6402;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #cc6402;
+    width: 70px;
+}
+
+.boton_actualizar_administrativos:hover {
+    background-color: #a14d0b;
+}
+
+.administrativos_actualizar {
+    display: flex;
+    justify-content: center;
+}
+
+.enlace_administrativos {
+    color: #333;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+    .imagen3 {
+        height: 200px;
+    }
+}
+
 .container2 {
     font-family: 'Arial', sans-serif;
     flex-direction: column;

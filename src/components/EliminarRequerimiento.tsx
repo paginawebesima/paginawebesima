@@ -1,6 +1,4 @@
 import { useMutation, useQuery } from "react-query";
-
-
 import 'react-toastify/ReactToastify.css'
 import { eliminarRequerimiento, requerimientosPreinscripciones } from "../api/api";
 import { Link, useNavigate } from "react-router-dom";
@@ -15,19 +13,19 @@ export default function EliminarRequerimiento() {
   })
   const {mutate} = useMutation({
     mutationFn:eliminarRequerimiento,
-    onError:()=>{
-
+    onError:(error:Error)=>{
+      toast.error(error.message)
     },
     onSuccess:(data)=>{
         toast.success(data)
-        navigate('/panel')
+        navigate('/panel/nuevoIngreso')
     }
   })
   if(isLoading) return "Cargando ..."
   if(data) return (
     <>
       <main>
-      <h1>Eliminar Requerimiento de Preinscripcion</h1>
+      <h2 className="texto_prestamo separacion_abajo">Eliminar Requerimiento de Preinscripcion</h2>
         <div className="informacion_inscripciones">
           {data.map((informacion:{
             _id:string,
@@ -36,12 +34,13 @@ export default function EliminarRequerimiento() {
             requerimiento2:string,
             requerimiento3:string,
             requerimiento4:string,
-            requerimiento5:string
+            requerimiento5:string,
+            icono:string
           })=>(
 
           <div className="informacion margen separacion_arriba">
             <div className="contenido_centrado">
-              <img className="Preinscripciones_Iconos" src='/examen.svg' alt="Papeleria" />
+              <img className="Preinscripciones_Iconos" src={`${informacion.icono}`} />
             </div>
             <div className="informacion_contenido">
 
@@ -54,13 +53,13 @@ export default function EliminarRequerimiento() {
               <p>{informacion.requerimiento5}</p>
             </div>
             </div>
-            <button onClick={()=>{mutate(informacion._id)}}>Eliminar</button>
+            <button className="boton_eliminar_preinscripciones" onClick={()=>{mutate(informacion._id)}}>Eliminar</button>
           </div>
           ))}
           
         </div>
       </main>
-      
+      <Link className="boton_regresar enlace_eliminar" to='/panel/nuevoIngreso'>Regresar</Link>
     </>
   )
 }
