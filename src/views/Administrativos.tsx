@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import InformacionCarga from "./administrativos/InformacionCarga";
+
 
 export default function Administrativos() {
   const administrativosRef = useRef<HTMLDivElement[]>([]);
@@ -50,7 +50,6 @@ export default function Administrativos() {
         </div>
       </header>
       <div className="container2">
-        <InformacionCarga administrativosRef={administrativosRef} />
       </div>
       <Footer />
     </>

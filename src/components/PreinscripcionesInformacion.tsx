@@ -23,7 +23,6 @@ export default function PreinscripcionesInformacion({nuevaInformacion}:Preinscri
           }
         }
       })
-      if(isLoading)return 'Cargando ....'
   return (
     <div id="proceso" className="informacion_inscripciones">
           {data.map((informacion:{

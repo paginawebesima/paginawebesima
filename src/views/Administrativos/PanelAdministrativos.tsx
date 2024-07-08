@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import InsertarAdministrativo from "./modalAdministrativo.tsx/InsertarAdministrativos";
 
-export default function PanelClausura() {
+export default function PanelAdministrativos() {
   return (
     <>
         <div className="display">
