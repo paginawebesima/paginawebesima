@@ -123,6 +123,7 @@ export default function Prestamos_Vespertino() {
                                 <th>Libro</th>
                                 <th>Fecha Prestamo</th>
                                 <th>Fecha Devolución</th>
+                                <th>Opciones</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -14,7 +14,7 @@ export default function InformacionCarga() {
             titulo:string,
             informacion:string
         })=>(
-            <div className="clausura_container">
+            <div className="clausura_container" key={clausuraInformacion._id}>
                 <div className="clausura_container_children">
                     <h2>{clausuraInformacion.titulo}</h2>
                     <p>{clausuraInformacion.informacion}</p>

@@ -37,7 +37,7 @@ export default function PreinscripcionesInformacion({nuevaInformacion}:Preinscri
             icono:string
           })=>(
 
-          <div  className="informacion margen separacion_arriba">
+          <div key={informacion._id} className="informacion margen separacion_arriba">
             <div className="contenido_centrado">
               <img className="Preinscripciones_Iconos" src={`${informacion.icono}`} />
             </div>
