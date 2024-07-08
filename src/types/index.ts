@@ -16,7 +16,6 @@ export type UserRegistrationForm = Pick<Auth, 'name' | 'email' | 'password' | 'p
 export type UserRequestCodeForm = Pick<Auth, 'email'>;
 export type ForgotPasswordForm = Pick<Auth, 'email'>;
 export type NewPasswordForm = Pick<Auth, 'password' | 'password_confirmation'>;
-
 export type NewPassword = Pick<Auth, 'token'>
 export type RecoverPassword = Pick<Auth, 'token'>
 export type ConfirmToken = Pick<Auth, 'token'>
@@ -36,21 +35,14 @@ export const telefono1=z.object({
     telefono:z.string()
 })
 
-
 export const telefonoshema=z.array(
     telefono1.pick({
         _id:true,
         telefono:true
     })
 )
-
 export type Telefono3 = z.infer<typeof telefono1>
-
-
 export type FormTelefono=Pick<Telefono3,'telefono'>
-
-
-
 
 export const preinscripciones1=z.object({
     _id:z.string(),
@@ -75,14 +67,8 @@ export const ShemaPreinscripciones=z.array(
         icono:true
     })
 )
-
-
 export type preinscripciones2= z.infer<typeof preinscripciones1>
-
 export type PreinscripcionesEsima = Pick<preinscripciones2,'titulo'|'requerimiento1'|'requerimiento2'|'requerimiento3'|'requerimiento4'|'requerimiento5'|'icono'>
-
-
-
 
 export const prestamosAlumnosShema=z.object({
     _id:z.string(),
@@ -107,9 +93,7 @@ export const EsimaprestamosAlumnosShema=z.array(
         personaAutorizacion:true
     })
 )
-
 export type TPrestamos = z.infer<typeof prestamosAlumnosShema>
-
 export type PrestamosFormData= Pick<TPrestamos,'alumno'|'grado'|'grupo'|'libro'|'fechaprestamo'|'fechadevolucion'|'personaAutorizacion'>
 
 export const inventarioShema=z.object({
@@ -131,18 +115,15 @@ export const EsimainventarioShema=z.array(
         cantidad_disponible:true,
     })
 )
-
 export type TInventario = z.infer<typeof inventarioShema>
 
 export type LibrosFormData= Pick<TInventario,'titulo'|'autor'|'genero'|'cantidad_total'>
-
 
 export const InformacionClausura=z.object({
     _id:z.string(),
     titulo:z.string(),
     informacion:z.string()
 })
-
 
 export const SchemaClusuraEsima=z.array(
     InformacionClausura.pick({
@@ -151,11 +132,8 @@ export const SchemaClusuraEsima=z.array(
         informacion:true
     })
 )
-
 export type TClausura = z.infer<typeof InformacionClausura>
-
 export type EsimaClausuraFormData = Pick<TClausura,'titulo'|'informacion'>
-
 
 export const ProcesoBoolean=z.object({
     _id:z.string(),
@@ -171,9 +149,7 @@ export const SchemaProcesoBoolean = z.array(
     )
 )
 
-
 export type TProceso = z.infer<typeof ProcesoBoolean>
-
 export const InformacionAdministrativos=z.object({
     _id:z.string(),
     directivo:z.string(),
