@@ -136,7 +136,7 @@ export default function PrestamosLibros() {
                                 fechaprestamo: string,
                                 fechadevolucion: string
                             }) => (
-                                <tr key={prestamo._id}>
+                                <tr>
                                     <th className="elemento_tabla">{prestamo.alumno}</th>
                                     <th className="elemento_tabla">{prestamo.grado}</th>
                                     <th className="elemento_tabla">{prestamo.grupo}</th>
