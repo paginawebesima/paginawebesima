@@ -15,7 +15,8 @@ export default function Panel() {
         'Información alumnos a egresar': 'clausura',
         'Actualizar información de contacto': '/panel/informacion',
         'Información directivos': '/panel/administrativos',
-        'Usuarios': '',
+        'Usuarios': '/usuarios',
+        'Tareas': '/tareas',
       };
       const path = routes[text || ''];
       path ? navigate(path) : alert('No hay una ruta definida para esta opción');

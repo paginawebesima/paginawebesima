@@ -27,7 +27,7 @@ import EliminarRequerimiento from './components/EliminarRequerimiento';
 import ActualizarNumero from './options/Forms/ActualizarNumero';
 import EditarNumeroDeTelefono from './options/Forms/EditarNumeroDeTelefono';
 import EliminarNumeroTelefono from './options/Forms/EliminarNumeroTelefono';
-import Register from './views/Register';
+import Register from './views/usuarios/Register';
 import Login from './views/Login';
 import TokenView from './views/TokenView';
 import RequestNewCodeView from './views/requestNewCodeView';
@@ -47,10 +47,15 @@ import Prestamo_Vespertino from './views/gestionprestamos/Prestamo_Vespertino';
 import ActualizarPrestamoVespertino from './views/gestionprestamos/ActualizarPrestamoVespertino';
 import Biblioteca from './views/Biblioteca';
 import BookLayout from './layout/BookLayout';
-import PanelAdministrativos from './views/Administrativos/PanelAdministrativos';
-import ActualizacionAdministrativos from './views/Administrativos/ActualizacionAdministrativos';
-import ActualizarAdministrativos from './views/Administrativos/ActualizarAdministrativos';
-import EliminarAdministrativos from './views/Administrativos/EliminarAdministrativos';
+import PanelAdministrativos from './views/administrativos/PanelAdministrativos';
+import ActualizacionAdministrativos from './views/administrativos/ActualizacionAdministrativos';
+import ActualizarAdministrativos from './views/administrativos/ActualizarAdministrativos';
+import EliminarAdministrativos from './views/administrativos/EliminarAdministrativos';
+import Usuarios from './views/usuarios/Usuarios';
+import ActualizarUsuarios from './views/usuarios/ActualizarUsuarios';
+import InventarioLibros from './views/gestionprestamos/inventario/Inventarios';
+import CrearLibros from './views/gestionprestamos/inventario/CrearLibros';
+import ActualizarLibros from './views/gestionprestamos/inventario/ActualizarLibros';
 
 export default function Router() {
     return (
@@ -81,6 +86,8 @@ export default function Router() {
 
                 <Route element={<AuthLayout />}>
                     <Route element={<Register />} path="/register" />
+                    <Route element={<Usuarios />} path="/usuarios" />
+                    <Route element={<ActualizarUsuarios />} path="/actualizarUsuarios/:id" />
                     <Route element={<Panel />} path="/panel">
                         <Route element={<OptionsPanel />} index />
                         <Route element={<OpcionesTelefono />} path="informacion" />
@@ -113,6 +120,9 @@ export default function Router() {
                     <Route element={<ActualizarPrestamo />} path='/actualizarPrestamo/:prestamoId/editar' />
                     <Route element={<ActualizarPrestamoVespertino/>} path='/actualizarPrestamoVespertino/:prestamoId/editar'/>
                     <Route element={<GenerarPDF />} path='/documento' />
+                    <Route element={<InventarioLibros />} path='/prestamos/inventario' />
+                    <Route element={<CrearLibros />} path='/crearLibros' />
+                    <Route element={<ActualizarLibros />} path='/actualizarLibros/:inventarioId/editar' />
                 </Route>
             </Routes>
         </BrowserRouter>

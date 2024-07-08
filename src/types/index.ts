@@ -112,6 +112,29 @@ export type TPrestamos = z.infer<typeof prestamosAlumnosShema>
 
 export type PrestamosFormData= Pick<TPrestamos,'alumno'|'grado'|'grupo'|'libro'|'fechaprestamo'|'fechadevolucion'|'personaAutorizacion'>
 
+export const inventarioShema=z.object({
+    _id:z.string(),
+    titulo:z.string(),
+    autor:z.string(),
+    genero:z.string(),
+    cantidad_total:z.number(),
+    cantidad_disponible:z.number(),
+})
+
+export const EsimainventarioShema=z.array(
+    inventarioShema.pick({
+        _id:true,
+        titulo:true,
+        autor:true,
+        genero:true,
+        cantidad_total:true,
+        cantidad_disponible:true,
+    })
+)
+
+export type TInventario = z.infer<typeof inventarioShema>
+
+export type LibrosFormData= Pick<TInventario,'titulo'|'autor'|'genero'|'cantidad_total'>
 
 
 export const InformacionClausura=z.object({

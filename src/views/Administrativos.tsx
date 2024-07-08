@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import InformacionCarga from "./Administrativos/InformacionCarga";
+import InformacionCarga from "./administrativos/InformacionCarga";
 
 export default function Administrativos() {
   const administrativosRef = useRef<HTMLDivElement[]>([]);

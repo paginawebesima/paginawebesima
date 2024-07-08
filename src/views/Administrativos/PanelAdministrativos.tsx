@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import InsertarAdministrativo from "./modalAdministrativo.tsx/InsertarAdministrativo";
+import InsertarAdministrativo from "./modalAdministrativo.tsx/InsertarAdministrativos";
 
 export default function PanelClausura() {
   return (

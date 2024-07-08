@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form";
 import { EsimaAdministrativosFormData } from "../../../types";
 import { useMutation } from "react-query";
-import InputAdministrativo from "../InputAdministrativos";
+import InputAdministrativos from "../InputAdministrativos";
 import { crearAdministrativos } from "../../../api/api";
 import { toast } from "react-toastify";
 export default function InsertarAdministrativos() {
@@ -42,7 +42,7 @@ export default function InsertarAdministrativos() {
                 </button>
                 <form noValidate onSubmit={handleSubmit(handleForm)}>
                     <h2 className="espacio-texto">Insertar administrativos</h2>
-                    <InputAdministrativo register={register} errors={errors}/>
+                    <InputAdministrativos register={register} errors={errors}/>
                     <input className="boton_guardar espacio" type="submit" value='Guardar' />
                 </form>
                 </div>

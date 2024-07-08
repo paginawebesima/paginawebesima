@@ -1,8 +1,19 @@
 import { isAxiosError } from "axios"
 import api from "../lib/axios"
-import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema, EsimaClausuraFormData, TClausura, TProceso, EsimaAdministrativosFormData, TAdministrativos } from "../types"
+import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema, EsimaClausuraFormData, TClausura, TProceso, EsimaAdministrativosFormData, TAdministrativos, User, LibrosFormData, TInventario } from "../types"
 
-//Crear cuenta
+//Usuarios
+export async function obtenerUsuarios() {
+    try {
+        const data = await api('/obtenerUsuarios')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
 export async function createAccount(formData: UserRegistrationForm) {
     try {
         const url = "/create-account";
@@ -13,6 +24,60 @@ export async function createAccount(formData: UserRegistrationForm) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error)
         }
+    }
+}
+
+export async function crearUsuarios(formData: UserRegistrationForm) {
+    try {
+        const url = "/crearUsuarios";
+        const { data } = await api.post<string>(url, formData)
+        return data
+
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function eliminarUsuarios(id: User['_id']) {
+    try {
+        const { data } = await api.delete<string>(`/eliminarUsuarios/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+export async function obtenerUsuariosById(id: User['_id']) {
+    try {
+        const { data } = await api.get(`/obtenerUsuarios/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+
+type ActualizarUsuariosProps = {
+    formData: UserRegistrationForm,
+    usuariosId: User['_id']
+}
+
+export async function actualizarUsuarios({ formData, usuariosId }: ActualizarUsuariosProps) {
+    try {
+        const { data } = await api.put<string>(`/actualizarUsuarios/${usuariosId}`, formData)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+        throw new Error('An unexpected error occurred');
     }
 }
 
@@ -230,10 +295,7 @@ export async function eliminarRequerimiento(id: preinscripciones2['_id']) {
     }
 }
 
-
-
 //Prestamos
-
 export async function obtenerPrestamos() {
     try {
         const data = await api('/obtenerPrestamos')
@@ -254,7 +316,6 @@ export async function crearPrestamo(formData: PrestamosFormData) {
             throw new Error(error.response.data.error)
         }
     }
-
 }
 
 export async function eliminarPrestamo(id: TPrestamos['_id']) {
@@ -268,7 +329,6 @@ export async function eliminarPrestamo(id: TPrestamos['_id']) {
     }
 }
 
-
 export async function obtenerPrestamoById(id: TPrestamos['_id']) {
     try {
         const { data } = await api.get(`/obtenerPrestamos/${id}`)
@@ -280,7 +340,6 @@ export async function obtenerPrestamoById(id: TPrestamos['_id']) {
     }
 }
 
-
 type actualizarPrestamoType = {
     formData2: PrestamosFormData
     prestamoId: TPrestamos['_id']
@@ -289,6 +348,70 @@ type actualizarPrestamoType = {
 export async function actualizarPrestamo({ formData2, prestamoId }: actualizarPrestamoType) {
     try {
         const { data } = await api.put<string>(`actualizarPrestamo/${prestamoId}`, formData2)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+//Inventario
+export async function obtenerLibros() {
+    try {
+        const data = await api('/obtenerLibros')
+        return data.data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+export const obtenerLibrosDisponibles = async () => {
+    const response = await api('/obtenerLibrosDisponibles');
+    return response.data;
+};
+export async function crearLibros(formData: LibrosFormData) {
+    try {
+        const { data } = await api.post('/inventario', formData)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function eliminarLibros(id: TInventario['_id']) {
+    try {
+        const { data } = await api.delete<string>(`/eliminarLibros/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+export async function obtenerLibrosById(id: TInventario['_id']) {
+    try {
+        const { data } = await api.get(`/obtenerLibros/${id}`)
+        return data
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error)
+        }
+    }
+}
+
+type actualizarLibrosType = {
+    formData2: LibrosFormData
+    inventarioId: TInventario['_id']
+}
+
+export async function actualizarLibros({ formData2, inventarioId }: actualizarLibrosType) {
+    try {
+        const { data } = await api.put<string>(`actualizarLibros/${inventarioId}`, formData2)
         return data
     } catch (error) {
         if (isAxiosError(error) && error.response) {
