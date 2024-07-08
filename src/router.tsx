@@ -36,7 +36,6 @@ import NewPasswordView from './views/NewPasswordView';
 import PrestamosLibros from './prestamos/PrestamosLibros';
 import CrearPrestamo from './prestamos/CrearPrestamo';
 import ActualizarPrestamo from './prestamos/ActualizarPrestamo';
-import GenerarPDF from './prestamos/GenerarPDF';
 import PanelClausura from './views/clausura/PanelClausura';
 import EliminarClausura from './views/clausura/EliminarClausura';
 import ActualizarClausura from './views/clausura/ActualizarClausura';
