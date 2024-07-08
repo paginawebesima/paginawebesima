@@ -6,7 +6,7 @@ type PreinscripcionesInformacionProps={
 }
 
 export default function PreinscripcionesInformacion({nuevaInformacion}:PreinscripcionesInformacionProps) {
-    const {data,isLoading} = useQuery({
+    const {data} = useQuery({
         queryKey:['preinscripciones'],
         queryFn:requerimientosPreinscripciones
       })
