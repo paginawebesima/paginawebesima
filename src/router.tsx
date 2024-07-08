@@ -119,7 +119,6 @@ export default function Router() {
                     <Route element={<Prestamo_Vespertino/>} path='/crearPrestamoVespertino'/>
                     <Route element={<ActualizarPrestamo />} path='/actualizarPrestamo/:prestamoId/editar' />
                     <Route element={<ActualizarPrestamoVespertino/>} path='/actualizarPrestamoVespertino/:prestamoId/editar'/>
-                    <Route element={<GenerarPDF />} path='/documento' />
                     <Route element={<InventarioLibros />} path='/prestamos/inventario' />
                     <Route element={<CrearLibros />} path='/crearLibros' />
                     <Route element={<ActualizarLibros />} path='/actualizarLibros/:inventarioId/editar' />
