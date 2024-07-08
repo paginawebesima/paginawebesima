@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from "react-query"
 import { jsPDF } from 'jspdf'
-import logo from '../../public/EsimaLogo.png';
+import logo from '/EsimaLogo.png';
 import { eliminarPrestamo, obtenerPrestamos } from "../api/api"
 import { Link } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
