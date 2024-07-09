@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
+import { useQuery } from "react-query";
+import { obtenerAdministrativos } from "../api/api";
 
 
 export default function Administrativos() {
+  const { data} = useQuery({
+    queryKey: ['administrativos'],
+    queryFn: obtenerAdministrativos
+  })
   const administrativosRef = useRef<HTMLDivElement[]>([]);
   const [scrollDirection, setScrollDirection] = useState<"up" | "down">("down");
   const previousScroll = useRef<number>(window.scrollY);
@@ -51,6 +57,20 @@ export default function Administrativos() {
       </header>
       <div className="container2">
       </div>
+      {data.map((administrativosInformacion: {
+        _id: string,
+        directivo: string,
+        cargo: string
+      }) => (
+        <div key={administrativosInformacion._id} className="administrativos_container">
+          <div className="administrativos_container_children">
+            <h2>{administrativosInformacion.directivo}</h2>
+            <p>{administrativosInformacion.cargo}</p>
+            <div className="administrativo_actualizar">
+            </div>
+          </div>
+        </div>
+      ))}
       <Footer />
     </>
   );
