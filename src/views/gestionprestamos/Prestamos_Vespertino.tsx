@@ -51,14 +51,12 @@ export default function Prestamos_Vespertino() {
                     // Datos del préstamo
                     doc.setFontSize(12);
                     doc.setFont('helvetica', 'normal');
-
-                    // Datos de alumno 
+ 
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Alumno:`, 20, 50);
                     doc.setFont('helvetica', 'normal');
                     doc.text(`${prestamo.alumno}`, 40, 50);
 
-                    // Datos de grado y grupo
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Grado:`, 20, 60);
                     doc.setFont('helvetica', 'normal');
@@ -69,13 +67,11 @@ export default function Prestamos_Vespertino() {
                     doc.setFont('helvetica', 'normal');
                     doc.text(`${prestamo.grupo}`, 38, 70);
 
-                    // Información del libro
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Libro:`, 20, 80);
                     doc.setFont('helvetica', 'normal');
                     doc.text(`${prestamo.libro.titulo}`, 35, 80);
 
-                    // Fechas
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Fecha de Préstamo:`, 20, 90);
                     doc.setFont('helvetica', 'normal');
@@ -86,16 +82,14 @@ export default function Prestamos_Vespertino() {
                     doc.setFont('helvetica', 'normal');
                     doc.text(`${prestamo.fechadevolucion}`, 67, 100);
 
-                    // Persona de Autorización
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Persona de Autorización:`, 20, 110);
                     doc.setFont('helvetica', 'normal');
                     doc.text(`${prestamo.personaAutorizacion}`, 73, 110);
 
-                    // Agregar logo de la escuela
                     const logoWidth = 120; 
                     const logoHeight = 100;
-                    const logoX = (doc.internal.pageSize.getWidth() / 2) - (logoWidth / 2); // Centrar el logo horizontalmente
+                    const logoX = (doc.internal.pageSize.getWidth() / 2) - (logoWidth / 2); 
                     doc.addImage(logo, 'JPEG', logoX, 103, logoWidth, logoHeight);
 
                     doc.save(`${prestamo.alumno}_${prestamo.grado}_${prestamo.grupo}_Prestamo.pdf`);

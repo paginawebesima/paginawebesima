@@ -41,7 +41,7 @@
 }
 
 .boton_guardar{
-    background-color: #4a5bb2;
+    background-color: #05859e;
     color: white;
     cursor: pointer;
     text-transform: uppercase;
@@ -49,6 +49,9 @@
     border: 2px solid #fff;
     padding: 10px;
     
+}
+.boton_guardar:hover{
+    background-color: #0e687c;
 }
 
 .boton_regresar{
