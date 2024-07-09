@@ -25,7 +25,7 @@ export default function PreinscripcionesInformacion({nuevaInformacion}:Preinscri
       })
   return (
     <div id="proceso" className="informacion_inscripciones">
-          {data.map((informacion:{
+          {data?.map((informacion:{
             _id:string,
             titulo:string,
             requerimiento1:string,
