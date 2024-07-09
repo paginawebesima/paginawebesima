@@ -57,7 +57,7 @@ export default function Administrativos() {
       </header>
       <div className="container2">
       </div>
-      {data.map((administrativosInformacion: {
+      {data?.map((administrativosInformacion: {
         _id: string,
         directivo: string,
         cargo: string
