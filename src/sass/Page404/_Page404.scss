@@ -1,4 +1,4 @@
-.imagen10{
+.imagen20{
     max-width: 100%;
     max-height: 100%;
     height: 400px;
@@ -16,6 +16,7 @@
     display: flex;
     text-decoration: none;
     padding: 10px;
+    width: 150px;
     border-radius: 5px;
     text-align: center;
     justify-content: center;
@@ -25,4 +26,8 @@
 
 .boton404:hover {
     background-color: #1b40b2;
+}
+.div_boton404{
+    display: flex;
+    justify-content: center;
 }
