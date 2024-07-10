@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
 import AuthLayout from './layout/AuthLayout';
 import PublicLayout from './layout/PublicLayout';
 import PaginaPrincipal from './views/PaginaPrincipal';
@@ -55,6 +55,7 @@ import ActualizarUsuarios from './views/usuarios/ActualizarUsuarios';
 import InventarioLibros from './views/gestionprestamos/inventario/Inventarios';
 import CrearLibros from './views/gestionprestamos/inventario/CrearLibros';
 import ActualizarLibros from './views/gestionprestamos/inventario/ActualizarLibros';
+import Page404 from './404/Page404';
 
 export default function Router() {
     return (
@@ -110,6 +111,7 @@ export default function Router() {
                     </Route>
                 </Route>
 
+                <Route path='/404' element={<Page404/>}/>
                 <Route element={<BookLayout />}>
                     <Route element={<Gestion/>}index path='/prestamos'/>
                     <Route element={<PrestamosLibros />} path='/prestamos/matutino' />
@@ -122,7 +124,9 @@ export default function Router() {
                     <Route element={<CrearLibros />} path='/crearLibros' />
                     <Route element={<ActualizarLibros />} path='/actualizarLibros/:inventarioId/editar' />
                 </Route>
+                <Route path='*' element={<Navigate to='/404'/>}/>
             </Routes>
+
         </BrowserRouter>
     );
 }
