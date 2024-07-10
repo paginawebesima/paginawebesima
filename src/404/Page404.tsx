@@ -14,6 +14,7 @@ export default function Page404() {
     </header>
     <div className="div_boton404">
     <Link className="boton404" to='/'>Volver al inicio</Link>
+    <p>prueba</p>
     </div>
     <Footer/>
     </div>
