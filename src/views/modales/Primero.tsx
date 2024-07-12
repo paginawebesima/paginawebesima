@@ -19,7 +19,6 @@ export default function Primero() {
                 <div className="modal-content_grado">
                 <h2>Listado de diciplinas a cursar</h2>
                 <h3>Primer Grado</h3>
-                <h2>Prueba</h2>
                 <button className="close-modal_grado" onClick={abrirModal}>
                 Cerrar
             </button>

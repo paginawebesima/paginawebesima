@@ -261,7 +261,7 @@ body.activar-modal{
 .disciplinas_grados{
     background-color: #213981;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -295,6 +295,10 @@ body.activar-modal{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
+    @media(min-width: 768px){
+        margin-bottom: 20px;
+    }
 }
 
 .segundosecundaria{
@@ -326,13 +330,13 @@ body.activar-modal{
     }
 }
 .biblioteca{
-    background-color: #174688;
+    
     color: #fff;
     margin-bottom: 20px;
     img{
         max-width: 100%;
         max-height: 100%;
-        height: 200px;
+        height: 250px;
         width: 100%;
         object-fit: cover;
     }
@@ -354,6 +358,7 @@ body.activar-modal{
 }
 .biblioteca_texto{
     height: 250px;
+    background-color: #174688;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -435,4 +440,10 @@ body.activar-modal{
 
 .oculto{
     display: none;
+}
+.separacion_biblioteca{
+    margin-bottom: 5px;
+    @media(min-width: 768px){
+        margin-bottom: 0;
+    }
 }

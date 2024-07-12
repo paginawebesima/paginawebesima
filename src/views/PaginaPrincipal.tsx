@@ -63,7 +63,11 @@ export default function PaginaPrincipal() {
           <h2 className="texto-centrado">Contamos con los siguiente turnos</h2>
           <div className="turnos">
             <div>
-              <img className="imagen_principal border-elements-image" src="/TurnoMatutino.jpg" alt="Turno Matutino" />
+              <picture>
+                <source srcSet="/TurnoMatutino.webp" type="image/webp" />
+                <source srcSet="/TurnoMatutino.jpg" type="image/jpeg"/>
+                <img className="imagen_principal border-elements-image" src="/TurnoMatutino.jpg" alt="Turno Matutino" loading="lazy"/>
+              </picture>
             </div>
             <div className="horario2 border-elements">
               <div>
@@ -76,7 +80,11 @@ export default function PaginaPrincipal() {
           </div>
           <div className="turnos">
             <div className="imagen-intermedio">
-              <img src="/TurnoIntermedio.jpg" alt="Turno Intermedio" className="border-elements-image2" />
+              <picture>
+                <source srcSet="/TurnoIntermedio.webp" type="image/webp" />
+                <source srcSet="/TurnoIntermedio.jpg" type="image/jpeg"/>
+                <img src="/TurnoIntermedio.jpg" alt="Turno Intermedio" className="border-elements-image2" loading="lazy" />
+              </picture>
             </div>
             <div className="horario1 border-elements1">
               <div>
@@ -89,7 +97,11 @@ export default function PaginaPrincipal() {
           </div>
           <div className="turnos">
             <div>
-              <img src="/TurnoVespertino.jpg" alt="Turno Vespertino" className="border-elements-image"/>
+              <picture>
+                <source srcSet="/TurnoVespertino.webp" type="image/webp" />
+                <source srcSet="/TurnoVespertino.jpg" type="image/jpeg"/>
+                <img src="/TurnoVespertino.jpg" alt="Turno Vespertino" className="border-elements-image" loading="lazy"/>
+              </picture>
             </div>
             <div className="horario2 border-elements">
               <div>
@@ -123,10 +135,10 @@ export default function PaginaPrincipal() {
       </div>
       <div className="centrar-biblioteca">  
       <div className="biblioteca">
-        <div>
+        <div className="separacion_biblioteca">
           <img src="/biblioteca.jpg" alt="Biblioteca Escolar" />
         </div>
-        <div className="biblioteca_texto">
+        <div className="biblioteca_texto border-elements">
           <h3>Contamos con una biblioteca adecuada para ti</h3>
           <Link className="enlace_biblioteca" to='/biblioteca'>Ver</Link>
         </div>
@@ -145,7 +157,11 @@ export default function PaginaPrincipal() {
       <div className="centrar_contenido_calendario">
       <div className="contenido_calendario">
         <h2 className="ciclo_escolar">Calendario escolar 2024 - 2025</h2>
-        <img className="calendarioescolar" src="/Calendario_Escolar.jpeg" alt="Calendario Escolar" />
+              <picture>
+                <source srcSet="/Calendario_Escolar.webp" type="image/webp" />
+                <source srcSet="/Calendario_Escolar.jpeg" type="image/jpeg"/>
+                <img className="calendarioescolar" src="/Calendario_Escolar.jpeg" alt="Calendario Escolar" loading="lazy"/>
+              </picture>
       </div>
       </div>
       <Footer />
