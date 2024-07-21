@@ -1,0 +1,43 @@
+.Telefono_Actual{
+    display: flex;
+    flex-direction: column;
+    label{
+        font-size: 1rem;
+    }
+    span{
+        font-weight: bold;
+    }
+}
+.formulario_actualizar_tel{
+    padding: 30px;
+}
+
+.formulario_aceptar{
+    width: 100%;
+}
+.boton_telefono{
+    background-color: #e91919;
+    border-radius: 8px;
+}
+.boton_telefono:hover{
+    background-color: #bb1010;
+}
+.actualizar_telefono{
+    background-color: #cc6402;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #cc6402;
+    width: 50px;
+}
+.actualizar_telefono:hover{
+    background-color: #a14d0b;
+}
+.tabla_telefono{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}

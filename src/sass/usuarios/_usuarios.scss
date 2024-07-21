@@ -1,0 +1,60 @@
+.eliminar{
+    background-color: #e91919;
+    border-radius: 5px;
+    border: 1px solid #e91919;
+}
+.eliminar:hover{
+    background-color: #bb1010;
+}
+.eliminar_separacion{
+    margin-left: 10px;
+}
+.actualizar_separacion{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.actualizar{
+    background-color: #cc6402;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #cc6402;
+}
+.actualizar:hover{
+    background-color: #a14d0b;
+}
+.Usuarios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlace_eliminar{
+    text-decoration: none;
+}
+
+.elemento_tabla{
+    font-weight: lighter;
+}
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.botones_flex_usuarios{
+    display: flex;
+}
+.tabla_usuarios{
+    margin: 0 30px;
+}

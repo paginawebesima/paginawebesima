@@ -1,0 +1,155 @@
+.imagen2 {
+    max-width: 100%;
+    max-height: 100%;
+    height: 400px;
+    background-position: center 75%;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url(/IniciarSesion.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    margin: 0px 40px 40px 40px;
+}
+
+.image-container {
+    width: 30%;
+}
+
+.logo-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.form-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.mail {
+    flex: 1;
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    border: 2px solid #213981;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    background-image: url('mail-login.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.password-input {
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+
+.password {
+    flex: 1;
+    width: 100%;
+    padding: 10px 10px 10px 40px;
+    box-sizing: border-box;
+    border: 2px solid #213981;
+    border-radius: 10px;
+    font-size: 1em;
+    outline: none;
+    background-image: url('padlock-login.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.input.password::-ms-reveal,
+.input.password::-webkit-contacts-auto-fill-button,
+.input.password::-webkit-credentials-auto-fill-button {
+    display: none;
+}
+
+.button {
+    display: flex;
+    background-color: #213981;
+    color: #ffffff;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 40%;
+    margin: 20px auto 0;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #152453;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.forgot-password-link {
+    margin-top: 20px; 
+    text-align: center; 
+    font-size: 0.9em; 
+    color: #b8b4b4;
+    text-decoration: none;
+    display: block; 
+    transition: color 0.3s ease; 
+  }
+  
+  .forgot-password-link:hover {
+    color: #213981;
+  }
+
+@media only screen and (max-width: 768px) {
+    .imagen2 {
+        height: 200px;
+    }
+
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 80%;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+
+    .input,
+    .button {
+        width: 100%;
+    }
+}

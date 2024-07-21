@@ -1,0 +1,118 @@
+.footer{
+    display: flex;
+    background-color: #213981;
+    color: white;
+    flex-direction: column;
+   p{
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+   }
+}
+.texto-izquierda{
+    font-size: 1rem;
+    text-align: center;
+    
+    padding-bottom: 15px;
+    @media (min-width:768px) {
+        text-align: left;
+        margin-left: 40px;
+        padding-top: 0;
+        
+    }
+}
+
+.imagenfooter{
+    border-radius: 100%;
+    width: 60px;
+    max-width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    @media(min-width: 768px){
+
+        margin-left: 40px;
+        margin-top: 10px;
+    }
+}
+
+.iconos{
+    width: 35px;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media(min-width: 768px){
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+.facebookicono{
+    @media(min-width: 768px){
+        padding-top: 4px;
+    }
+}
+.instagram_icono{
+    @media(min-width: 768px){
+        padding-top: 4px;
+    }
+}
+.twitter_icono{
+    @media(min-width: 768px){
+        padding-top: 4px;
+    }
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media(min-width:768px){
+        
+        padding-right: 40px;
+        flex-direction: row;
+    }
+}
+
+.flexdireccion{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media(min-width: 768px){
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        padding-top: 30px;
+        justify-content: space-between;
+    }
+}
+
+.numero_contacto{
+    font-size: 1rem;
+    
+    @media(min-width: 768px){
+        text-align: right;
+       padding-right: 45px;
+       padding-top: 0;
+        margin: 0;
+    }
+}
+.informacionescuela{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    @media(min-width:768px){
+        flex-direction: row;
+        text-align: left;
+    }
+    .texto_informacion{
+        padding-top: 8px;
+        padding-left: 10px;
+    }
+}
+.texto_informacion{
+    p{
+        font-size: 0.9rem;
+        margin: 3px;
+    }
+}

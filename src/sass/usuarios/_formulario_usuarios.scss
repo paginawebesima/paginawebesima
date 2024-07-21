@@ -1,0 +1,140 @@
+.formulario_email{
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+.formulario_input{
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #213981;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.texto_usuarios{
+    text-align: center;
+    margin-top: 40px;
+    
+}
+
+.separacion_usuarios{
+    margin-top: 60px;
+    margin-bottom: 60px;
+    a{
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+    }
+}
+
+.enlaces_usuarios{
+    padding: 30px;
+}
+.prestamo_turno{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.separacion_abajo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+.boton_agregar_usuarios{
+    background-color: #049116;
+    color: white;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boton_agregar_usuarios:hover{
+    background-color: #0a7118;
+}
+.enlace_crear{
+    display: flex;
+    justify-content: center;
+}
+
+.div_formulario {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    background-color: #fff;
+    width: 60%;
+    border-radius: 10px;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
+
+@media(min-width: 768px) {
+    .formulario {
+        width: 30%;
+    }
+}
+
+.formulario_flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formulario_input {
+    padding: 10px 10px 10px 40px;
+    border: 2px solid #213981;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.boton_regresar {
+    background-color: #194edc;
+    color: #fff;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-left: 30px;
+    border-radius: 5px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton_regresar:hover {
+    background-color: #1b40b2;
+}
+
+.texto_prestamo {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.prestamo_turno {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.enlaces_prestamos {
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}

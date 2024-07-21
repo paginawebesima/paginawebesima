@@ -1,0 +1,194 @@
+.imagen3{
+    max-width: 100%;
+    max-height: 100%;
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-image:
+    linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
+     url(/Preinscripciones.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.texto_informativo1{
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.informacion_inscripciones{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    h2{
+        font-size: 1.2rem;
+    }
+    li{
+        font-size: 1rem;
+    }
+    
+    
+    @media(min-width: 768px){
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(2,1fr);
+        gap: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+}
+
+.informacion{
+    background-color: #fff;
+    border: 3px solid #9bb9dd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    li{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    @media(min-width: 768px){
+        display: flex;
+        border-radius: 10px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        text-align: left;
+        border-radius: 20px;
+        justify-content: center;
+        
+    }
+}
+.separacion_arriba{
+    
+    padding-top: 30px;
+    @media(min-width: 768px){
+        padding-top: 0;
+    }
+}
+
+
+.margen_1{
+    @media(min-width: 768px){
+        margin-bottom: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+.margen_2{
+    @media(min-width: 768px){
+        margin-left: 0;
+    }
+}
+.Preinscripciones_Iconos{
+    width: 50px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-bottom: 0;
+    }
+}
+.contenido_centrado{
+    display: flex;
+    justify-content: center;
+    @media(min-width: 768px){
+        flex-basis: 25%;
+    }
+}
+
+.informacion_contenido{
+    @media(min-width: 768px){
+        flex-basis: 75%;
+    }
+}
+.informacion_contenido_papeleria{
+    padding-bottom: 20px;
+}
+.examen{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.papeleria{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.horario{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+.resultados{
+    text-align: center;
+    @media(min-width: 768px){
+        text-align: left;
+    }
+}
+
+.titulo_papeleria{
+
+    margin-bottom: 20px;
+    @media(min-width: 768px){
+        margin-top: 15px;
+    margin-bottom: 10px;
+    }
+}
+.boton_eliminar_preinscripciones{
+    background-color: #e91919;
+    border-radius: 8px;
+    @media(min-width: 768px){
+        margin-right: 15px;
+    }
+}
+.boton_eliminar_preinscripciones:hover{
+    background-color: #bb1010;
+}
+
+.boton_actualizar_preinscripciones{
+    background-color: #cc6402;
+    @media(min-width: 768px){
+        display: flex;
+        align-items: center;
+        padding: 6px 20px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid #cc6402;
+        margin-right: 15px;
+    }
+}
+.boton_actualizar_preinscripciones:hover{
+    background-color: #a14d0b;
+}
+
+.boton_activar{
+    background-color: #049116;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.boton_activar:hover{
+    background-color: #0a7118;
+}
+.boton_desactivar{
+    background-color: #e91919;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.boton_desactivar:hover{
+    background-color: #bb1010;
+}
