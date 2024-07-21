@@ -24,7 +24,7 @@ export default function Login() {
   const navigate = useNavigate();
   const { mutate } = useMutation({
     mutationFn: authenticateUser,
-    onError: (error: unknown) => {
+    onError: (error: any) => {
       if (error instanceof Error) {
         toast.error(error.message);
       } else {

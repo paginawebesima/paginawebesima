@@ -18,7 +18,7 @@ export default function Register() {
     const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<UserRegistrationForm>({ defaultValues: initialValues });
     const { mutate } = useMutation({
         mutationFn: createAccount,
-        onError: (error: unknown) => {
+        onError: (error: any) => {
             if (error instanceof Error) {
                 toast.error(error.message);
             } else {

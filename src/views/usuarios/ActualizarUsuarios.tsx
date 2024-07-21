@@ -25,7 +25,7 @@ export default function ActualizarUsuarios() {
             toast.success('Usuario actualizado correctamente');
             queryClient.invalidateQueries('Usuarios');
         },
-        onError: (error: unknown) => {
+        onError: (error: any) => {
             if (error instanceof Error) {
                 toast.error(error.message);
             } else {

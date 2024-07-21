@@ -11,7 +11,7 @@ export default function RecoverPasswordView() {
 
     const {mutate} = useMutation({
         mutationFn: recoverPassword,
-        onError: (error: unknown) => {
+        onError: (error: any) => {
             if (error instanceof Error) {
               toast.error(error.message);
             } else {

@@ -1,4 +1,4 @@
-import { useForm, UseFormRegister } from 'react-hook-form';
+/*import { useForm, UseFormRegister } from 'react-hook-form';
 import { UserRegistrationForm, userSchema } from '../../types';
 import { useMutation } from 'react-query';
 import { crearUsuarios } from '../../api/api';
@@ -22,17 +22,20 @@ export default function Usuario({ register }: UsuarioProps) {
 
     const { mutate } = useMutation({
         mutationFn: async (formData: UserRegistrationForm) => {
+            // Validate using Zod schema before sending data to backend
             const result = userSchema.safeParse(formData);
 
             if (!result.success) {
+                // Handle validation errors
                 const errorMessage = result.error.errors[0].message;
                 throw new Error(errorMessage);
             }
 
+            // If validation is successful, proceed with API call
             const data = await crearUsuarios(formData);
             return data;
         },
-        onError: (error: unknown) => {
+        onError: (error: any) => {
             if (error instanceof Error) {
                 toast.error(error.message);
             } else {
@@ -142,4 +145,4 @@ export default function Usuario({ register }: UsuarioProps) {
             </form>
         </div>
     );
-}
+}*/

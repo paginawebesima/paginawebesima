@@ -15,7 +15,7 @@ export default function ForgotPasswordView() {
 
     const {mutate} = useMutation({
         mutationFn: forgotPassword,
-        onError: (error: unknown) => {
+        onError: (error: any) => {
             if (error instanceof Error) {
               toast.error(error.message);
             } else {
