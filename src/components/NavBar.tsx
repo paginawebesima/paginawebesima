@@ -35,7 +35,14 @@ export default function NavBar() {
   return (
     <>
       <nav className={`header clase2 ${slidebarVisible ? 'hidden' : ''}`}>
-        <Link to="/"><img className="logo" src="/LogoEsima.png" alt="Esima" /></Link>
+        <Link to="/">
+              <picture>
+                <source srcSet="/LogoEsima.webp" type="image/webp" />
+                <source srcSet="/LogoEsima.jpg" type="image/jpeg"/>
+                <img className="logo" src="/LogoEsima.png" alt="Esima"  loading="lazy"/>
+              </picture>
+        
+        </Link>
         <Link to="/preinscripciones" className={`enlace ${location.pathname === "/preinscripciones" ? "active" : ""}`}>Preinscripciones</Link>
         <Link to="/talleres" className={`enlace ${location.pathname === "/talleres" ? "active" : ""}`}>Talleres</Link>
         <Link to="/graduaciones" className={`enlace ${location.pathname === "/graduaciones" ? "active" : ""}`}>Clausura</Link>

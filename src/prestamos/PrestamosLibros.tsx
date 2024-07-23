@@ -5,6 +5,7 @@ import { eliminarPrestamo, obtenerPrestamos } from "../api/api"
 import { Link } from "react-router-dom"
 import { ToastContainer, toast } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
+import { convertirFecha } from "./date/date";
 export default function PrestamosLibros() {
     const { data } = useQuery({
         queryKey: ['Prestamos'],
@@ -79,12 +80,12 @@ export default function PrestamosLibros() {
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Fecha de Préstamo:`, 20, 90);
                     doc.setFont('helvetica', 'normal');
-                    doc.text(`${prestamo.fechaprestamo}`, 63, 90);
+                    doc.text(`${convertirFecha(prestamo.fechaprestamo)}`, 63, 90);
 
                     doc.setFont('helvetica', 'bold');
                     doc.text(`Fecha de Devolución:`, 20, 100);
                     doc.setFont('helvetica', 'normal');
-                    doc.text(`${prestamo.fechadevolucion}`, 67, 100);
+                    doc.text(`${convertirFecha(prestamo.fechadevolucion)}`, 67, 100);
 
                     // Persona de Autorización
                     doc.setFont('helvetica', 'bold');
@@ -98,7 +99,7 @@ export default function PrestamosLibros() {
                     const logoX = (doc.internal.pageSize.getWidth() / 2) - (logoWidth / 2); // Centrar el logo horizontalmente
                     doc.addImage(logo, 'JPEG', logoX, 103, logoWidth, logoHeight);
 
-                    doc.save(`${prestamo.alumno}_${prestamo.grado}_${prestamo.grupo}_Prestamo.pdf`);
+                    doc.save(`Prestamo_${prestamo.alumno}_${prestamo.fechaprestamo}.pdf`);
                 }
             })
         }
