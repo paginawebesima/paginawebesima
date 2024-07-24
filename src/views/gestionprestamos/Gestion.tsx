@@ -13,6 +13,9 @@ export default function Gestion() {
         <div className="box1_clausura">
           <Link className="enlace_eliminar enlaces_prestamos" to='/prestamos/inventario'>Inventario</Link>
         </div>
+        <div className="box1_clausura">
+          <Link className="enlace_eliminar enlaces_prestamos" to='/prestamos/administracion'>Administracion de la biblioteca</Link>
+        </div>
       </div>
     </div>
   )

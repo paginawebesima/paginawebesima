@@ -31,3 +31,84 @@
     display: flex;
     justify-content: center;
 }
+
+.administracion_container {
+    text-align: center;
+}
+
+.administracion_container_children {
+    border: 3px solid #9bb9dd;
+    margin: 30px;
+    background-color: #fff;
+    padding: 30px;
+}
+.boton_actualizar_administracion{
+    text-decoration: none;
+    background-color: #cc6402;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #cc6402;
+    width: 70px;
+}
+.boton_actualizar_administracion:hover{
+    background-color: #a14d0b;
+}
+.boton_eliminar_administracion{
+    text-decoration: none;
+    background-color: #e91919;
+    display: flex;
+    align-items: center;
+    padding: 6px 20px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #e91919;
+    width: 111px;
+}
+.boton_eliminar_administracion:hover{
+    background-color: #bb1010
+}
+@media (min-width: 768px) {
+    .administracion_container_children{
+        border-radius: 10px;
+    }
+    .administracion_informacion{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+    }
+    .administracion_container_left{
+        text-align: left;
+        padding-left: 90px;
+    }
+    .administracion_persona_children{
+        text-align: left;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .administracion_persona{
+        text-align: right;
+        margin-right: 10px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+
+.div_botones_administracion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+@media (min-width: 768px) {
+    .div_botones_administracion{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+

@@ -166,3 +166,29 @@ export const SchemaAdministrativosEsima=z.array(
 
 export type TAdministrativos = z.infer<typeof InformacionAdministrativos>
 export type EsimaAdministrativosFormData = Pick<TAdministrativos,'directivo'|'cargo'>
+
+
+export const InformacionPrestamoSalon=z.object({
+    _id:z.string(),
+    persona:z.string(),
+    grupo:z.string(),
+    fecha:z.string(),
+    hora_inicio:z.string(),
+    hora_final:z.string(),
+    motivo:z.string(),
+})
+
+export const SchemaInformacionPrestamoSalon=z.array(
+    InformacionPrestamoSalon.pick({
+        _id:true,
+        persona:true,
+       grupo:true,
+    fecha:true,
+    hora_inicio:true,
+    hora_final:true,
+    motivo:true,
+    })
+)
+
+export type TSalonPrestamo = z.infer<typeof InformacionPrestamoSalon>
+export type SalonPrestamoFormData = Pick<TSalonPrestamo,'persona'|'grupo'|'fecha'|'hora_inicio'|'hora_final'|'motivo'>
