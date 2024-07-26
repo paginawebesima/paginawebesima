@@ -30,7 +30,7 @@ export default function DetallesModalTarea() {
         onError: (error: any) => {
             toast.error(error.message);
         },
-        onSuccess: (data, variables) => {
+        onSuccess: (_data, variables) => {
             toast.success('Estado actualizado con éxito');
             queryClient.invalidateQueries(['tareas']);
             queryClient.setQueryData(['tarea', tareaId], (oldData: any) => {
