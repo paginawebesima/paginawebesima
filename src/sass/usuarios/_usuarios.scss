@@ -1,19 +1,25 @@
-.eliminar{
+.eliminar {
     background-color: #e91919;
     border-radius: 5px;
     border: 1px solid #e91919;
+    color: white;
+    padding: 6px 10px;
 }
-.eliminar:hover{
+
+.eliminar:hover {
     background-color: #bb1010;
 }
-.eliminar_separacion{
+
+.eliminar_separacion {
     margin-left: 10px;
 }
-.actualizar_separacion{
+
+.actualizar_separacion {
     margin-left: 10px;
     margin-right: 10px;
 }
-.actualizar{
+
+.actualizar {
     background-color: #cc6402;
     display: flex;
     align-items: center;
@@ -22,50 +28,60 @@
     border-radius: 5px;
     border: 1px solid #cc6402;
 }
-.actualizar:hover{
+
+.actualizar:hover {
     background-color: #a14d0b;
 }
-.Usuarios{
+
+.Usuarios {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.enlace_eliminar{
+.enlace_eliminar {
     text-decoration: none;
 }
 
-.elemento_tabla{
+.elemento_tabla {
     font-weight: lighter;
 }
+
 .table-container {
     width: 100%;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 600px;
 }
+
 th, td {
     padding: 8px 12px;
     border: 1px solid #ddd;
     text-align: left;
 }
 
-.botones_flex_usuarios{
+.botones_flex_usuarios {
     display: flex;
     flex-wrap: wrap;
 }
-.tabla_usuarios{
+
+.tabla_usuarios {
     margin: 0 30px;
 }
 
 @media (max-width: 768px) {
     .eliminar, .actualizar {
-        width: 100%;
         text-align: center;
         padding: 10px;
         font-size: 1em;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .eliminar_separacion, .actualizar_separacion {
@@ -80,21 +96,21 @@ th, td {
     }
 
     .botones_flex_usuarios {
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
     }
 
-    .eliminar, .actualizar {
-        flex: 1; 
-        margin-top: 10px;
-    }
-
     .tabla_usuarios {
-        margin: 0; 
-        padding: 0; 
+        margin: 0;
+        padding: 0;
     }
 
     table, th, td {
         font-size: 0.9em;
+    }
+
+    .boton_volver {
+        width: 100%;
+        margin-left: 0;
     }
 }
