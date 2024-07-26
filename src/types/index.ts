@@ -192,3 +192,29 @@ export const tareaResumenSchema = tareaSchema.pick({
 export type Tarea = z.infer<typeof tareaSchema>;
 export type DatosFormularioTarea = Pick<Tarea, 'nombre' | 'descripcion' | 'estado'>;
 export type ResumenTarea = z.infer<typeof tareaResumenSchema>;
+
+
+export const InformacionPrestamoSalon=z.object({
+    _id:z.string(),
+    persona:z.string(),
+    grupo:z.string(),
+    fecha:z.string(),
+    hora_inicio:z.string(),
+    hora_final:z.string(),
+    motivo:z.string(),
+})
+
+export const SchemaInformacionPrestamoSalon=z.array(
+    InformacionPrestamoSalon.pick({
+        _id:true,
+        persona:true,
+       grupo:true,
+    fecha:true,
+    hora_inicio:true,
+    hora_final:true,
+    motivo:true,
+    })
+)
+
+export type TSalonPrestamo = z.infer<typeof InformacionPrestamoSalon>
+export type SalonPrestamoFormData = Pick<TSalonPrestamo,'persona'|'grupo'|'fecha'|'hora_inicio'|'hora_final'|'motivo'>

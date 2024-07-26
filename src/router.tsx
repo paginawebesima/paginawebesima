@@ -58,6 +58,9 @@ import ActualizarLibros from './views/gestionprestamos/inventario/ActualizarLibr
 import Tareas from './views/tareas/Tareas';
 import AgregarTareaModal from './views/tareas/AgregarTareaModal';
 import Page404 from './404/Page404';
+import GestionSalonBiblioteca from './views/gestionprestamos/GestionSalonBiblioteca';
+import FormularioSalon from './views/gestionprestamos/FormularioSalon';
+import ActualizarAdministracionData from './views/gestionprestamos/ActualizarAdministracionData';
 
 export default function Router() {
     return (
@@ -127,6 +130,9 @@ export default function Router() {
                     <Route element={<InventarioLibros />} path='/prestamos/inventario' />
                     <Route element={<CrearLibros />} path='/crearLibros' />
                     <Route element={<ActualizarLibros />} path='/actualizarLibros/:inventarioId/editar' />
+                    <Route element={<GestionSalonBiblioteca/>} path='/prestamos/administracion'/>
+                    <Route element={<FormularioSalon/>} path='/prestamos/crearAdministracion'/>
+                    <Route element={<ActualizarAdministracionData/>} path='/prestamos/:prestamoSalonId/editar'/>
                 </Route>
                 <Route path='*' element={<Navigate to='/404'/>}/>
             </Routes>
