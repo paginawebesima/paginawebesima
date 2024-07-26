@@ -24,6 +24,10 @@ export default function OptionsPanel() {
               <p>Información directivos</p>
               <img src="admins.svg" alt="Información Directivos"></img>
             </div>
+            <div className="box">
+              <p>Tareas</p>
+              <img src="tareas.svg" alt="Tareas"></img>
+            </div>
           </div>
         </div>
         

@@ -1,6 +1,6 @@
-import { isAxiosError } from "axios"
+import axios, { isAxiosError } from "axios"
 import api from "../lib/axios"
-import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema, EsimaClausuraFormData, TClausura, TProceso, EsimaAdministrativosFormData, TAdministrativos, User, LibrosFormData, TInventario } from "../types"
+import { FormTelefono, PreinscripcionesEsima, PrestamosFormData, RecoverPassword, TPrestamos, Telefono3, UserLoginForm, UserRegistrationForm, UserRequestCodeForm, ForgotPasswordForm, preinscripciones2, telefonoshema, ConfirmToken, NewPasswordForm, userSchema, EsimaClausuraFormData, TClausura, TProceso, EsimaAdministrativosFormData, TAdministrativos, User, LibrosFormData, TInventario, DatosFormularioTarea, EstadoTarea, Tarea } from "../types"
 
 //Usuarios
 export async function obtenerUsuarios() {
@@ -643,5 +643,75 @@ export async function desactivarProcesoAPI(id:TProceso['_id']) {
         if (isAxiosError(error) && error.response) {
             throw new Error(error.response.data.error)
         }
+    }
+}
+
+export async function crearTarea(formularioDatos: DatosFormularioTarea) {
+    try {
+        const { data } = await api.post('/crearTareas', formularioDatos)
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+
+export async function obtenerTareas() {
+    try {
+        const url = '/obtenerTareas';
+        const { data } = await api.get(url);
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+        throw error;
+    }
+}
+
+export async function obtenerTareaById(tareaId: string) {
+    try {
+        const { data } = await api.get(`/obtenerTareas/${tareaId}`);
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+
+export async function actualizarTarea({ tareaId, formularioDatos }: { tareaId: string, formularioDatos: DatosFormularioTarea }) {
+    try {
+        const { data } = await api.put<Tarea>(`/actualizarTareas/${tareaId}`, formularioDatos);
+        
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+
+export async function eliminarTarea(tareaId: string) {
+    try {
+        const { data } = await api.delete<string>(`/eliminarTareas/${tareaId}`);
+        return data;
+    } catch (error) {
+        if (axios.isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+    }
+}
+
+export async function actualizarEstado({ tareaId, estado }: { tareaId: string; estado: EstadoTarea }) {
+    try {
+        const { data } = await api.post<string>(`/actualizarTareas/${tareaId}/estado`, { estado });
+        return data;
+    } catch (error) {
+        if (isAxiosError(error) && error.response) {
+            throw new Error(error.response.data.error);
+        }
+        throw new Error('An unexpected error occurred');
     }
 }

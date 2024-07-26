@@ -55,6 +55,8 @@ import ActualizarUsuarios from './views/usuarios/ActualizarUsuarios';
 import InventarioLibros from './views/gestionprestamos/inventario/Inventarios';
 import CrearLibros from './views/gestionprestamos/inventario/CrearLibros';
 import ActualizarLibros from './views/gestionprestamos/inventario/ActualizarLibros';
+import Tareas from './views/tareas/Tareas';
+import AgregarTareaModal from './views/tareas/AgregarTareaModal';
 import Page404 from './404/Page404';
 
 export default function Router() {
@@ -87,6 +89,8 @@ export default function Router() {
                 <Route element={<AuthLayout />}>
                     <Route element={<Register />} path="/register" />
                     <Route element={<Usuarios />} path="/usuarios" />
+                    <Route element={<Tareas />} path="/tareas" />
+                    <Route element={<AgregarTareaModal />} path="/tareas/crearTareas" />
                     <Route element={<ActualizarUsuarios />} path="/actualizarUsuarios/:id" />
                     <Route element={<Panel />} path="/panel">
                         <Route element={<OptionsPanel />} index />

@@ -166,3 +166,29 @@ export const SchemaAdministrativosEsima=z.array(
 
 export type TAdministrativos = z.infer<typeof InformacionAdministrativos>
 export type EsimaAdministrativosFormData = Pick<TAdministrativos,'directivo'|'cargo'>
+
+export const estadoTareaSchema = z.enum(["Pendiente", "En Espera", "En Proceso", "En Revision", "Completado"]);
+export type EstadoTarea = z.infer<typeof estadoTareaSchema>;
+
+export const tareaSchema = z.object({
+    _id: z.string(),
+    nombre: z.string(),
+    descripcion: z.string(),
+    estado: estadoTareaSchema,
+    completadoPor: z.array(z.object({
+        _id: z.string(),
+        usuario: userSchema,
+        estado: estadoTareaSchema
+    }))
+});
+
+export const tareaResumenSchema = tareaSchema.pick({
+    _id: true,
+    nombre: true,
+    descripcion: true,
+    estado: true
+});
+
+export type Tarea = z.infer<typeof tareaSchema>;
+export type DatosFormularioTarea = Pick<Tarea, 'nombre' | 'descripcion' | 'estado'>;
+export type ResumenTarea = z.infer<typeof tareaResumenSchema>;

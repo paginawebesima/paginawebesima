@@ -54,7 +54,47 @@ th, td {
 
 .botones_flex_usuarios{
     display: flex;
+    flex-wrap: wrap;
 }
 .tabla_usuarios{
     margin: 0 30px;
+}
+
+@media (max-width: 768px) {
+    .eliminar, .actualizar {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 1em;
+    }
+
+    .eliminar_separacion, .actualizar_separacion {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+
+    .Usuarios {
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    .botones_flex_usuarios {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .eliminar, .actualizar {
+        flex: 1; 
+        margin-top: 10px;
+    }
+
+    .tabla_usuarios {
+        margin: 0; 
+        padding: 0; 
+    }
+
+    table, th, td {
+        font-size: 0.9em;
+    }
 }
