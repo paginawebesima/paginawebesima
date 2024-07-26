@@ -37,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: auto; /* Aseguramos que el contenedor permita desplazamiento horizontal */
+    overflow-x: auto;
 }
 
 .generarPDF {
@@ -81,14 +81,14 @@
 
 .table-container {
     width: 100%;
-    overflow-x: auto; /* Aseguramos que el contenedor permita desplazamiento horizontal */
-    -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos móviles */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px; /* Aseguramos un ancho mínimo para la tabla */
+    min-width: 600px;
 }
 
 th,
