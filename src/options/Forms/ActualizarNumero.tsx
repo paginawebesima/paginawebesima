@@ -21,15 +21,14 @@ export default function ActualizarNumero() {
          <tr>
             <th className="elemento_tabla">{telefono.telefono}</th>
             <div>
-            <Link className="enlace_eliminar actualizar_telefono" to={`/panel/informacion/actualizar/${telefono._id}/editar`}>Editar</Link>
+            <Link className="enlace_eliminar actualizar_telefono" 
+            to={`/panel/informacion/actualizar/${telefono._id}/editar`}>Editar</Link>
             </div>
           </tr>
           ))}
         </tbody>
-        
       </table>
       </div>
-
     <Link className="boton_regresar enlace_eliminar" to='/panel/informacion'>Regresar</Link>
     </>
   )

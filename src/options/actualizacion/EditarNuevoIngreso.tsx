@@ -2,8 +2,6 @@ import { useQuery } from "react-query";
 import { Navigate, useParams } from "react-router-dom"
 import { obtenerRequerimientoPorID } from "../../api/api";
 import ActualizarNuevoIngreso from "../Forms/ActualizarNuevoIngreso";
-
-
 export default function EditarNuevoIngreso() {
     const params= useParams();
     const preinscripcionesId=params.preinscripcionesId!

@@ -156,13 +156,13 @@
 
 .boton_actualizar_preinscripciones{
     background-color: #cc6402;
+    color: white;
+    padding: 6px 20px;
+    border: 1px solid #cc6402;
+    border-radius: 5px;
     @media(min-width: 768px){
         display: flex;
         align-items: center;
-        padding: 6px 20px;
-        color: white;
-        border-radius: 5px;
-        border: 1px solid #cc6402;
         margin-right: 15px;
     }
 }
