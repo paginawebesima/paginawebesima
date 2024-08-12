@@ -17,11 +17,22 @@ export default function Segundo() {
     <div className="modal_grado">
         <div onClick={abrirModal} className="overlay_grado"></div>
         <div className="modal-content_grado">
+        <button className="close-modal_clausura" onClick={abrirModal}>
+                X
+        </button>
         <h2>Listado de diciplinas a cursar</h2>
         <h3>Segundo Grado</h3>
-        <button className="close-modal_grado" onClick={abrirModal}>
-        Cerrar
-    </button>
+        <div>
+        <li>Español</li>
+        <li>Inglés</li>
+        <li>Artes</li>
+        <li>Matemáticas</li>
+        <li>Física</li>
+        <li>Historia</li>
+        <li>Formacion Civica y Ética</li>
+        <li>Tecnología</li>
+        <li>Educación Física</li>
+        </div>
         </div>
     </div>
 )}  

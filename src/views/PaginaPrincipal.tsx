@@ -128,7 +128,7 @@ export default function PaginaPrincipal() {
       </main>
       <div className="disciplinas_grados">
         <div>
-        <h2 className="titulo_disciplinas">Disciplinas a cursar</h2>
+        <h2 className="titulo_disciplinas">Diciplinas a cursar</h2>
         </div>
         <div className="disciplinas">
         <div className="grado">

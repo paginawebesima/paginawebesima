@@ -66,13 +66,12 @@ export default function Biblioteca() {
             <div className='display1'>
                 <div className="main-content">
                     <div className="info-section">
-                        <img ref={infoImageRef} src="Automotriz-img.jpg" alt="Automotriz" className={`info-image ${showImage ? 'hovered' : ''}`} onMouseEnter={() => setShowImage(true)} />
+                        <img ref={infoImageRef} src="biblioteca1.jpeg" alt="Biblioteca" className={`info-image ${showImage ? 'hovered' : ''}`} onMouseEnter={() => setShowImage(true)} />
                         <div ref={infoTextRef} className={`info-text ${showText ? 'hovered' : ''}`} onMouseEnter={() => { setShowText(true); setShowImage(true); }}>
                             <h2 className="h2-taller">Biblioteca</h2>
                             <p className="p-taller">¿Te gusta leer?</p>
-                            <p className="p-taller">Tenemos el lugar adecuado para ti donde puedes conocer un mundo lleno de aventuras a traves de los libros ademas de;</p>
-                            <p className="p-taller">vernir a aprender, jugar y divertirte</p>
-                            <p className="p-taller">Te esperamos!</p>
+                            <p>Tenemos el lugar adecuado para ti, donde puedes conocer un mundo lleno de aventuras a través de los libros, además de venir a aprender, jugar y divertirte.</p>
+                            <p className="p-taller">¡Te esperamos!</p>
                             <p className="p-taller">Biblioteca Esima</p>
                             
 

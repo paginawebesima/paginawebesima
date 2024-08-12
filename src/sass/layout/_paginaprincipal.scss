@@ -250,6 +250,9 @@ body.activar-modal{
     max-width: 600px;
     min-width: 400px;
     min-height: 200px;
+    @media(min-width: 768px){
+        padding-bottom: 35px;
+    }
 }
 
 .close-modal_grado {
