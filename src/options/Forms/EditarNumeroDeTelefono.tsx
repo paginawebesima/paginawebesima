@@ -3,8 +3,6 @@ import { Navigate, useParams } from "react-router-dom"
 import { obtenerTelefonoById } from "../../api/api";
 import ActualizacionNuevoIngreso from "./ActualizacionNuevoIngreso";
 
-
-
 export default function EditarNumeroDeTelefono() {
     const params = useParams();
     const telefonoId = params.telefonoId!
@@ -18,7 +16,6 @@ export default function EditarNumeroDeTelefono() {
   return (
     <div>
       <ActualizacionNuevoIngreso data={data} telefonoId={telefonoId}/>
-      
     </div>
   )
 }

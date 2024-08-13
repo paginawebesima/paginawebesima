@@ -250,6 +250,9 @@ body.activar-modal{
     max-width: 600px;
     min-width: 400px;
     min-height: 200px;
+    @media(min-width: 768px){
+        padding-bottom: 35px;
+    }
 }
 
 .close-modal_grado {
@@ -446,4 +449,18 @@ body.activar-modal{
     @media(min-width: 768px){
         margin-bottom: 0;
     }
+}
+.conoce_mi_escuela{
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    column-gap: 10px;
+    padding-left: 10px;
+}
+.video_institucional{
+    height: 400px;
+}
+.titulo_conoce_mi_escuela{
+    text-align: center;
+    margin-bottom: 40px;
 }
