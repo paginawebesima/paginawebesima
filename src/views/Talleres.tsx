@@ -13,67 +13,52 @@ export default function Talleres() {
       <div className="display">
         <div className="container1">
           <div className="card">
-            <img src="Carpintería.jpg" alt="Carpintería"></img>
+            <img src="Diseño-Técnico.jpg" alt="Diseño Técnico"></img>
             <div className="overlay">
-              <h3>Carpintería</h3>
-              <a href="/carpinteria"><button>Ver</button></a>
-              
+              <h2>Diseño Técnico</h2>
+              <a href="/diseño-tecnico"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
-            <img src="Ofimática.jpg" alt="Ofimática"></img>
+            <img src="Administración-Contable.jpg" alt="Ofimática"></img>
             <div className="overlay">
-              <h3>Ofimática</h3>
-              <a href="/ofimatica"><button>Ver</button></a>
+              <h2>Administración Contable</h2>
+              <a href="/administracion-contable"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Cocina.jpg" alt="Cocina"></img>
             <div className="overlay">
-              <h3>Cocina</h3>
+              <h2>Cocina</h2>
               <a href="/cocina"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
-            <img src="Electrónica.jpg" alt="Electrónica"></img>
+            <img src="Corte-Y-Confección.jpg" alt="Corte Y Confección"></img>
             <div className="overlay">
-              <h3>Electrónica</h3>
-              <a href="/electronica"><button>Ver</button></a>
+              <h2>Corte Y Confección</h2>
+              <a href="/corte-y-confeccion"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
-            <img src="Mecánica.jpg" alt="Mecánica"></img>
+            <img src="Carpintería.jpg" alt="Carpintería"></img>
             <div className="overlay">
-              <h3>Mecánica</h3>
-              <a href="/mecanica"><button>Ver</button></a>
-            </div>
-          </div>
-          <div className="card">
-            <img src="Automotriz.jpg" alt="Automotriz"></img>
-            <div className="overlay">
-              <h3>Automotriz</h3>
-              <a href="/automotriz"><button>Ver</button></a>
-            </div>
-          </div>
-          <div className="card">
-            <img src="Dibujo.jpg" alt="Dibujo"></img>
-            <div className="overlay">
-              <h3>Dibujo</h3>
-              <a href="/dibujo"><button>Ver</button></a>
-            </div>
-          </div>
-          <div className="card">
-            <img src="Soldadura.jpg" alt="Soldadura"></img>
-            <div className="overlay">
-              <h3>Soldadura</h3>
-              <a href="/soldadura"><button>Ver</button></a>
+              <h2>Carpintería</h2>
+              <a href="/carpinteria"><button>Ver</button></a>
             </div>
           </div>
           <div className="card">
             <img src="Electricidad.jpg" alt="Electricidad"></img>
             <div className="overlay">
-              <h3>Electricidad</h3>
+              <h2>Electricidad</h2>
               <a href="/electricidad"><button>Ver</button></a>
+            </div>
+          </div>
+          <div className="card">
+            <img src="Turismo.jpg" alt="Turismo"></img>
+            <div className="overlay">
+              <h2>Turismo</h2>
+              <a href="/turismo"><button>Ver</button></a>
             </div>
           </div>
         </div>

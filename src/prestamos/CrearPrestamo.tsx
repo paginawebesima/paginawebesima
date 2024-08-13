@@ -36,7 +36,7 @@ export default function CrearPrestamo() {
          pauseOnHover={false}
             pauseOnFocusLoss={false}
         />
-        <h2 className="texto_prestamo">Añadir prestamo turno matutino</h2>
+        <h2 className="texto_prestamo">Añadir préstamo turno matutino</h2>
         <div className="div_formulario">
         <form className="formulario" noValidate onSubmit={handleSubmit(handleForm)}>
             <Prestamo

@@ -5,13 +5,11 @@ import PaginaPrincipal from './views/PaginaPrincipal';
 import Preinscripciones from './views/Preinscripciones';
 import Talleres from './views/Talleres';
 import TallerCarpinteria from './views/talleres/Carpinteria';
-import TallerOfimatica from './views/talleres/Ofimatica';
+import TallerAdministracionContable from './views/talleres/AdministracionContable';
 import TallerCocina from './views/talleres/Cocina';
-import TallerElectronica from './views/talleres/Electronica';
-import TallerMecanica from './views/talleres/Mecanica';
-import TallerAutomotriz from './views/talleres/Automotriz';
-import TallerDibujo from './views/talleres/Dibujo';
-import TallerSoldadura from './views/talleres/Soldadura';
+import TallerCorteYConfeccion from './views/talleres/CorteYConfeccion';
+import TallerDiseñoTecnico from './views/talleres/DiseñoTecnico';
+import TallerTurismo from './views/talleres/Turismo';
 import TallerElectricidad from './views/talleres/Electricidad';
 import Graduaciones from './views/Graduaciones';
 import Administrativos from './views/Administrativos';
@@ -72,13 +70,11 @@ export default function Router() {
                     <Route element={<Biblioteca/>} path='/biblioteca'/>
                     <Route element={<Talleres />} path='/talleres' />
                     <Route element={<TallerCarpinteria />} path="/carpinteria" />
-                    <Route element={<TallerOfimatica />} path="/ofimatica" />
+                    <Route element={<TallerAdministracionContable />} path="/administracion-contable" />
                     <Route element={<TallerCocina />} path="/cocina" />
-                    <Route element={<TallerElectronica />} path="/electronica" />
-                    <Route element={<TallerMecanica />} path="/mecanica" />
-                    <Route element={<TallerAutomotriz />} path="/automotriz" />
-                    <Route element={<TallerDibujo />} path="/dibujo" />
-                    <Route element={<TallerSoldadura />} path="/soldadura" />
+                    <Route element={<TallerCorteYConfeccion />} path="/corte-y-confeccion" />
+                    <Route element={<TallerDiseñoTecnico />} path="/diseño-tecnico" />
+                    <Route element={<TallerTurismo />} path="/turismo" />
                     <Route element={<TallerElectricidad />} path="/electricidad" />
                     <Route element={<Graduaciones />} path="/graduaciones" />
                     <Route element={<Administrativos />} path="/administrativos" />

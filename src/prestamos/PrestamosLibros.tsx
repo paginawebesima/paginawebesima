@@ -157,7 +157,7 @@ export default function PrestamosLibros() {
                     </table>
                 </div>
                 <div className="enlace_crear">
-                    <Link className="enlace_eliminar boton_agregar_prestamo" to='/crearPrestamo'>Añadir prestamo</Link>
+                    <Link className="enlace_eliminar boton_agregar_prestamo" to='/crearPrestamo'>Añadir préstamo</Link>
                 </div>
             </div>
             <Link className="boton_regresar enlace_eliminar" to='/prestamos'>Regresar</Link>

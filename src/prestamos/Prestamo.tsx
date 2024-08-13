@@ -93,7 +93,7 @@ export default function Prestamo({ register, errors }: PrestamoProps) {
                 )}
             </div>
             <div className="formulario_flex">
-                <label htmlFor="fechaprestamo">Fecha prestamo</label>
+                <label htmlFor="fechaprestamo">Fecha préstamo</label>
                 <input
                     type="date"
                     id="fechaprestamo"
@@ -107,7 +107,7 @@ export default function Prestamo({ register, errors }: PrestamoProps) {
                 )}
             </div>
             <div className="formulario_flex">
-                <label htmlFor="fechadevolucion">Fecha devolucion</label>
+                <label htmlFor="fechadevolucion">Fecha devolución</label>
                 <input
                     type="date"
                     id="fechadevolucion"

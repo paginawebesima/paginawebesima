@@ -25,7 +25,7 @@ export default function InformationContact() {
   const handleForm = (form:FormTelefono)=>mutate(form)
   return (
     <>
-      <h2 className='texto_prestamo'>Añadir Telefono</h2>
+      <h2 className='texto_prestamo'>Añadir Teléfono</h2>
       <div className='div_formulario'>
         <form className='formulario' noValidate onSubmit={handleSubmit(handleForm)} >
             <TelefonoContacto register={register} errors={errors}/>

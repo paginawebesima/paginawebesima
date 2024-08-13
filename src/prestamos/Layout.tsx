@@ -10,7 +10,7 @@ export default function Layout() {
         <NavBar/>
         <div className="imagen4 clase1">
           <h1></h1>
-          <h3 className="texto-principal">Prestamos</h3>
+          <h3 className="texto-principal">Préstamos</h3>
         </div>
       </header>
         <ToastContainer 

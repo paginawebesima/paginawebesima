@@ -46,7 +46,7 @@ export default function EditarPrestamo({data,prestamoId}:EditarPrestamoProps) {
          pauseOnHover={false}
             pauseOnFocusLoss={false}
         />
-        <h2 className='texto_prestamo'>Actualizar prestamo turno matutino</h2>
+        <h2 className='texto_prestamo'>Actualizar préstamo turno matutino</h2>
         <div className='div_formulario'>
         <form className='formulario' noValidate onSubmit={handleSubmit(handleForm)}>
             <Prestamo register={register} errors={errors}/>
