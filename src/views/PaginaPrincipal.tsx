@@ -48,15 +48,15 @@ export default function PaginaPrincipal() {
 
       <div className="contenido_principal">
         <div>
-          <h2>Mision</h2>
+          <h2>Misión</h2>
           <div>
-            <p className="texto_mision">Somos una INSTITUCIÓN PÚBLICA DE CALIDAD, con alto compromiso social, que imparte estudios de educación superior; comprometida con la formación integral de profesionistas con valores, liderazgo y visión emprendedora; mediante un modelo educativo de vanguardia basado en competencias y orientado a contribuir al desarrollo regional sustentable.</p>
+            <p className="texto_mision">Somos una institucion que forma integralmente jóvenes que desarrollen habilidades y competencias que les permitan integrarse a los procesos sociales con una cultura de respeto y de mejora continua</p>
           </div>
         </div>
         <div className="contenido_principal_vision">
-          <h2>Vision</h2>
+          <h2>Visión</h2>
           <div>
-            <p className="texto_vision">Ser una INSTITUCIÓN PÚBLICA RECONOCIDA en el ámbito nacional e internacional, con programas académicos acreditados y procesos de gestión certificados; profesores con alto perfil académico y profesional, cuerpos académicos consolidados y proyectos de investigación aplicados en áreas estratégicas que satisfagan las necesidades sociales.</p>
+            <p className="texto_vision">La ESIMA es una escuela con liderazgo académico, personal altamente capacitado y actualizado con prácticas docentes que propicien una educación de calidad centrada en el desarrollo de la persona y sus competencias</p>
           </div>
         </div>
       </div>
